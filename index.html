@@ -12,6 +12,15 @@
 <meta name="apple-mobile-web-app-title" content="Post Portfolio">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#ffffff">
+<script>
+/* In app mode the app opens on the dashboard; the list is reachable at #list. */
+(function(){
+  try{
+    var standalone=(window.navigator.standalone===true)||window.matchMedia('(display-mode: standalone)').matches;
+    if(standalone && location.hash!=='#list'){ location.replace('dashboard.html'); }
+  }catch(e){}
+})();
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <style>
 /* Layout: phone-first list app. White header, grey page, grouped white cards with hairline borders; one row per page. */

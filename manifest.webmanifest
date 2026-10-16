@@ -2,7 +2,7 @@
   "name": "Post Portfolio",
   "short_name": "Post",
   "description": "Post Investment Group portfolio dashboard, property reviews, debt and deals.",
-  "start_url": "index.html",
+  "start_url": "dashboard.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f5f6f8",
