@@ -1,0 +1,351 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Monday Deals Oct 12</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: three tiles, one sentence, a changes line, ranked deal rows that open on click, a watch list table, a proof card showing the sources match Post's own pipeline, and a what-to-do box. Same tokens as the Crestmark review and the Oct 7 sheet. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --warn-text:#8a5a00; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600;margin-top:34px}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:30px;font-weight:600;line-height:1.1;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.big .stripe{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0}
+.stripe.good{background:var(--good)} .stripe.info{background:var(--s1)} .stripe.warn{background:var(--warn)}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+.changes{margin-top:10px;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.changes b{color:var(--ink)}
+.stack{display:grid;gap:10px;margin-top:12px}
+details.deal{background:var(--surface);border:1px solid var(--ring);border-radius:10px}
+details.deal summary{list-style:none;display:grid;grid-template-columns:30px 1fr auto 20px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+details.deal summary::-webkit-details-marker{display:none}
+details.deal summary:hover{background:var(--accent-soft)}
+details.deal summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.deal .n{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1}
+.deal .t{font-weight:600;font-size:16px;min-width:0}
+.deal .t .where{display:block;font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
+.deal .k{text-align:right;white-space:nowrap}
+.deal .k .v{font-size:22px;font-weight:600;line-height:1.1}
+.deal .k .l{font-size:12px;color:var(--muted)}
+.deal .chev{color:var(--muted);transition:transform .15s}
+details[open].deal .chev{transform:rotate(90deg)}
+.deal .more{padding:14px 16px 16px 60px;border-top:1px solid var(--grid)}
+@media (max-width:560px){details.deal summary{grid-template-columns:30px 1fr 20px}.deal .k{display:none}.deal .more{padding-left:16px}}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;margin-left:8px;white-space:nowrap}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.good{background:var(--good)} .dot.warn{background:var(--warn)} .dot.info{background:var(--s1)} .dot.crit{background:var(--crit)}
+.lines{display:grid;gap:6px;font-size:15px}
+.lines b{font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0;margin-top:12px}
+.tbl-wrap{overflow-x:auto;margin-top:10px}
+table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+.data th,.data td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap;vertical-align:top}
+.data th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.data td.n,.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.data td.w{white-space:normal;min-width:220px}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.math{font-family:var(--mono);font-size:12.5px;background:var(--page);border:1px solid var(--ring);border-radius:8px;padding:8px 10px;margin-top:8px;overflow-x:auto}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+@media (prefers-reduced-motion:reduce){.deal .chev{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · deal finder · week 2</div>
+      <h1>Deals on the market that fit Post</h1>
+      <div class="sub">Every active listing of 120+ units in Post's states, pulled this morning from the broker feeds that can be read without a login, scored against the buy box, with Post's own pipeline removed. For today's 1:30 Pacific pipeline meeting.</div>
+    </div>
+    <div class="meta">Scanned Mon Oct 12, 2026, 7:00 AM<br>Next scan Monday Oct 19, 7:00 AM</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><span class="stripe info"></span><div class="lab">Listings screened</div><div class="val">340+</div><div class="cmp">Cushman (179 cards), Berkadia (156), IPA Texas (10) plus news search · GA, TX, FL, SC, NC, WA, CA</div></div>
+    <div class="big"><span class="stripe good"></span><div class="lab">Fit the buy box</div><div class="val">10</div><div class="cmp">score 80 or better · 4 new this week · 22 more on the watch list</div></div>
+    <div class="big"><span class="stripe warn"></span><div class="lab">Already in Post's pipeline</div><div class="val">30</div><div class="cmp">feed listings with a folder in Active Pursuits, including 5 that last week's sheet ranked by mistake</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> The best deal to bring today is 50 Stoneview, 236 units built 1986 in Lilburn, Gwinnett County, where the housing authority has done one deal with Post this year and 1BR rents sit about $500 under the 80% AMI ceiling; the most urgent is The Grayson, 330 units built 2016 in Spring, Harris County, with offers due tomorrow and 1BR rents about $450 under the Houston ceiling. Place at Midway still has the top score, but the boss is already talking to the Douglas County authority about it.</div>
+  <div class="changes"><b>Changes since last week:</b> <b>New</b> on the sheet: The Grayson (Spring TX), Verandas at Bear Creek (Houston), Cameron Creek (Fort Worth), Estates at Palm Bay (Fort Walton Beach, lender-driven). <b>Carried over:</b> 50 Stoneview, Place at Midway, The Meadows, Manchester Ridge, Sedgefield, the Federal Way package. <b>Gone:</b> 2950 North, Compton Place, Carrington Place, Lake St. James and The Chelsea all turned out to have Post pursuit folders already (opened March to August), Wood Pointe dropped to the watch list because its offer date passed, Waterview Crossing in Orlando went under contract, and The Shores in Corpus Christi is off the Berkadia feed. Scores were recomputed with the rents and vintages found this week, so a few carried deals moved.</div>
+
+  <h2>Ranked, best fit first</h2>
+  <div class="sub">Click a row to open it. Score is out of 100: structure and market 25, pullback 25, size 15, vintage 10, timing 15, seller motivation 10.</div>
+  <div class="stack">
+
+    <details class="deal" open>
+      <summary><div class="n">1</div><div class="t">50 Stoneview<span class="chip"><span class="dot info"></span>carried over</span><span class="where">Lilburn, GA · Gwinnett County · 236 units · built 1986 · Berkadia · active, no offer date</span></div><div class="k"><div class="v">93</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it ranks first</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>Partner with room.</b> Gwinnett County Housing Authority has one Post deal this year (Park on Sweetwater was 2024, Rosemont Peachtree Corners and the Asher consulting deal before that). No capacity problem, unlike Douglas County.</div>
+              <div><b>No pullback.</b> Current 1BR asking is $1,249 (Apartment List). The Atlanta 80% AMI 1BR ceiling is $1,767. Cobb/Gwinnett restriction set: 20% at 60%, 30% at 80%, 50% at 120% AMI.</div>
+              <div><b>1986 garden product, 14 buildings, pool and tennis courts.</b> Center of Post's vintage and size range. Looks like Rosemont Peachtree Corners (440 units, 1983, bought at a 5.45% market cap, 6.69% exempt cap).</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What to check</div>
+            <div class="lines" style="margin-top:6px">
+              <div>How long it has been on Berkadia's feed. It was there last week with no offer date, so ask whether guidance exists and whether anyone has priced it.</div>
+              <div>Georgia exemption timing: a 2027 close must apply by April 1, 2027.</div>
+              <div>Rent roll by unit type. Only one unit was advertised, so confirm the $1,249 is typical, not a lead-in.</div>
+            </div>
+          </div>
+        </div>
+        <div class="math">Atlanta MSA 2026 · 4-person 80% AMI $94,240 → 1BR max $1,767 · 2BR max $2,120 · 3BR max $2,450 · Stoneview 1BR asks $1,249 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> call Berkadia Atlanta this morning for the OM and rent roll. Tell the associate who ran Rosemont Peachtree Corners it is the same county and the same structure.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">2</div><div class="t">Place at Midway<span class="chip"><span class="dot warn"></span>boss already on it</span><span class="where">Douglasville, GA · Douglas County · 200 units · built 1989 · Cushman &amp; Wakefield · posted Oct 6, no offer date</span></div><div class="k"><div class="v">93</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Still the best county in the portfolio.</b> Crestmark, Sweetwater Creek, Villas at West Ridge and Valera Riverside are all within a few miles with the Douglas County Housing Authority. TAM already staffs the submarket.</div>
+          <div><b>No pullback.</b> 2BRs start at $1,190 (RentCafe) and the whole property advertises $1,264 to $1,772 all-in. The 2BR ceiling is $2,120.</div>
+          <div><b>Partner may be paused.</b> Douglas County HA has done four Post deals in 2026. The buy box scores that at 15 unless the close lands in 2027, which a deal posted Oct 6 would. The boss took last week's one-pager to DCHA and is asking for the exception. There is no pursuit folder yet, so it is not officially in the pipeline.</div>
+          <div><b>Fallback if DCHA says no:</b> a bond execution, or a sweetener (deeper affordability on a slice, higher PILOT). Before any call, confirm Crestmark's certifications are no longer at zero; that is the first thing DCHA will check.</div>
+        </div>
+        <div class="math">Atlanta MSA 2026 · $94,240 → 1BR $1,767 · 2BR $2,120 · 3BR $2,450 · Midway 2BR from $1,190 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> do not pitch this as new. Ask Lash where DCHA landed and whether Cushman has sent the OM yet.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">3</div><div class="t">The Grayson<span class="chip"><span class="dot crit"></span>offers due tomorrow</span><span class="where">Spring, TX · Harris County · 330 units · built 2016 · Cushman &amp; Wakefield · offers due Tue Oct 13</span></div><div class="k"><div class="v">91</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it is here</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>Harris County, where Post has the Houston Housing Authority and 72 Texas deals of history.</b> 4115 Louetta Road, 11 three-story buildings on 14.8 acres, 95% occupied per Yardi Matrix.</div>
+              <div><b>New product that still passes the test.</b> 1BRs list from $1,082 to $1,111 and the full range runs to $2,181 for 3BRs (HotPads). The Houston 80% AMI ceilings are $1,560 / $1,872 / $2,163. Same pattern as Valera, Oslo and Sydney: 2016-era suburban product under the ceiling.</div>
+              <div><b>Institutional seller.</b> Passco bought it from the developer (Bridgeview) a few years ago; Cushman's Josh Goldfarb and John Carr did that sale. A fund exit, not a distressed owner.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What to check</div>
+            <div class="lines" style="margin-top:6px">
+              <div>Timing. Offers are due tomorrow, so this is a "can we get a late look" call, not a full underwriting.</div>
+              <div>Harris County is excluded from the CHDO route, so the structure is HFC, HUD assumption or bonds. Ask Adam F which one before the call.</div>
+              <div>Concessions. One listing showed 1BR and 2BR at the same $1,111 lead-in, which usually means specials.</div>
+            </div>
+          </div>
+        </div>
+        <div class="math">Houston MSA 2026 · 4-person 80% AMI $83,200 (City of Houston 2026 AMI chart) → 1BR max $1,560 · 2BR max $1,872 · 3BR max $2,163 · Grayson 1BR from $1,082 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> call Cushman Houston (Goldfarb / Carr) today for guidance and a late look. If the field is closed, ask where it clears; it is the comp for every 2016-era Houston suburb deal Post sees next.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">4</div><div class="t">The Meadows<span class="chip"><span class="dot info"></span>carried over</span><span class="where">Tacoma, WA · Pierce County · 200 units · Berkadia · active</span></div><div class="k"><div class="v">90</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Washington is Post's strongest structure.</b> Spokane Indian Housing Authority takes title, tax exempt by right at closing, and still active after six-plus deals this year. Post has Lakes and Revive in Fife and is under contract on Northpoint in Tacoma (402 units).</div>
+          <div><b>No pullback at today's rents.</b> 2BRs list at $1,947 to $2,031 (Redfin, HotPads) at 11012 Portland Ave E. The Pierce County 2BR ceiling is about $2,292 on the 2026 limit, and $2,175 even on the official 2025 limit.</div>
+          <div>Vintage still not on the feed. Pierce County AMI grew 6.5% this year, and the median rose 5.4% in the HUD release.</div>
+        </div>
+        <div class="math">Pierce County 2026 · 4-person 80% AMI $101,850 (third-party copy of the HUD table; official FY2025 was $96,650) → 1BR $1,910 · 2BR $2,292 · 3BR $2,648 · Meadows 2BR $1,947 to $2,031 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> Berkadia Seattle for the OM and vintage. Loop in Hacker and Lash, who run the Washington deals.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">5</div><div class="t">Manchester Ridge<span class="chip"><span class="dot info"></span>carried over</span><span class="where">College Park, GA · Fulton County · 330 units · Berkadia · active</span></div><div class="k"><div class="v">90</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Housing Authority of Fulton County</b> has two Post deals this year (Windward, Manchester at Mansell), so it has room. Fulton restriction: 10% at 60%, 45% at 80%, 45% at 120%.</div>
+          <div><b>Rents are far under the ceiling.</b> 1BRs at $875 to $900, 2BRs at $1,125 to $1,375 (Apartment List, ApartmentAdvisor) against ceilings of $1,767 and $2,120. Pullback is not the question. Collections, crime and the 30 units advertised vacant are.</div>
+          <div>3100 Godby Road, one- and two-bedroom apartments and townhomes. Vintage still unknown; ask.</div>
+        </div>
+        <div class="math">Atlanta MSA 2026 · $94,240 → 1BR $1,767 · 2BR $2,120 · Manchester Ridge 2BR $1,125 to $1,375 → no pullback, but check why rents are this low</div>
+        <div class="takeaway"><b>Next step:</b> same Berkadia Atlanta call as Stoneview. Ask for delinquency history and occupancy first, then the rent roll.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">6</div><div class="t">Sedgefield<span class="chip"><span class="dot info"></span>carried over</span><span class="where">Marietta, GA · Cobb County · 280 units · built 1972 · Berkadia · active</span></div><div class="k"><div class="v">89</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Cobb County Housing Authority</b> did Avenues of Kennesaw (524 units) with Post in 2025. Same restriction set as Gwinnett.</div>
+          <div><b>No pullback.</b> 1BRs $1,026 to $1,150, 2BRs $1,203 to $1,220 (Rentable) against the $1,767 and $2,120 ceilings. Walden Group bought it in 2019 at $101,852 a unit through Berkadia; this is likely their exit.</div>
+          <div><b>Vintage is 1972, not unknown.</b> That costs it four points and means plumbing, electrical and roofs need Hillcrest's eyes before pricing.</div>
+        </div>
+        <div class="math">Atlanta MSA 2026 · $94,240 → 1BR $1,767 · 2BR $2,120 · Sedgefield 2BR $1,203 to $1,220 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> same Berkadia Atlanta call. Ask for the 2019 basis and what capital Walden put in.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">7</div><div class="t">Homestead + View at the Lake I and II<span class="chip"><span class="dot info"></span>carried over</span><span class="where">Federal Way, WA · King County · 134 + 155 + 50 = 339 units · built 1987 (Homestead) · Berkadia · active</span></div><div class="k"><div class="v">88</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Three Berkadia listings in one city, probably one seller.</b> Homestead (formerly Rainier Meadows) is 1987, 70% renovated, average market rent $1,728 per the Berkadia page. Together they are Post-sized; alone, each is small.</div>
+          <div><b>No pullback.</b> King County limits run above Pierce County's, and $1,728 sits under even the Pierce 2BR ceiling of $2,292. Post owns Porchlight (236) and Mariposa (194) in Federal Way with SIHA.</div>
+          <div>Score assumes a package. If Berkadia will only sell them separately, size drops to 5 or 10 points and this falls to the watch list.</div>
+        </div>
+        <div class="takeaway"><b>Next step:</b> ask Berkadia Seattle on the same call as The Meadows whether the three can be bought as one.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">8</div><div class="t">Verandas at Bear Creek<span class="chip"><span class="dot good"></span>new this week</span><span class="where">Houston, TX · Harris County · 160 units · built 1982 · IPA / Marcus &amp; Millichap · minimum bid $15M, no date found</span></div><div class="k"><div class="v">88</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Classic Post product.</b> 1982 garden in the Bear Creek / Katy corridor at 5455 Timber Creek Place. 2BRs at $1,249 (ApartmentIQ) against a $1,872 ceiling, which is $600 of room.</div>
+          <div><b>The problem is size.</b> 160 units at a $15M minimum bid is under Post's $25M floor. It only works as part of a package or if IPA has a sister property. Washer/dryer connections and fireplaces suggest a quick TAM turn.</div>
+          <div>Harris County again, so no CHDO; HFC or bonds.</div>
+        </div>
+        <div class="math">Houston MSA 2026 · $83,200 → 1BR $1,560 · 2BR $1,872 · 3BR $2,163 · Verandas 2BR $1,249 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> one question to IPA Houston: is there a bid date, and is anything else from this seller for sale? If not, log it as a comp.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">9</div><div class="t">Cameron Creek<span class="chip"><span class="dot good"></span>new this week</span><span class="where">Fort Worth, TX · Tarrant County · 446 units · built 1985 · IPA · active</span></div><div class="k"><div class="v">83</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Big, old, cheap rents.</b> 5209 Bryant Irvin Road, seven floor plans averaging 859 sq ft. 2BRs have shown at $997 to $1,121 with one month free (Redfin). The Fort Worth 2BR ceiling is about $1,920.</div>
+          <div><b>Tarrant County is a known path but not a core one.</b> Post has The Sydney and Oak Park there. No CHDO in Tarrant; needs an HFC. Bascom once bought it with a renovation loan, so expect a mix of renovated and classic units.</div>
+          <div>Concessions and the 36 to 38 units advertised vacant say the submarket is soft. Price accordingly; a 446-unit deal at these rents is the kind Post wins on price discipline.</div>
+        </div>
+        <div class="math">Fort Worth-Arlington 2026 · 4-person 80% AMI $85,350 (third-party copy of the HUD API, median $106,700) → 1BR $1,600 · 2BR $1,920 · 3BR $2,219 · Cameron Creek 2BR ≈ $1,000 to $1,120 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> IPA Fort Worth for the OM, T-12 and the renovated-unit count. Compare to The Sydney on structure.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">10</div><div class="t">Estates at Palm Bay<span class="chip"><span class="dot good"></span>new this week</span><span class="where">Fort Walton Beach, FL · Okaloosa County · 300 townhomes · built 1992 · Cushman &amp; Wakefield (Birmingham team) · OM "available soon" since June 3</span></div><div class="k"><div class="v">80</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it is here</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>A lender is driving this sale.</b> The $61M CMBS loan went to special servicing after sponsor Lurin filed Chapter 11 in March; the loan had been late since May 2025 (Commercial Observer, Morningstar). Lurin is running a property-by-property Chapter 11 sale program.</div>
+              <div><b>Post just opened a folder in the same county.</b> Exchange at Crestview (362 units) went into Active Pursuits on Oct 1, so the Okaloosa structure question is already being worked.</div>
+              <div><b>Product fits.</b> 1992 two-, three- and four-bedroom townhomes, $17.5K a unit of recent interior work, 15 minutes from Eglin AFB and Hurlburt Field (30,000 jobs).</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What to check</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>Ground lease to 2066.</b> Forty years left is a financing problem for agency debt. This is the first question, before rents.</div>
+              <div>Rents are not public. Tenant reviews call it overpriced; the 80% AMI 2BR ceiling is at least $1,836. Get the rent roll before scoring pullback above "probably under".</div>
+              <div>Four units fire-damaged. The OM has said "available soon" for four months, which fits a bankruptcy timeline, not a normal marketing one.</div>
+            </div>
+          </div>
+        </div>
+        <div class="math">Okaloosa County · FY2025 4-person 80% AMI $81,600 (HUD HOME table; FY2026 not published in a readable form) → 1BR $1,530 · 2BR $1,836 · 3BR $2,122 · asking rents unknown → probably under, confirm</div>
+        <div class="takeaway"><b>Next step:</b> Cushman Birmingham (Craig Hey, Andrew Brown) is likely the same team on Exchange at Crestview. Ask about both on one call, and ask how the bankruptcy court sale will run.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2>Watch list</h2>
+  <div class="sub">Fits on paper, needs one more fact, or timing is off.</div>
+  <div class="card" style="padding-top:12px">
+    <div class="tbl-wrap"><table class="data">
+      <thead><tr><th>Deal</th><th>Where</th><th class="n">Units</th><th>Built</th><th>Broker · status</th><th class="n">Score</th><th class="w">Why it is here</th></tr></thead>
+      <tbody>
+        <tr><td>Denton North</td><td>Denton, TX · Denton</td><td class="n">200</td><td>?</td><td>Berkadia · active</td><td class="n">80</td><td class="w">Denton Housing Authority is a Post partner. Vintage and rents not on the feed. One question to Berkadia Dallas.</td></tr>
+        <tr><td>City Summit</td><td>San Antonio, TX · Bexar</td><td class="n">269</td><td>?</td><td>Berkadia · active</td><td class="n">80</td><td class="w">Bexar AMI up 6.2%; Post has Arroyo Seco and Willow Bend there. Vintage unknown.</td></tr>
+        <tr><td>Green Oaks at Medical</td><td>San Antonio, TX · Bexar</td><td class="n">254</td><td>?</td><td>Berkadia · active</td><td class="n">80</td><td class="w">Carried from last week. Pair with City Summit for one San Antonio call.</td></tr>
+        <tr><td>South Pointe</td><td>Dallas, TX · Dallas</td><td class="n">372</td><td>?</td><td>Berkadia · active</td><td class="n">80</td><td class="w">Carried. Needs an HFC path; CHDO is not available in Dallas County.</td></tr>
+        <tr><td>The Chalet</td><td>Irving, TX · Dallas</td><td class="n">250</td><td>?</td><td>Berkadia · active</td><td class="n">80</td><td class="w">Same Dallas County question as South Pointe. Ask for both at once.</td></tr>
+        <tr><td>Broadmoor</td><td>Houston, TX · Harris</td><td class="n">235</td><td>?</td><td>Cushman · posted Sep 9</td><td class="n">80</td><td class="w">Harris County, no vintage on the feed. Add to the Cushman Houston call about The Grayson.</td></tr>
+        <tr><td>Berkadia Houston set: Hollow Tree Park · North Bend · Baystone · Halcyon West · The JaXon · Richmond Towne Homes</td><td>Houston / Webster, TX · Harris</td><td class="n">280 · 282 · 290 · 240 · 250 · 188</td><td>?</td><td>Berkadia · active</td><td class="n">70–80</td><td class="w">Six Harris County listings with no vintage or rents on the feed. One call to Berkadia Houston for all six rent rolls sorts them.</td></tr>
+        <tr><td>555 Mansell</td><td>Roswell, GA · Fulton</td><td class="n">200</td><td>?</td><td>Cushman · posted Aug 10</td><td class="n">80</td><td class="w">Fulton HA has room. Roswell rents run higher than south Fulton; pullback needs the rent roll.</td></tr>
+        <tr><td>Kristopher Woods</td><td>Clarkston, GA · DeKalb</td><td class="n">214</td><td>1973</td><td>Cushman · posted Jun 2024</td><td class="n">79</td><td class="w">Listed for 16 months. Rents will be far under the ceiling; the question is why nobody has bought it. DeKalb would be a new authority for Post.</td></tr>
+        <tr><td>Huntington Oaks</td><td>Alvin, TX · Brazoria</td><td class="n">152</td><td>1979</td><td>IPA · active</td><td class="n">78</td><td class="w">Outside Harris County, so CHDO is possible if the seller has owned it 5+ years. Small.</td></tr>
+        <tr><td>Edgewater Vista · Covington Glen · Arbor Crossing · Tucker Square</td><td>Decatur / Lithonia / Stone Mountain, GA · DeKalb</td><td class="n">151 · 254 · 240 · 276</td><td>?</td><td>Berkadia · active</td><td class="n">70–75</td><td class="w">Four DeKalb deals on one feed. Post has no DeKalb authority deal yet; the first one opens the county for all four.</td></tr>
+        <tr><td>Pointe South Townhomes</td><td>Jonesboro, GA · Clayton</td><td class="n">160</td><td>?</td><td>Cushman · posted Dec 2025</td><td class="n">75</td><td class="w">Clayton is a target county with no partner yet. Stale listing, likely a price gap.</td></tr>
+        <tr><td>Newnan Crossing</td><td>Newnan, GA · Coweta</td><td class="n">192</td><td>?</td><td>Cushman · posted Jun 16</td><td class="n">75</td><td class="w">Southwest exurb, workforce rents. New county.</td></tr>
+        <tr><td>Landera</td><td>San Antonio, TX · Bexar</td><td class="n">184</td><td>?</td><td>Berkadia · active</td><td class="n">75</td><td class="w">Third Bexar listing on the feed. Small on its own.</td></tr>
+        <tr><td>Wood Pointe</td><td>Marietta, GA · Cobb</td><td class="n">178</td><td>1986</td><td>Cushman · offers were due Sep 29</td><td class="n">73</td><td class="w">Dropped from last week's top 10 on timing only. Still "status not stated" on the feed two weeks after offers, so ask if it fell out.</td></tr>
+        <tr><td>Spring Creek</td><td>Crestview, FL · Okaloosa</td><td class="n">254</td><td>2011</td><td>Cushman · posted Jun 17</td><td class="n">73</td><td class="w">Same city as Post's new Exchange at Crestview pursuit. Could be a two-property Okaloosa play with the same Cushman team.</td></tr>
+        <tr><td>Chatham Green Village</td><td>Arlington, TX · Tarrant</td><td class="n">234</td><td>rehab 2014</td><td>Cushman · posted Sep 16</td><td class="n">73</td><td class="w">Carried. Same Tarrant HFC question as Cameron Creek.</td></tr>
+        <tr><td>The Depot</td><td>Fort Worth, TX · Tarrant</td><td class="n">210</td><td>2005</td><td>IPA · active</td><td class="n">73</td><td class="w">Pair with Cameron Creek on the IPA Fort Worth call.</td></tr>
+        <tr><td>The Reid</td><td>Tucker, GA · DeKalb</td><td class="n">242</td><td>2021</td><td>Cushman · posted Oct 7, OM soon</td><td class="n">70</td><td class="w">Truly new this week. 2021 product in Tucker probably rents near $1,800 for a 2BR, under the $2,120 ceiling, but DeKalb has no partner yet.</td></tr>
+        <tr><td>Village at Rice Hope</td><td>Port Wentworth, GA · Chatham</td><td class="n">360</td><td>?</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Chatham is a target county and Post pursued Allier Port Wentworth in February. Savannah limits are lower than Atlanta's; needs the rent roll.</td></tr>
+        <tr><td>Bremerton Landing Ph 1 &amp; 2</td><td>Bremerton, WA · Kitsap</td><td class="n">373</td><td>new</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Carried. New construction; pullback check on new rents.</td></tr>
+        <tr><td>Elements on Third</td><td>St. Petersburg, FL · Pinellas</td><td class="n">431</td><td>1962–2021 phased</td><td>Cushman · posted Jun 19</td><td class="n">70</td><td class="w">Big. Mixed vintages make the exemption math messy. Post has looked at Pinellas before (Stillwater Palms, Reserve at Lake Pointe).</td></tr>
+        <tr><td>Lakeside at Southwood · Village at Terra Bella</td><td>Tallahassee / Land O' Lakes, FL · Leon / Pasco</td><td class="n">310 · 311</td><td>?</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Florida bond execution could work on either. Both need vintage and rents.</td></tr>
+        <tr><td>WillowBrook</td><td>Pensacola, FL · Escambia</td><td class="n">218</td><td>1976</td><td>Cushman · offers were due Oct 1</td><td class="n">68</td><td class="w">Right product, but offers went in 11 days ago. Post is already pursuing Avalon in Pensacola (folder Sep 23); ask the same team.</td></tr>
+        <tr><td>Lender REO portfolio</td><td>Fort Worth / Richardson / Mesquite, TX</td><td class="n">376</td><td>1963–83</td><td>Cushman · posted Sep 1</td><td class="n">70</td><td class="w">Carried. Bank-owned, four small properties. Only if priced like REO.</td></tr>
+        <tr><td>Clemson Ridge + Crescent Pointe</td><td>Seneca, SC · Oconee</td><td class="n">264</td><td>1998 / 2003</td><td>Cushman · posted Oct 6</td><td class="n">66</td><td class="w">Carried. Tertiary market an hour from Greenville.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h2>Proof the sources are the right ones</h2>
+  <div class="card">
+    <div class="lines">
+      <div><b>Thirty of the listings on these feeds already have a folder in Post's Active Pursuits.</b> That includes five that last week's sheet ranked as if they were new: 2950 North (folder opened Mar 4), Compton Place (Mar 19), Carrington Place at Wildewood (Jun 22), The Chelsea (May 21) and Lake St. James (Aug 20, offers due Oct 20). The name check now runs against every folder, so that will not happen again.</div>
+      <div><b>Opened in the last four weeks:</b> Exchange at Crestview (Oct 1), Avalon in Pensacola (Sep 23), Meetinghouse at Collins Cove (Sep 17), Solace at Rainier Ridge in Puyallup (Sep 16). The team is working the Florida panhandle and Pierce County right now, which is why Estates at Palm Bay, Spring Creek and The Meadows are worth a second look.</div>
+      <div><b>Also already in the folders:</b> Ashbrook Village, Champions Walk, Residences at Soho, Alwell, Commons at University Square, Whitewing Flats, The Ashton at East Park, Encore, Rosemont Bentley (now under LOI on the feed), Solstice Morningside (under LOI), Elevation 3505, Villas of Pine Ridge, Allier Port Wentworth, Palm Vista, Cove at St. Lucie, The Lucille, The Cooper in Corona, Blossoms at Brentwood, Altura, Canyon Country Villas, Oak &amp; Ivy, Wellspring in Pecos, Cottages on Edmonds, Villas at Valley Ranch. None appear above.</div>
+      <div><b>Under contract:</b> Northpoint (402, Tacoma) and Park at Lake Como (400, Tampa). The cap rate tracker was not read this week; the file was last updated Aug 2024 and the machine has no spreadsheet reader.</div>
+    </div>
+  </div>
+
+  <h2>What to do this week</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <div class="eyebrow">Before 1:30 Pacific today</div>
+        <ul class="plain">
+          <li><b>Cushman Houston (Goldfarb / Carr):</b> The Grayson, offers due tomorrow. Ask for guidance and a late look. Add Broadmoor to the same call.</li>
+          <li><b>Berkadia Atlanta:</b> one call for 50 Stoneview, Sedgefield and Manchester Ridge. Ask for rent rolls, guidance and whether offers have a date.</li>
+          <li><b>Berkadia Seattle:</b> The Meadows vintage and OM, and whether Homestead and the two View at the Lake buildings sell as a package.</li>
+          <li><b>Internal:</b> ask Lash where Douglas County landed on Place at Midway before saying the name in the meeting.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">Later this week</div>
+        <ul class="plain">
+          <li><b>IPA Fort Worth and Houston:</b> Cameron Creek OM and renovated-unit count; Verandas at Bear Creek bid date and whether it packages.</li>
+          <li><b>Cushman Birmingham (Hey / Brown):</b> Estates at Palm Bay ground lease and bankruptcy-sale process, on the same call as Exchange at Crestview.</li>
+          <li><b>Berkadia Houston:</b> vintages and rent rolls on the six Harris County listings. Half will be luxury and drop out.</li>
+          <li>Lead with county, units, vintage, offers date and the pullback read. Name the housing partner and the Post property it looks like. Hand the associate a deal they can take credit for.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Sources read Oct 12, 2026, 7 AM: Cushman &amp; Wakefield Multifamily Advisory Group active listings for GA (60), TX (25), FL (64), SC (7), NC (23); Berkadia featured listings for Texas, Atlanta, Florida, California, Seattle, Charlotte; IPA Texas; Northmarq property search (returned no results with the unit filter); web search of REBusinessOnline, Multi-Housing News, Commercial Observer, Bisnow and local press for new listings, calls for offers, receiverships and special-servicer transfers. Post pipeline from Z:\Shared\Acquisitions\Acquisitions Pending\1. Active Pursuits and 2. Under Contract (folder names and creation dates, Oct 12). Income limits: Atlanta 2026 $94,240 (Invest Atlanta MTSP table); Houston 2026 $83,200 (City of Houston AMI chart effective Jun 1, 2026); Fort Worth-Arlington 2026 $85,350 and Pierce County 2026 $101,850 (third-party copies of the HUD FY2026 tables, not confirmed on HUD's own site); Okaloosa FY2025 $81,600 (HUD HOME limits). Rents from Apartment List, RentCafe, Rentable, Redfin, HotPads, ApartmentIQ and Berkadia listing pages, captured on various dates. Vintage marked "?" where the feed does not show it. Scores are a screen, not an underwriting.</div>
+</div>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

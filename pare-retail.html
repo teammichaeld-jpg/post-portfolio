@@ -1,0 +1,201 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>PARE Retail Screen</title>
+<style>
+/* Corporate memo, two letter pages. Same house style as the Post deal sheets. */
+:root{--navy:#1f2a44;--ink:#1a1a1a;--ink2:#444;--muted:#6b6b6b;--rule:#c9ccd3;--light:#f3f4f7;--page:#fff;--green:#1e6b2e;--amber:#8a5a00;--bg:#e9eaee;--fg:#1a1a1a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page:#fff;--bg:#e9eaee;--fg:#1a1a1a}}
+:root[data-theme="dark"]{--page:#fff;--bg:#e9eaee;--fg:#1a1a1a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.4;padding-block:24px;padding-inline:16px}
+.sheet{background:var(--page);max-width:8.5in;margin:0 auto 24px;padding:0.45in 0.5in;box-shadow:0 2px 14px rgba(0,0,0,.12)}
+.bar{background:var(--navy);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.bar .firm{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.bar h1{margin:2px 0 0;font-size:22px;font-weight:700;text-wrap:balance}
+.bar .addr{font-size:12px;opacity:.9;margin-top:2px}
+.bar .right{text-align:right;font-size:11px;line-height:1.5;white-space:nowrap;opacity:.9}
+.sec{margin-top:14px}
+.sec h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 5px;padding-bottom:3px;border-bottom:1.5px solid var(--navy)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.cols>div{min-width:0}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+td,th{padding:4px 6px;border-bottom:1px solid var(--rule);vertical-align:top;text-align:left}
+th{background:var(--light);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);font-weight:700}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.k{color:var(--ink2);width:30%}
+.big td{font-size:13px;padding:6px}
+.ok{color:var(--green);font-weight:700}
+.watch{color:var(--amber);font-weight:700}
+b.n{white-space:nowrap}
+ul{margin:2px 0 0;padding-left:16px}
+li{margin:0 0 4px}
+p{margin:4px 0}
+.ask{margin-top:14px;background:var(--light);border-left:4px solid var(--navy);padding:9px 12px;font-size:13.5px}
+.foot{margin-top:12px;border-top:1px solid var(--rule);padding-top:5px;font-size:9px;color:var(--muted);line-height:1.35}
+.deal{margin-top:12px;padding-top:8px;border-top:1px solid var(--rule)}
+.deal:first-of-type{border-top:none;padding-top:0}
+.deal h3{margin:0 0 3px;font-size:14px;color:var(--navy)}
+.deal .sub{font-size:12px;color:var(--ink2);margin:0 0 4px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}.bar .right{text-align:left;white-space:normal}.sheet{padding:18px 14px}}
+@page{size:letter;margin:0.35in 0.4in}
+@media print{
+  body{background:#fff;font-size:10.2px;line-height:1.25;padding:0}
+  .sheet{box-shadow:none;margin:0;padding:0;max-width:none}
+  .sheet+.sheet{page-break-before:always}
+  .bar{padding:9px 12px}.bar h1{font-size:18px}.bar .addr,.bar .right,.bar .firm{font-size:9.5px}
+  .sec{margin-top:8px}.sec h2{font-size:9.2px;margin-bottom:3px}
+  table{font-size:9.6px}td,th{padding:2.5px 5px}th{font-size:8.3px}
+  .big td{font-size:10px;padding:3.5px 5px}
+  li{margin-bottom:2px}
+  .deal{margin-top:7px;padding-top:5px}.deal h3{font-size:11px}.deal .sub{font-size:9.5px}
+  .ask{margin-top:8px;padding:6px 10px;font-size:10.2px}
+  .foot{font-size:7.3px;margin-top:8px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+
+<div class="sheet">
+  <div class="bar">
+    <div>
+      <div class="firm">Post Real Estate Group · PARE Investments · Retail Screen</div>
+      <h1>Open-Air Centers on the Market</h1>
+      <div class="addr">For Ethan Beutel · FL, GA, NC, SC, TN, TX, AZ listings as of October 15, 2026 · checked against CB Square, Chesterfield, NASA Plaza and Chatsworth</div>
+    </div>
+    <div class="right">Michael Del Gais · October 15, 2026<br>Confidential</div>
+  </div>
+
+  <div class="sec">
+    <h2>Bottom line</h2>
+    <div class="wrap">
+    <table class="big">
+      <tr><th>#</th><th>Center</th><th class="r">Ask · cap</th><th class="r">SF · $/SF</th><th>Anchors · leased</th><th class="r">At ask: IRR · Y1 cash</th><th>Bid</th></tr>
+      <tr><td>1</td><td><b>Cypress Station Square</b><br>Houston, TX (I-45 &amp; FM 1960)</td><td class="r">$21.41M · 9.25%</td><td class="r">137,565 · $156</td><td>Dollar Tree, DaVita, Hibbett, Milan Institute · 91%</td><td class="r"><span class="ok">18.7%</span> · 12.3%</td><td>$19.5M → 23.8% IRR, 14% cash</td></tr>
+      <tr><td>2</td><td><b>Fayetteville Commons</b><br>Fayetteville, NC (Skibo Rd)</td><td class="r">$21.40M · 7.02%</td><td class="r">126,833 · $169</td><td>Academy Sports, Burlington (89% of GLA) · 98% · built 2016</td><td class="r">14.8% · 7.0%</td><td>$20.5M → 17.1% IRR</td></tr>
+      <tr><td>3</td><td><b>Shops at Gilbert Town Square</b><br>Gilbert, AZ</td><td class="r">$9.68M · 7.00%</td><td class="r">37,613 · $257</td><td>Shop center, 15K SF to lease · 92% · listed Sep 23</td><td class="r"><span class="ok">16.2%</span> · 6.8%</td><td>Ask; move fast, it is new</td></tr>
+      <tr><td>4</td><td><b>Centennial Place</b><br>Memphis, TN (Winchester &amp; Hwy 385)</td><td class="r">$11.59M · 8.00%</td><td class="r">126,849 · $91</td><td>Burlington, Club4 Fitness · 100% · built 2006</td><td class="r">10.1% · 9.7%</td><td>$10.5M → 16.0% IRR, 11.7% cash</td></tr>
+      <tr><td>5</td><td><b>Tucson Fiesta</b><br>Tucson, AZ (across from Tucson Mall)</td><td class="r">$18.10M · 7.25%</td><td class="r">93,005 · $195</td><td>Burlington, Bob's Discount Furniture, PGA Tour Superstore · 100%</td><td class="r"><span class="watch">10.9%</span> · 7.8%</td><td>$17.0M → 14.5% IRR</td></tr>
+    </table>
+    </div>
+    <p style="font-size:12px;color:var(--ink2)">Returns are project level, 5-year hold, PARE's CB Square debt terms (62% of cost, 6.25% fixed, 2 years interest-only). None of the five is in Post's pending folders.</p>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="deal">
+        <h3>1. Cypress Station Square, Houston</h3>
+        <p class="sub">Marcus &amp; Millichap · 1986, renovated 2019 · 12.19 acres · NOI $1.98M · 275,000 cars a day at I-45 and FM 1960</p>
+        <ul>
+          <li><b>Why Ethan.</b> Same shape as NASA Plaza with better in-place income: 9.25% going in, in-line rents at $12 to $18 NNN, 9% vacant, 850 feet of frontage and pad sites the broker says are leasable or developable. Day-one cash pays 12% on equity.</li>
+          <li><b>Plan.</b> Lease 12,000 SF at $14, push bumps, carve one or two pads. Stabilized return on cost 9.7%. Exit at 9.0% in year 5.</li>
+          <li><b>Risks.</b> FM 1960 corridor has slipped; tenants are needs-based, not credit (Workforce Solutions, Milan cosmetology school). Underwrite the school and DaVita terms first. 1986 roofs and parking.</li>
+          <li><b>Next.</b> OM and rent roll from Marcus &amp; Millichap Houston; ask why 9.25% and how long listed.</li>
+        </ul>
+      </div>
+      <div class="deal">
+        <h3>2. Fayetteville Commons, NC</h3>
+        <p class="sub">Marcus &amp; Millichap · listed June 30, 2026 · 2016 build · 12.09 acres · NOI $1.50M · shadow-anchored by Target and Home Depot</p>
+        <ul>
+          <li><b>Why Ethan.</b> Chesterfield again, newer: two national anchors at $10.30 NNN since 2015, Burlington is the top store in North Carolina, shop rents in the mid-$20s to low-$30s, 1.4M visits a year, no junior-box vacancy in the corridor.</li>
+          <li><b>Plan.</b> Burlington wants to shrink to 36,348 SF and pay for the split at the same total rent. That frees 13,000 SF the leasing agent prices at $200K a year. Plus two small vacancies. NOI to $1.83M by year 3, return on cost 8.0%.</li>
+          <li><b>Risks.</b> Two tenants are 89% of the rent. Fort Liberty town. $169/SF is fair, not cheap; the IRR needs the Burlington split to happen.</li>
+          <li><b>Next.</b> OM, Burlington correspondence on the downsize, Placer data. Bid $20.5M.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="deal">
+        <h3>3. Shops at Gilbert Town Square, AZ</h3>
+        <p class="sub">Phoenix Commercial Advisors · listed September 23, 2026 · 2001 · NOI $677K · 92% leased</p>
+        <ul>
+          <li><b>Why Ethan.</b> Smallest check ($4.0M equity), fastest-growing submarket on the list, clear lease-up story: 15,276 SF available across four suites, broker projects NOI up 20% by year 3. 7% going in for Gilbert is unusual.</li>
+          <li><b>Risks.</b> $257/SF, 1.22 acres so no pad or land cushion, unanchored. A 9,324 SF box is the swing space.</li>
+          <li><b>Next.</b> OM is posted; call this week, it will not last.</li>
+        </ul>
+      </div>
+      <div class="deal">
+        <h3>4. Centennial Place, Memphis</h3>
+        <p class="sub">Michael Lightman Realty · listed October 29, 2025, cut from $12.96M · 2006 · 10.6 acres · NOI $927K</p>
+        <ul>
+          <li><b>Why Ethan.</b> $91/SF for a 2006 Burlington box next to At Home, Costco and the FedEx campus, 114,000 cars on Hwy 385. Ethan owned Ridgeway Trace in this market at LBX. A year on market means the price moves.</li>
+          <li><b>Risks.</b> Three tenants; Club4 Fitness is regional credit. Little lease-up upside, so this is a cash-yield deal: 11.7% cash at $10.5M.</li>
+          <li><b>Next.</b> Rent roll and lease terms; bid $10.5M.</li>
+        </ul>
+      </div>
+      <div class="deal">
+        <h3>5. Tucson Fiesta, AZ</h3>
+        <p class="sub">Cushman &amp; Wakefield · listed August 4, 2026 · 1995 · 7.04 acres · NOI $1.31M · 4.1-year WALT</p>
+        <ul>
+          <li><b>Why Ethan.</b> Three national boxes at below-market rent across from the region's biggest mall, 43,000 cars a day, $92K household income in 5 miles.</li>
+          <li><b>Risks.</b> Short leases are the upside and the risk. At ask the deal is 10.9%; it needs $17M or a bigger mark-to-market than we assumed.</li>
+          <li><b>Next.</b> Get the three rents and options from the OM before bidding.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="sec" style="margin-top:0">
+    <h2>Watch list</h2>
+    <div class="wrap">
+    <table>
+      <tr><th>Center</th><th class="r">Ask · cap</th><th class="r">SF · $/SF</th><th>Read</th></tr>
+      <tr><td><b>International Plaza</b>, College Park, GA (Old National Hwy at I-85/285)</td><td class="r">$8.89M · 8.30%</td><td class="r">160,836 · $55</td><td>20 acres, 86% leased, 1978. Tenants are local bars, restaurants and an event hall. Land play more than a retail deal; 13.4% IRR if the rent holds.</td></tr>
+      <tr><td><b>Fairmeadows Shopping Center</b>, Duncanville, TX (I-20)</td><td class="r">$13.80M · 8.39%</td><td class="r">111,437 · $111</td><td>Ollie's and Advance Auto, 96% leased, 1963 to 1986, seven parcels. Listed Nov 2025. 11.9% at ask; works nearer $12.5M.</td></tr>
+      <tr><td><b>Point West Center</b>, Houston (S Gessner, Chinatown)</td><td class="r">$12.75M · 7.71%</td><td class="r">80,527 · $158</td><td>Grocery anchored on a long lease, 100% leased, new roof, below-market rents. Grocer not named in the listing. Listed Apr 2025.</td></tr>
+      <tr><td><b>University Center South</b>, Jacksonville (University Blvd S)</td><td class="r">$8.25M · 7.03%</td><td class="r">43,530 · $190</td><td>Same trade area as CB Square, 75% occupied, 1972, renovated and re-roofed 2024, Firehouse Subs 30 years. Small, but Ethan's Jacksonville team can run it.</td></tr>
+      <tr><td><b>Union Hills Village</b>, Phoenix (Deer Valley)</td><td class="r">$21.30M · 6.76%</td><td class="r">110,188 · $193</td><td>Goodwill, Dollar General, 95% leased, 1988, listed Sep 24, 2026. Cap too tight unless rents are well under market.</td></tr>
+      <tr><td><b>Killeen Marketplace</b>, Killeen, TX</td><td class="r">$16.77M · 7.50%</td><td class="r">80,615 · $208</td><td>Northern Tool and Boot Barn, 100% leased, 2000, across from Killeen Mall. Stabilized; little to add.</td></tr>
+      <tr><td><b>Island Plaza</b>, Riviera Beach, FL</td><td class="r">$13.60M · 7.00%</td><td class="r">76,098 · $179</td><td>Dollar Tree, Family Dollar, 87% leased, 6 acres, on market since Nov 2023. Seller is in a 1031. Only at a real discount.</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="sec">
+        <h2>How the numbers were run</h2>
+        <ul>
+          <li>Price plus 4% for closing and working capital, plus a leasing and capital reserve per deal ($200K to $900K).</li>
+          <li>Debt at 62% of total cost, 6.25% fixed, 24 months interest-only, then 30-year amortization (CB Square's SouthState terms).</li>
+          <li>NOI from the listing; rent bumps 2% a year; vacancy leased at the broker's quoted rents over 24 to 36 months.</li>
+          <li>Five-year hold, sold at the going-in cap plus 25 basis points, 2% sale cost. Project level, before PARE fees and promote.</li>
+          <li>Bids are the price at which the deal clears 16% IRR and PARE's 8% preferred return in year one.</li>
+        </ul>
+      </div>
+      <div class="sec">
+        <h2>Already in Post's pending folders</h2>
+        <ul>
+          <li>CB Square, Jacksonville (owned, May 2026).</li>
+          <li>Chesterfield Towne Center Plaza, Richmond; NASA Plaza, Melbourne; Chatsworth strip, Granada Hills (under contract).</li>
+          <li>None of the deals on this sheet overlap.</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="sec">
+        <h2>Where the list came from</h2>
+        <ul>
+          <li>LoopNet shopping-center listings in seven states, sorted by price, 227 in Florida alone, 80 in Georgia, 336 in Texas, 115 in Arizona.</li>
+          <li>Kept multi-tenant open-air centers between $8M and $25M with a going-in cap at or above 7%, or a basis under $100/SF.</li>
+          <li>Dropped single-tenant, condo, office, redevelopment and sub-$8M listings, and anything priced below a 6.5% cap.</li>
+          <li>Listing dates matter: Centennial Place (12 months), Island Plaza (35 months) and Point West (18 months) are negotiable; Gilbert and Union Hills are three weeks old.</li>
+        </ul>
+      </div>
+      <div class="sec">
+        <h2>Calls this week</h2>
+        <ul>
+          <li>Marcus &amp; Millichap Houston: Cypress Station OM, rent roll, pad survey.</li>
+          <li>Marcus &amp; Millichap Raleigh: Fayetteville Commons OM and the Burlington downsize file.</li>
+          <li>Phoenix Commercial Advisors: Gilbert Town Square OM.</li>
+          <li>Michael Lightman Realty, Memphis: Centennial Place leases; open at $10.5M.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask"><b>The angle:</b> Cypress Station is the NASA Plaza play with twice the in-place income. Fayetteville Commons is the cleanest institutional asset on the list and has a built-in lease-up. Take one of each to Ethan.</div>
+
+  <div class="foot">Sources: LoopNet listings and detail pages read October 15, 2026 (listing IDs 37048933, 41107680, 42317654, 38256482, 41546786, 40142998, 38352959, 35690111, 42415925, 42337257, 38792404, 30169251); Marcus &amp; Millichap, Cushman &amp; Wakefield and Phoenix Commercial Advisors listing text; Jacksonville Daily Record and Colliers on CB Square (May 2026); PARE investment memos for CB Square, Chesterfield Towne Center Plaza and NASA Plaza (Post acquisitions files). Prices, NOI and occupancy are broker-reported and unverified; returns are estimates, not an underwriting. Confidential.</div>
+</div>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

@@ -1,0 +1,349 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Newmark NYC Deals</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: verdict band, then four deal rows ranked, then a price-at-cap table with a cap-rate switch, then the Post model checklist. Same token system as the Crestmark review so the Post pages read as one set. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --warn-text:#8a5a00; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600;margin-top:34px}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:28px;font-weight:600;line-height:1.15;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.big .stripe{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0}
+.stripe.crit{background:var(--crit)} .stripe.warn{background:var(--warn)} .stripe.good{background:var(--good)} .stripe.info{background:var(--s1)}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+
+.stack{display:grid;gap:10px;margin-top:12px}
+details.deal{background:var(--surface);border:1px solid var(--ring);border-radius:10px}
+details.deal summary{list-style:none;display:grid;grid-template-columns:30px 1fr auto 20px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+details.deal summary::-webkit-details-marker{display:none}
+details.deal summary:hover{background:var(--accent-soft)}
+details.deal summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.deal .n{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1}
+.deal .t{font-weight:600;font-size:16px}
+.deal .t .where{display:block;font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
+.deal .k{text-align:right;white-space:nowrap}
+.deal .k .v{font-size:19px;font-weight:600;line-height:1.1}
+.deal .k .l{font-size:12px;color:var(--muted)}
+.deal .chev{color:var(--muted);transition:transform .15s}
+details[open].deal .chev{transform:rotate(90deg)}
+.deal .more{padding:14px 16px 16px 60px;border-top:1px solid var(--grid)}
+@media (max-width:560px){details.deal summary{grid-template-columns:30px 1fr 20px}.deal .k{display:none}.deal .more{padding-left:16px}}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;margin-left:8px;white-space:nowrap}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.crit{background:var(--crit)} .dot.warn{background:var(--warn)} .dot.good{background:var(--good)} .dot.info{background:var(--s1)}
+.lines{display:grid;gap:6px;font-size:15px}
+.lines b{font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+.why{margin-top:12px}
+.why .eyebrow{margin-bottom:4px}
+.mini{border-collapse:collapse;font-size:14px;margin-top:8px;width:100%}
+.mini td{padding:5px 14px 5px 0;border-bottom:1px solid var(--grid);vertical-align:top}
+.mini td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mini tr:last-child td{border-bottom:none}
+.mini tr.total td{font-weight:600;border-top:2px solid var(--axis)}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0;margin-top:12px}
+.tbl-wrap{overflow-x:auto;margin-top:10px}
+table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+.data th,.data td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+.data th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.data td.n,.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.data tr.sub td{color:var(--ink-2);font-size:13px}
+.data tr.sub td:first-child{padding-left:24px}
+.data tr.est td{font-style:italic}
+td.pos{color:var(--good-text)} td.neg{color:var(--crit)} td.warnc{color:var(--warn-text)}
+.seg{display:inline-flex;border:1px solid var(--ring);border-radius:7px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:6px 12px;background:transparent;color:var(--ink-2);border:none;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:600}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.ctl{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+
+.meter{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+.meter > span{display:block;height:100%}
+.mrow{display:grid;grid-template-columns:200px 1fr 130px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--grid)}
+.mrow:last-child{border-bottom:none}
+.mrow .r{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right}
+@media (max-width:560px){.mrow{grid-template-columns:1fr 110px}.mrow .k{grid-column:1/-1}}
+
+.fit{border-collapse:collapse;width:100%;font-size:14px;margin-top:10px}
+.fit th,.fit td{padding:9px 10px;border-bottom:1px solid var(--grid);vertical-align:top;text-align:left}
+.fit th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.fit td.c{text-align:center;white-space:nowrap}
+.mark{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px}
+.mark.good{background:var(--good)} .mark.warn{background:var(--warn)} .mark.crit{background:var(--crit)}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · acquisitions screen</div>
+      <h1>Four Newmark NYC deals against the Post model</h1>
+      <div class="sub">All four are unpriced. Each is sized at the cap rates Post actually paid and underwrote on Crestmark, then checked against the four things that make a Post deal work.</div>
+    </div>
+    <div class="meta">Screened Oct 7, 2026<br>Benchmark: Crestmark final deal memo, Oct 2025</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><span class="stripe good"></span><div class="lab">Best fit of the four</div><div class="val">Trident Portfolio</div><div class="cmp">573 units · $6.1M NOI · 98% occupied · Post-sized</div></div>
+    <div class="big"><span class="stripe crit"></span><div class="lab">Biggest trap</div><div class="val">34-57 82nd Street</div><div class="cmp">$560K of "legal rent upside" the law will not let you collect</div></div>
+    <div class="big"><span class="stripe warn"></span><div class="lab">The hard truth</div><div class="val">None pencil as-is</div><div class="cmp">Post has never owned in NYC. The model needs a tax exemption and rent growth; NYC rent stabilization blocks both.</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> Post buys 250 to 700 unit Sunbelt garden apartments, gets the property tax removed through a housing authority partnership, and grows rents to market. These are 1920s to 1960s New York elevator and walk-up buildings where 74% to 99% of the units are rent stabilized, taxes are a fifth of revenue, and rent growth is set by a city board. Trident is the only one with Post's scale and the only one worth a real look, and even that only at a price near a 7% cap.</div>
+
+  <h2>Ranked, best fit first</h2>
+  <div class="sub">Click a row to open it.</div>
+  <div class="stack">
+
+    <details class="deal" open>
+      <summary><div class="n">1</div><div class="t">Trident Portfolio<span class="chip"><span class="dot good"></span>worth a look</span><span class="where">7 buildings · 573 units · Astoria, Washington Heights, Canarsie, Rockaway Park · built 1920–1963</span></div><div class="k"><div class="v">$6.12M</div><div class="l">pro forma NOI</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it ranks first</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>It is Post-sized.</b> 573 units is bigger than Crestmark. Everything else here is 44 to 192 units, below anything Post owns.</div>
+              <div><b>It is full and clean.</b> 98.1% occupied, institutionally owned, about one violation per five units, records kept. Post would not be fixing a broken office on day one.</div>
+              <div><b>It comes apart.</b> Newmark will sell the four Astoria buildings (280 units) or the three outer-borough buildings (293 units) separately. Post could buy the piece that pencils.</div>
+              <div><b>Lowest basis per door.</b> At the same cap rate, Trident costs $186K a unit against $280K to $300K for the Jackson Heights pair.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What works against it</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>91% rent stabilized.</b> Only 45 of 573 units are free market. The $1.11M of preferential-rent upside only arrives when a stabilized tenant leaves, and they rarely do.</div>
+              <div><b>Expenses eat 56% of revenue.</b> Property tax alone is $3.0M. Five of seven buildings have union staff. Canarsie runs a 66% expense ratio.</div>
+              <div><b>Washington Heights carries 64 of the 126 violations</b> and is the weakest building. Price it or leave it out.</div>
+              <div><b>Old stock.</b> Three walk-ups from the 1920s. Facade, boiler and NYC emissions-law capital will not be in the broker's pro forma.</div>
+            </div>
+          </div>
+        </div>
+        <div class="why"><div class="eyebrow">The two halves</div>
+          <table class="mini">
+            <tr><td></td><td class="n">Units</td><td class="n">NOI</td><td class="n">Price at 5.75%</td><td class="n">Price at 7.25%</td><td class="n">Per unit at 7.25%</td></tr>
+            <tr><td>Astoria core (4 buildings, N/W trains)</td><td class="n">280</td><td class="n">$3.50M</td><td class="n">$60.9M</td><td class="n">$48.3M</td><td class="n">$173K</td></tr>
+            <tr><td>Outer-borough (Wash. Heights, Canarsie, Rockaway)</td><td class="n">293</td><td class="n">$2.62M</td><td class="n">$45.5M</td><td class="n">$36.1M</td><td class="n">$123K</td></tr>
+            <tr class="total"><td>Whole portfolio</td><td class="n">573</td><td class="n">$6.12M</td><td class="n">$106.5M</td><td class="n">$84.4M</td><td class="n">$147K</td></tr>
+          </table>
+          <div class="takeaway">The Rockaway building is the sleeper: 72 oceanfront units, 92% on preferential rents averaging $1,957 against $3,200 asking nearby. That is a $385K gap. It only pays if tenants leave, but it is the one place in the package where the upside is real and large.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">2</div><div class="t">82-15 35th Avenue<span class="chip"><span class="dot warn"></span>too small, right shape</span><span class="where">48 units + 1 store · Jackson Heights, Queens · 1936 elevator · six stories</span></div><div class="k"><div class="v">$775K</div><div class="l">in-place NOI</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it ranks second</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>It is the only deal with real free-market rent.</b> 20 of 48 units (41%) are unregulated. That is the one place in these four packages where Post's "grow rents to market" playbook actually applies.</div>
+              <div><b>Low regulatory exposure.</b> Only 9 units carry preferential rents, so there is little upside that depends on turnover, and little that can be taken away.</div>
+              <div><b>Maintained.</b> Renovated kitchens and baths, new meter bank, minimal deferred maintenance per the broker.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What works against it</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>48 units.</b> A $13M deal. Post's smallest Georgia or Carolina asset is five times this. It cannot carry a manager, and the asset management fee would be about $13K a year.</div>
+              <div><b>Taxes are 24% of revenue,</b> the highest of the four, and the assessment is $2.6M on a building that would trade for five times that.</div>
+              <div><b>Free-market rents of $2,397 are already at market</b> for a 1936 one-bedroom in Jackson Heights. The upside is normal rent growth, not a mark-to-market.</div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">Only makes sense bought together with its sister building next door (deal 3): 92 units, 3 commercial spaces, one block, about $26M at a 5.75% cap. Still half the size of anything Post owns.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">3</div><div class="t">34-57 82nd Street<span class="chip"><span class="dot crit"></span>upside you cannot collect</span><span class="where">44 units + 2 medical offices · Jackson Heights, Queens · 1936 elevator · sister building to deal 2</span></div><div class="k"><div class="v">$752K</div><div class="l">in-place NOI</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">What the broker is selling</div>
+            <div class="lines" style="margin-top:6px">
+              <div>In-place rent is $1.17M a year. Legal rent is $1.73M. The pitch is $560K a year of upside, a 48% raise, "as apartments turn over."</div>
+              <div>35 of 44 units (78%) sit on preferential rents averaging $2,330 against a legal $3,592.</div>
+              <div>Two medical offices add $144K a year, 11% of revenue.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">Why that upside is mostly fiction</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>Since the 2019 state law, a preferential rent stays with the tenant for as long as they stay.</b> The landlord can only move to the legal rent when the unit is vacated.</div>
+              <div><b>Stabilized tenants in Queens paying $1,200 below legal rent do not leave.</b> Turnover in buildings like this runs a few units a year. At that pace the $560K takes 15 to 20 years to show up.</div>
+              <div><b>Zero free-market units.</b> There is nothing Post can reprice on day one.</div>
+              <div>Taxes are 21% of revenue and the city will reassess upward after a sale.</div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">Underwrite this on in-place NOI with 2% to 3% annual increases set by the Rent Guidelines Board and nothing else. On that basis it is a 5.5% to 6% bond with a 1936 boiler.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">4</div><div class="t">The Collegiate Collection<span class="chip"><span class="dot crit"></span>cannot underwrite yet</span><span class="where">3 buildings · 192 units · Sunset Park and Windsor Terrace, Brooklyn · 1959–1962 elevator · union staff</span></div><div class="k"><div class="v">no NOI</div><div class="l">one-pager only</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">What we know</div>
+            <div class="lines" style="margin-top:6px">
+              <div>192 units, average rent $1,973, about $4.5M of gross rent potential. No expenses, no taxes, no NOI in the package.</div>
+              <div>53% stabilized, 21% stabilized on preferential rents, 6% free market, 2% Section 8.</div>
+              <div><b>11% of units are SCRIE or DRIE,</b> senior and disabled tenants whose rent is frozen by the city and averages $1,318.</div>
+              <div><b>11 units (6%) are vacant</b> in a city with 1.4% vacancy. Ask why. Vacant stabilized units that need full renovation are a liability, not an opportunity.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">Rough size, for scale only</div>
+            <div class="lines" style="margin-top:6px">
+              <div>If expenses run 50% to 55% of revenue, which is normal for a union elevator building in Brooklyn, NOI lands near $2.0M to $2.3M.</div>
+              <div>At a 5.75% cap that is about $35M to $40M, or $190K a unit. At 7.25% it is about $28M to $32M.</div>
+              <div>Those are my estimates, not Newmark's. Do not quote them.</div>
+            </div>
+          </div>
+        </div>
+        <div class="takeaway">Ask Newmark for the trailing 12 months, the rent roll, and the vacancy explanation before spending another hour on it.</div>
+      </div>
+    </details>
+  </div>
+
+  <h2>What each would cost at Post's cap rates</h2>
+  <div class="sub">Post paid a 5.75% walk-in cap for Crestmark. With the tax exemption the yield on price rose to 7.25%. In New York there is no exemption to lift it, so the price itself has to deliver the yield. Switch the cap rate to see the price that implies.</div>
+  <div class="card">
+    <div class="ctl">
+      <h3>Implied price by cap rate</h3>
+      <div class="seg" role="group" aria-label="Cap rate">
+        <button type="button" data-cap="0.0575" aria-pressed="true" id="cap-575">5.75% · what Post paid</button>
+        <button type="button" data-cap="0.065" aria-pressed="false" id="cap-650">6.50%</button>
+        <button type="button" data-cap="0.0725" aria-pressed="false" id="cap-725">7.25% · what Post needs</button>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="price-tbl">
+      <thead><tr><th>Deal</th><th class="n">Units</th><th class="n">NOI</th><th class="n">Implied price</th><th class="n">Per unit</th><th class="n">Taxes as % of revenue</th><th class="n">Expense ratio</th><th class="n">Free-market units</th></tr></thead>
+      <tbody>
+        <tr data-noi="6121354" data-units="573"><td>Trident Portfolio</td><td class="n">573</td><td class="n">$6,121,354</td><td class="n p"></td><td class="n u"></td><td class="n warnc">21.6%</td><td class="n neg">56%</td><td class="n neg">8%</td></tr>
+        <tr class="sub" data-noi="3504568" data-units="280"><td>Astoria core only</td><td class="n">280</td><td class="n">$3,504,568</td><td class="n p"></td><td class="n u"></td><td class="n">22.4%</td><td class="n">50%</td><td class="n">9%</td></tr>
+        <tr class="sub" data-noi="2616785" data-units="293"><td>Outer-borough only</td><td class="n">293</td><td class="n">$2,616,785</td><td class="n p"></td><td class="n u"></td><td class="n">20.7%</td><td class="n">62%</td><td class="n">7%</td></tr>
+        <tr data-noi="774884" data-units="48"><td>82-15 35th Avenue</td><td class="n">48</td><td class="n">$774,884</td><td class="n p"></td><td class="n u"></td><td class="n neg">24.2%</td><td class="n warnc">42%</td><td class="n pos">41%</td></tr>
+        <tr data-noi="752359" data-units="44"><td>34-57 82nd Street</td><td class="n">44</td><td class="n">$752,359</td><td class="n p"></td><td class="n u"></td><td class="n warnc">20.7%</td><td class="n warnc">41%</td><td class="n neg">0%</td></tr>
+        <tr class="est" data-noi="2150000" data-units="192"><td>Collegiate Collection (NOI estimated)</td><td class="n">192</td><td class="n">~$2,150,000</td><td class="n p"></td><td class="n u"></td><td class="n">not given</td><td class="n">not given</td><td class="n neg">6%</td></tr>
+        <tr data-noi="3450000" data-units="334" style="background:var(--accent-soft);font-weight:600"><td>Crestmark, for reference (walk-in)</td><td class="n">334</td><td class="n">$3,450,000</td><td class="n p"></td><td class="n u"></td><td class="n pos">0% after exemption</td><td class="n">—</td><td class="n pos">100%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="takeaway">Crestmark's walk-in NOI is backed out from the $60M price at a 5.75% cap. Post's underwritten NOI after the tax exemption was $4.35M, which is the 7.25% figure. In New York, buying at 5.75% and hoping taxes go away is not a plan.</div>
+  </div>
+
+  <h2>How much the tax line matters</h2>
+  <div class="sub">Post's whole edge on Crestmark was removing property tax through the Douglas County Housing Authority. Here is what the same move would be worth in New York, and why it is not available in the same form.</div>
+  <div class="card">
+    <h3>Yield on price at a 5.75% cap, with and without property tax</h3>
+    <div class="mrow"><div class="k">Trident, as offered</div><div class="meter"><span style="width:66%;background:var(--s1)"></span></div><div class="r">5.75%</div></div>
+    <div class="mrow"><div class="k">Trident, if taxes went to zero</div><div class="meter"><span style="width:99%;background:var(--good)"></span></div><div class="r">8.6%</div></div>
+    <div class="mrow"><div class="k">35th Avenue, as offered</div><div class="meter"><span style="width:66%;background:var(--s1)"></span></div><div class="r">5.75%</div></div>
+    <div class="mrow"><div class="k">35th Avenue, if taxes went to zero</div><div class="meter"><span style="width:93%;background:var(--good)"></span></div><div class="r">8.1%</div></div>
+    <div class="mrow"><div class="k">82nd Street, as offered</div><div class="meter"><span style="width:66%;background:var(--s1)"></span></div><div class="r">5.75%</div></div>
+    <div class="mrow"><div class="k">82nd Street, if taxes went to zero</div><div class="meter"><span style="width:90%;background:var(--good)"></span></div><div class="r">7.8%</div></div>
+    <div class="mrow"><div class="k">Crestmark, actual</div><div class="meter"><span style="width:83%;background:var(--s2)"></span></div><div class="r">7.25%</div></div>
+    <div class="takeaway">
+      <b>Why it is not that simple.</b> The Texas and Georgia structures Post uses (public facility corporations and housing authority partnerships) do not exist in New York. The closest New York tool is an Article XI exemption from the city's housing agency, which requires a nonprofit housing company to hold title, a regulatory agreement capping rents and incomes, and a City Council vote. It is used by preservation buyers, it takes a year or more, and it is usually partial. It is the one idea that would make these buildings look like a Post deal. It needs a New York affordable-housing lawyer's opinion before anyone underwrites it.
+    </div>
+  </div>
+
+  <h2>Post model fit, deal by deal</h2>
+  <div class="card" style="padding-top:12px">
+    <div class="tbl-wrap"><table class="fit">
+      <thead><tr><th>What a Post deal needs</th><th class="c">Trident</th><th class="c">35th Ave</th><th class="c">82nd St</th><th class="c">Collegiate</th></tr></thead>
+      <tbody>
+        <tr><td><b>Scale.</b> 250 to 700 units so a full on-site team and Post's asset management fee both work.</td><td class="c"><span class="mark good"></span> 573</td><td class="c"><span class="mark crit"></span> 48</td><td class="c"><span class="mark crit"></span> 44</td><td class="c"><span class="mark warn"></span> 192</td></tr>
+        <tr><td><b>Rent growth to market.</b> Post underwrites pushing rents to market on turnover. Stabilized units get a board-set increase of a few percent and preferential rents are locked for the tenancy.</td><td class="c"><span class="mark crit"></span> 8% free market</td><td class="c"><span class="mark warn"></span> 41% free market</td><td class="c"><span class="mark crit"></span> 0% free market</td><td class="c"><span class="mark crit"></span> 6% free market</td></tr>
+        <tr><td><b>Tax exemption.</b> The lever that took Crestmark from 5.75% to 7.25%. Not available through Post's usual partners in New York.</td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td></tr>
+        <tr><td><b>Expense ratio under 45%.</b> Union payroll, NYC taxes, fuel oil and gas heat push these to 41% to 66%.</td><td class="c"><span class="mark crit"></span> 56%</td><td class="c"><span class="mark warn"></span> 42%</td><td class="c"><span class="mark warn"></span> 41%</td><td class="c"><span class="mark crit"></span> union, unknown</td></tr>
+        <tr><td><b>Occupancy and condition.</b> Full building, clean records, no broken office to fix.</td><td class="c"><span class="mark good"></span> 98%</td><td class="c"><span class="mark good"></span> renovated</td><td class="c"><span class="mark good"></span> renovated</td><td class="c"><span class="mark warn"></span> 6% vacant</td></tr>
+        <tr><td><b>Agency debt.</b> Freddie Mac does lend on New York stabilized buildings, so this one carries over.</td><td class="c"><span class="mark good"></span></td><td class="c"><span class="mark good"></span></td><td class="c"><span class="mark good"></span></td><td class="c"><span class="mark good"></span></td></tr>
+        <tr><td><b>A team that knows the market.</b> Post's 190-plus deals are in Texas, Georgia, the Carolinas, Florida, California and the Northwest. None in New York.</td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td><td class="c"><span class="mark crit"></span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h2>What to do with this</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <div class="eyebrow">Before anything else</div>
+        <ul class="plain">
+          <li><b>Ask the acquisitions lead one question:</b> is New York in bounds at all? If the answer is no, send your friend a polite pass and spend the time on Sunbelt deals.</li>
+          <li><b>If yes, ask Newmark for pricing guidance</b> on Trident as a whole and on the Astoria core alone, plus trailing 12 months and a DHCR rent registration for every building.</li>
+          <li><b>Underwrite Trident on in-place NOI only.</b> Give the preferential-rent upside zero value in year one and a 3% to 5% annual turnover after that. If it does not clear a 7% yield on price on that basis, it does not work.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">The big idea, if you want one</div>
+        <ul class="plain">
+          <li>Post's real skill is not buying apartments. It is <b>turning workforce housing into tax-exempt housing through public partnerships.</b> New York has a version of that tool and almost no private buyers use it.</li>
+          <li>If a New York housing lawyer says an Article XI deal is doable on a rent-stabilized portfolio, the tax line on Trident alone is $3M a year. That is a new line of business, not one deal.</li>
+          <li>That is a six-month question, not a this-week one. Raise it as a question, not a recommendation.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Sources: Newmark setups for 34-57 82nd Street and 82-15 35th Avenue (Heritage Multifamily Portfolio), Newmark Trident Portfolio offering memorandum (pro forma, 26/27 tax year), Newmark Collegiate Collection one-pager. Post benchmark: Crestmark final deal memo (10.9.25 model: 5.75% walk-in cap, 17.1% investor IRR, 7.65% year-one cash-on-cash) and the Post Holdings deal list on the shared drive. Implied prices are NOI divided by cap rate, before closing costs and capital. Collegiate NOI is an estimate. Rent regulation statements reflect the 2019 Housing Stability and Tenant Protection Act as generally understood; confirm with counsel.</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const rows=[...document.querySelectorAll('#price-tbl tbody tr')];
+const btns=[...document.querySelectorAll('.seg button')];
+const fmt=v=>'$'+(v>=1e6?(v/1e6).toFixed(1)+'M':Math.round(v/1e3)+'K');
+function render(cap){
+  rows.forEach(r=>{ const noi=+r.dataset.noi, u=+r.dataset.units; const p=noi/cap; r.querySelector('.p').textContent=(r.classList.contains('est')?'~':'')+fmt(p); r.querySelector('.u').textContent='$'+Math.round(p/u/1000)+'K'; });
+  btns.forEach(b=>b.setAttribute('aria-pressed', String(+b.dataset.cap===cap)));
+  try{ localStorage.setItem('nmrk-cap',String(cap)); }catch(e){}
+}
+btns.forEach(b=>b.addEventListener('click',()=>render(+b.dataset.cap)));
+let start=0.0575; try{ const s=parseFloat(localStorage.getItem('nmrk-cap')); if(s && btns.some(b=>+b.dataset.cap===s)) start=s; }catch(e){}
+render(start);
+})();
+</script>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

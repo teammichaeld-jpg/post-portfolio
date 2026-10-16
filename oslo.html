@@ -1,0 +1,510 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Oslo Operating Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 3 numbers, one sentence, then tabs. Overview = six problems, each a click-to-open row with a short plain explanation. Same system as the other Post reviews. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --seq250:#86b6ef; --seq400:#3987e5; --seq550:#1c5cab; --seq700:#0d366b;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#0ca30c; --accent-soft:rgba(57,135,229,.16);
+    --seq250:#184f95; --seq400:#256abf; --seq550:#5598e7; --seq700:#9ec5f4;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#0ca30c; --accent-soft:rgba(57,135,229,.16);
+  --seq250:#184f95; --seq400:#256abf; --seq550:#5598e7; --seq700:#9ec5f4;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;font-weight:600}
+h3{font-size:14px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:40px;font-weight:600;line-height:1.05;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.big .stripe{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0}
+.stripe.crit{background:var(--crit)} .stripe.warn{background:var(--warn)} .stripe.good{background:var(--good)}
+.delta{font-weight:600} .delta.bad{color:var(--crit)} .delta.good{color:var(--good-text)}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+.tabs{display:flex;gap:4px;margin-top:22px;border-bottom:1px solid var(--axis);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font:inherit;font-size:14px;font-weight:500;color:var(--ink-2);background:transparent;border:none;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:4px}
+.panel{padding-top:18px}
+.panel .intro{margin-bottom:14px}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2 > .full{grid-column:1/-1}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.stack{display:grid;gap:10px}
+details.prob{background:var(--surface);border:1px solid var(--ring);border-radius:10px}
+details.prob summary{list-style:none;display:grid;grid-template-columns:30px 1fr auto 20px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+details.prob summary::-webkit-details-marker{display:none}
+details.prob summary:hover{background:var(--accent-soft)}
+details.prob summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.prob .n{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1}
+.prob .t{font-weight:600;font-size:16px}
+.prob .k{text-align:right;white-space:nowrap}
+.prob .k .v{font-size:20px;font-weight:600;line-height:1.1}
+.prob .k .l{font-size:12px;color:var(--muted)}
+.prob .chev{color:var(--muted);transition:transform .15s}
+details[open].prob .chev{transform:rotate(90deg)}
+.prob .more{padding:0 16px 16px 60px;border-top:1px solid var(--grid);padding-top:14px}
+@media (max-width:560px){details.prob summary{grid-template-columns:30px 1fr 20px}.prob .k{display:none}.prob .more{padding-left:16px}}
+.lines{display:grid;gap:6px;font-size:15px}
+.lines b{font-weight:600}
+.mini{border-collapse:collapse;font-size:14px;margin-top:10px}
+.mini td{padding:5px 14px 5px 0;border-bottom:1px solid var(--grid)}
+.mini td.n{text-align:right;font-variant-numeric:tabular-nums}
+.mini tr:last-child td{border-bottom:none}
+.why{margin-top:12px}
+.why .eyebrow{margin-bottom:4px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;margin-left:8px}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.crit{background:var(--crit)} .dot.warn{background:var(--warn)} .dot.good{background:var(--good)}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-2);margin-top:6px}
+.legend .key{display:inline-flex;align-items:center;gap:6px}
+.legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.legend .sw.bar{width:10px;height:10px;border-radius:2px}
+.chart{position:relative;margin-top:8px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12px;padding:6px 9px;border-radius:5px;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));opacity:0;transition:opacity .08s;z-index:3;font-variant-numeric:tabular-nums;line-height:1.4}
+.tip.on{opacity:1}
+.tip .t{font-weight:600;margin-bottom:2px}
+.toggle{font:inherit;font-size:12px;color:var(--ink-2);background:transparent;border:1px solid var(--ring);border-radius:5px;padding:3px 9px;cursor:pointer}
+.toggle:hover,.toggle:focus-visible{border-color:var(--accent);color:var(--ink);outline:none}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+.tbl-wrap{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.subject td{font-weight:600;background:var(--accent-soft)}
+td.neg{color:var(--crit)} td.pos{color:var(--good-text)}
+tr.total td{font-weight:600;border-top:2px solid var(--axis)}
+td.w{white-space:normal}
+.meter{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+.meter > span{display:block;height:100%}
+.mrow{display:grid;grid-template-columns:200px 1fr 120px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--grid)}
+.mrow:last-child{border-bottom:none}
+.mrow .r{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right}
+@media (max-width:560px){.mrow{grid-template-columns:1fr 100px}.mrow .k{grid-column:1/-1}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px}
+.fact .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:14.5px;font-weight:500;margin-top:2px}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.plan-tbl td{white-space:normal;vertical-align:top;font-size:15px;padding:12px 14px}
+.plan-tbl td.w{min-width:200px}
+.plan-tbl input{width:16px;height:16px;accent-color:var(--accent);margin-top:3px}
+.plan-tbl tr.done td.w{color:var(--muted);text-decoration:line-through}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · OSL · RRP</div>
+      <h1>Oslo Apartments</h1>
+      <div class="sub">Fairburn, GA · 288 units · built 2024 · owned since Mar 2026 · TAM Residential · AM Tanner Lack · same team as Crestmark, Valera and Avenues</div>
+    </div>
+    <div class="meta">Financials Aug 2026 · ops Oct 4, 2026<br>Portfolio Dashboard v425</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><span class="stripe warn"></span><div class="lab">NOI run-rate (Jun–Aug, annualized)</div><div class="val">$4.35M</div><div class="cmp"><span class="delta bad">▼ $226K</span> vs $4.58M underwritten · July and August were on plan · the next 60 days are not</div></div>
+    <div class="big"><span class="stripe crit"></span><div class="lab">Occupancy today, and in 60 days</div><div class="val">92.7%</div><div class="cmp"><span class="delta bad">→ 84.5%</span> projected · 24 notices in, 17 move-outs scheduled, 1 new lease a week</div></div>
+    <div class="big"><span class="stripe crit"></span><div class="lab">Days to turn an empty home</div><div class="val">46</div><div class="cmp">double the portfolio median of 23 · Valera, same team, does it in 13 · 21 vacant, 2 ready to show</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> Oslo is a two-year-old building that the seller filled with free rent; those leases are expiring now, the renewals come without the freebies, and residents are walking out faster than the office can replace them, while the 21 empty homes sit 46 days waiting on paint and a signature. The numbers look fine today and fall off a cliff in 60 days. Fourth Georgia property, same team, same unfinished list.</div>
+
+  <div class="tabs" role="tablist" id="tabs">
+    <button class="tab" role="tab" aria-selected="true" data-tab="overview">Problems</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="leasing">Leasing</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="money">Money</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="risk">Leaks &amp; compliance</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="plan">Plan</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="deal">Deal</button>
+  </div>
+
+  <!-- PROBLEMS -->
+  <div class="panel" id="panel-overview" role="tabpanel">
+    <div class="intro"><div class="sub">Biggest first. Click a row to open it.</div></div>
+    <div class="stack">
+
+      <details class="prob" id="prob-cliff">
+        <summary><div class="n">1</div><div class="t">The seller's free-rent leases are expiring and residents are leaving<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">84.5%</div><div class="l">occupancy in 60 days</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Bought at</b> 95.1% occupied in March. <b>Peaked</b> at 95.5% in mid-August. <b>Today</b> 92.7%. <b>Projected</b> 87.3% in 30 days and 84.5% in 60.</div>
+            <div><b>Why the drop:</b> the seller leased up a brand-new building in 2025 with one to two months free. Those leases are coming due. Post's policy is no concessions, so the renewal offer is the full rent. In August, 13 renewals went out at an average of 15% more. One week in September, six renewals at 39% more.</div>
+            <div><b>What residents did:</b> 24 gave notice and their homes are not re-rented. 17 move-outs are scheduled in the next 30 days. 9 left last week. 25 more leases expire in the next 75 days.</div>
+            <div><b>The math:</b> about 35 move-outs over the next two months against roughly 8 new leases takes Oslo from 92.7% occupied to the mid-80s, which is what the system's own 60-day projection of 84.5% says.</div>
+          </div>
+          <table class="mini">
+            <tr><td>Renewal rate this year</td><td class="n">55%</td></tr>
+            <tr><td>Renewal rent change, August</td><td class="n">+15% on 13 leases</td></tr>
+            <tr><td>New-lease rent change, August</td><td class="n">−1.5% on 1 lease</td></tr>
+            <tr><td>Net new leases per week</td><td class="n">1</td></tr>
+            <tr><td>Leases needed per week to hold 94%</td><td class="n">about 6</td></tr>
+          </table>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>Every point of occupancy is about $61K a year here. Falling from 93% to 84.5% is about $500K of run-rate, and the building would be below the $4.58M underwriting by a wide margin. This is the whole review. Everything else is smaller.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-turn">
+        <summary><div class="n">2</div><div class="t">Empty homes take 46 days to turn on a 2024 building<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">2 of 21</div><div class="l">vacant homes ready</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>36 homes turned in the last 30 days.</b> That is one in eight, on a building where a turn should be a touch-up and a clean.</div>
+            <div><b>Turn time 46 days.</b> The standard in the business plan is 7. Contract painting is $52K a year on a building that was painted in 2024. The plan said painting would be in-house.</div>
+            <div><b>Twice the portfolio.</b> Across the 86 Post properties that report a turn time, the median is 23 days and the average 26. Oslo is the sixth slowest of all of them, on the newest building Post owns. The same regional team turns Valera in 13 days, Mariposa in 24 and Crestmark in 26. Avenues does not report one at all.</div>
+            <div><b>Fewest ready homes in the group.</b> 2 of 21 vacant homes are showable at Oslo (10%). Valera has 35 of 45 ready (78%), Crestmark 29 of 42 (69%).</div>
+            <div><b>The leasing office is holding units too.</b> The Oct 6 tracker shows homes held a month for move-ins that have not happened, an applicant who missed move-in with no screening decision, and a lease that was never generated.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Why it matters</div>
+            <div class="lines">
+              <div>Leasing can only sell what is ready. Two ready homes against 27 prospects a week means the tours end in "we'll call you."</div>
+              <div>Same pattern as Avenues, with the same regional team: the turn vendor, Anvic, does every paint; nobody checks the invoice against the move-out; the in-house switch never happened.</div>
+              <div>Valera proves the team can turn a home in 13 days when it chooses to. Oslo at 46 is a choice, not a capability problem.</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-lease">
+        <summary><div class="n">3</div><div class="t">The leasing office does not follow up<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">0%</div><div class="l">follow-up after a tour</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Mystery shop, April 8:</b> phone call scored 55%. No description of the apartment, the amenities or the neighborhood, no reason given to visit. The tour itself scored 91%, the consultant was excellent. Then no call or email, ever. Follow-up scored zero.</div>
+            <div><b>The funnel:</b> 27 prospects a week, 7 tours, 2 applications, 1 lease. A third of applications cancel.</div>
+            <div><b>Marketing</b> is $118K a year against $90K underwritten. $45K of it is resident events through Apartment Life, which was budgeted at $1,300 and also gets a free apartment.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>The people are good on the tour and absent after it. That is a process problem, not a hiring problem. A 24-hour follow-up rule and a phone script would move this faster than any ad spend.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-leaks">
+        <summary><div class="n">4</div><div class="t">Water, damages, retail and fees are not being collected<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">−$186K</div><div class="l">other income vs UW</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <table class="mini">
+            <tr><td>Water and sewer billed back</td><td class="n">45% of cost · 22% in August</td><td class="n" style="color:var(--muted)">target 90%</td></tr>
+            <tr><td>Damage billed back</td><td class="n">10%</td><td class="n" style="color:var(--muted)">target 70% · $5K collected all year</td></tr>
+            <tr><td>Retail rent</td><td class="n">$7K vs $34K budget</td><td class="n" style="color:var(--muted)">"online payment not set up, request a check"</td></tr>
+            <tr><td>Admin and application fees</td><td class="n">$15K vs $28K budget</td><td class="n" style="color:var(--muted)"></td></tr>
+            <tr><td>Moved-out balances written off</td><td class="n">$51K</td><td class="n" style="color:var(--muted)">budget $17K · not placed with collections first</td></tr>
+          </table>
+          <div class="why"><div class="eyebrow">Why</div>
+            <div class="lines">
+              <div>The water billing vendor (RUMS) is not posting charges in real time. A $9,600 catch-up accrual covered February through April, then August collapsed to $4,700 against about $17K of water cost. That alone is about $130K a year.</div>
+              <div>Retail: three storefronts, a coffee lease signed in April, and the rent is being collected by asking the tenant for a check.</div>
+              <div>Move-out damage is not posted from the inspection before the deposit goes back. Same finding as the other three.</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-tax">
+        <summary><div class="n">5</div><div class="t">Property tax is still on the books and compliance is at 29%<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">$484K</div><div class="l">tax run-rate · UW $224K</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>The deal assumed</b> a housing-authority tax exemption. The business plan marks it "done." The books still accrue about $30K a month of property tax, plus an $82K catch-up in August. Underwriting allowed $224K a year. The run-rate is $484K.</div>
+            <div><b>Compliance:</b> 58 homes need residents at or under 100% of area income and 230 at or under 120%. Designated so far: 55 and 28. Files completed: 44 of 288. The operating agreement gives 12 months from closing, March 2, 2027. The dashboard shows 2028 and says "On track."</div>
+          </div>
+          <div class="why"><div class="eyebrow">Why it matters</div>
+            <div class="lines">
+              <div>Most residents in a $1,800 apartment clear the 120% test on paper. It is paperwork, and only 44 files are done in seven months. The pace needed is about 40 a month.</div>
+              <div>If the exemption is in force, the tax accrual is wrong and NOI below the line is understated by $260K. If it is not, the deal is missing its biggest assumption. Either way someone needs to confirm with the Fairburn Housing Authority and Fulton County this month.</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-team">
+        <summary><div class="n">6</div><div class="t">Fourth property, same team, no weekly reports since takeover<span class="chip"><span class="dot warn"></span>warning</span></div><div class="k"><div class="v">0 of 6</div><div class="l">action items done</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Same people as Crestmark, Valera and Avenues:</b> asset manager Tanner Lack, regional manager Samantha Finley, maintenance lead Louvensky Beauge. All four Georgia properties are below plan with the same findings.</div>
+            <div><b>Weekly reports:</b> the folder holds the seller's reports through February 24, 2026. Nothing since Post took over.</div>
+            <div><b>September action plan:</b> 6 items, none started. One of 22 flagged issues resolved. Several RPM responses read "requested" or name nobody.</div>
+            <div><b>Unbudgeted giveaways:</b> $32K of employee and partner apartments this year, including a free unit for the events company, approved by the AM in June.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>Oslo is the newest and simplest building in the group. If the team cannot run a 2024 building at plan, the issue is not the building.</div></div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- LEASING -->
+  <div class="panel" id="panel-leasing" role="tabpanel" hidden>
+    <div class="stack">
+      <div class="grid2">
+        <div class="card">
+          <div class="chart-head"><div><h3>Occupancy by week</h3><div class="legend" id="lg-occ"></div></div><button class="toggle" data-for="c-occ">Table</button></div>
+          <div class="chart" id="c-occ"></div>
+          <div class="takeaway">Dipped to 89% in May, climbed to 95.5% in August, now sliding. The 60-day projection of 84.5% is below anything on this chart.</div>
+        </div>
+        <div class="card">
+          <div class="chart-head"><div><h3>Asking rent by week</h3><div class="legend" id="lg-rent"></div></div><button class="toggle" data-for="c-rent">Table</button></div>
+          <div class="chart" id="c-rent"></div>
+          <div class="takeaway">Asking rent went from $1,700 to $1,845 over the summer, then was cut to $1,697 for two weeks in late September and put back to $1,816. Residents in place pay $1,774.</div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:var(--accent)">
+        <h3>The funnel, last four weeks</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Week ending</th><th class="n">Prospects</th><th class="n">Tours</th><th class="n">Applications</th><th class="n">Net leases</th></tr></thead>
+          <tbody>
+            <tr><td>Sep 13</td><td class="n">31</td><td class="n">7</td><td class="n">1</td><td class="n">1</td></tr>
+            <tr><td>Sep 20</td><td class="n">31</td><td class="n">11</td><td class="n">2</td><td class="n">0</td></tr>
+            <tr><td>Sep 27</td><td class="n">33</td><td class="n">10</td><td class="n">2</td><td class="n">1</td></tr>
+            <tr><td>Oct 4</td><td class="n">27</td><td class="n">7</td><td class="n">3</td><td class="n">2</td></tr>
+          </tbody></table></div>
+        <div class="takeaway">Four leases in a month against 17 scheduled move-outs. With two ready homes to show, more tours will not help until the turn board moves.</div>
+      </div>
+
+      <div class="card">
+        <h3>The neighbors · at purchase, March 2026</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Property</th><th class="n">Built</th><th class="n">Units</th><th class="n">Miles</th><th class="n">Leased</th><th class="n">1BR</th><th class="n">2BR</th></tr></thead>
+          <tbody>
+            <tr><td>Marlowe South Fulton</td><td class="n">2023</td><td class="n">319</td><td class="n">0.5</td><td class="n">93%</td><td class="n">$1,936</td><td class="n">$2,286</td></tr>
+            <tr class="subject"><td>Oslo</td><td class="n">2024</td><td class="n">288</td><td class="n">—</td><td class="n">97%</td><td class="n">$1,694</td><td class="n">$2,287</td></tr>
+            <tr><td>Solstice</td><td class="n">2017</td><td class="n">308</td><td class="n">0.5</td><td class="n">97%</td><td class="n">$1,549</td><td class="n">$2,138</td></tr>
+            <tr><td>The Dylan at Fairburn</td><td class="n">2019</td><td class="n">276</td><td class="n">0.2</td><td class="n">96%</td><td class="n">$1,528</td><td class="n">$1,973</td></tr>
+            <tr><td>Allora Creekbend</td><td class="n">2024</td><td class="n">250</td><td class="n">6.0</td><td class="n">95%</td><td class="n">$1,511</td><td class="n">$1,982</td></tr>
+            <tr><td>Union Green</td><td class="n">2024</td><td class="n">295</td><td class="n">5.9</td><td class="n">83%</td><td class="n">$1,500</td><td class="n">$2,149</td></tr>
+          </tbody></table></div>
+        <div class="takeaway">Oslo's two bedrooms were priced at the top of the set on the day Post bought it, with concessions doing the work underneath. The dashboard has no comp survey for Oslo since takeover. Get one before the next pricing call.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONEY -->
+  <div class="panel" id="panel-money" role="tabpanel" hidden>
+    <div class="stack">
+      <div class="card">
+        <div class="chart-head"><div><h3>Monthly NOI vs underwriting</h3><div class="legend" id="lg-noi"></div></div><button class="toggle" data-for="c-noi">Table</button></div>
+        <div class="chart" id="c-noi"></div>
+        <div class="takeaway">Six months owned. July and August hit the $381K monthly underwriting. April was the low point. The chart does not show what 17 move-outs do to September and October.</div>
+      </div>
+      <div class="card">
+        <div class="chart-head"><div><h3>Where the gap to underwriting comes from, last three months annualized ($K per year)</h3><div class="legend" id="lg-var"></div></div><button class="toggle" data-for="c-var">Table</button></div>
+        <div class="chart" id="c-var"></div>
+        <div class="takeaway">Expenses are actually under plan, by about $110K. The gap is revenue: other income $186K short (water, damages, retail, fees) and vacancy $105K worse. Property tax sits below this line and is $260K a year over the underwriting on its own.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK -->
+  <div class="panel" id="panel-risk" role="tabpanel" hidden>
+    <div class="grid2">
+      <div class="card">
+        <h3>Cost recovery</h3>
+        <div class="mrow"><div class="k">Water and sewer, 12 months</div><div class="meter"><span style="width:45%;background:var(--crit)"></span></div><div class="r">45% · target 90%</div></div>
+        <div class="mrow"><div class="k">Water and sewer, August</div><div class="meter"><span style="width:22%;background:var(--crit)"></span></div><div class="r">22%</div></div>
+        <div class="mrow"><div class="k">Damages</div><div class="meter"><span style="width:10%;background:var(--crit)"></span></div><div class="r">10% · target 70%</div></div>
+        <div class="mrow"><div class="k">Retail rent vs budget</div><div class="meter"><span style="width:21%;background:var(--crit)"></span></div><div class="r">$7K of $34K</div></div>
+        <div class="mrow"><div class="k">Trash</div><div class="meter"><span style="width:100%;background:var(--good)"></span></div><div class="r">116%</div></div>
+      </div>
+      <div class="card">
+        <h3>Income compliance · 12 months from closing</h3>
+        <div class="mrow"><div class="k">100% AMI units designated</div><div class="meter"><span style="width:95%;background:var(--seq400)"></span></div><div class="r">55 of 58</div></div>
+        <div class="mrow"><div class="k">120% AMI units designated</div><div class="meter"><span style="width:12%;background:var(--crit)"></span></div><div class="r">28 of 230</div></div>
+        <div class="mrow"><div class="k">Files completed</div><div class="meter"><span style="width:15%;background:var(--crit)"></span></div><div class="r">44 of 288</div></div>
+        <div class="takeaway">Compliance specialist Amanda Scott. Operating agreement deadline Mar 2, 2027; dashboard shows Mar 3, 2028. Confirm which one is real. Tax exemption not visible in the books.</div>
+      </div>
+      <div class="card">
+        <h3>Delinquency · $77,616</h3>
+        <div class="chart-head"><div class="legend" id="lg-dq"></div><button class="toggle" data-for="c-dq">Table</button></div>
+        <div class="chart" id="c-dq"></div>
+        <div class="takeaway">Small, but $20.6K is past 90 days on a seven-month-old ownership. Those should already be filed.</div>
+      </div>
+      <div class="card">
+        <h3>Capital</h3>
+        <div class="mrow"><div class="k">Year-one plan</div><div class="meter"><span style="width:30%;background:var(--seq550)"></span></div><div class="r">$50K of $167K</div></div>
+        <div class="takeaway">Fire stops done. Open: pickleball court drainage ($7K quote), pool furniture, $30K rebrand allowance (the new name is Valera Oslo), $20K retail build-out for the coffee shop. Nothing structural. This building does not need money. It needs attention.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN -->
+  <div class="panel" id="panel-plan" role="tabpanel" hidden>
+    <div class="intro"><div class="sub">We do → this happens → NOI moves by this. Check items off as they land (saved in this browser only).</div></div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="tbl-wrap" style="margin:0"><table id="plan" class="plan-tbl">
+        <thead><tr><th style="width:36px"></th><th>We do</th><th>What happens</th><th class="n">Fixes #</th><th class="n">NOI / yr</th></tr></thead>
+        <tbody>
+          <tr><td><input type="checkbox" id="p1"></td><td class="w"><b>Call all 24 notices and the 25 expiring leases this week with a real renewal offer.</b> Step the rent up over the lease instead of removing the free month in one jump. A resident at $1,700 beats an empty home at $1,816.</td><td class="w">Renewals 55% → 70%. Occupancy holds at 93% instead of falling to 84%.</td><td class="n">1</td><td class="n">keeps ~$500K</td></tr>
+          <tr><td><input type="checkbox" id="p2"></td><td class="w"><b>Turns in 7 days.</b> It is a 2024 building: touch-up and clean, in-house. Approve or deny every application within 48 hours. No unit held more than 14 days for a move-in.</td><td class="w">Ready homes 2 → 15. Turn time 46 → 7 days.</td><td class="n">2</td><td class="n pos">+$60K</td></tr>
+          <tr><td><input type="checkbox" id="p3"></td><td class="w"><b>Follow up every tour within 24 hours. Phone script that sells the building.</b> Four weeks free on one bedrooms for move-ins inside 30 days. Move the $45K of events money to leasing until occupancy is 94%.</td><td class="w">Leases 1 a week → 4. Occupancy 93% → 95%.</td><td class="n">3</td><td class="n pos">+$60K</td></tr>
+          <tr><td><input type="checkbox" id="p4"></td><td class="w"><b>Fix the water billing with RUMS this month.</b> Every unit billed every month, catch-up posted.</td><td class="w">Water recovery 45% → 85%.</td><td class="n">4</td><td class="n pos">+$110K</td></tr>
+          <tr><td><input type="checkbox" id="p5"></td><td class="w"><b>Collect what is owed.</b> Retail tenants on online payment, damage charged from the move-out video, moved-out balances to collections before write-off.</td><td class="w">Retail $7K → $34K. Damages 10% → 50%.</td><td class="n">4</td><td class="n pos">+$60K</td></tr>
+          <tr><td><input type="checkbox" id="p6"></td><td class="w"><b>Confirm the tax exemption with the Fairburn Housing Authority and Fulton County, and certify 40 households a month, 120% tier first.</b></td><td class="w">Tax accrual corrected or the problem known. 288 files by Mar 2027.</td><td class="n">5</td><td class="n">protects ~$260K below NOI</td></tr>
+          <tr><td><input type="checkbox" id="p7"></td><td class="w"><b>Weekly ops report filed every Monday, and the Georgia call with Crestmark, Valera and Avenues.</b> Employee and partner apartments back to policy.</td><td class="w">Someone is watching before the next cliff.</td><td class="n">6</td><td class="n pos">+$40K</td></tr>
+          <tr class="total"><td></td><td class="w">Net</td><td class="w">If the renewals hold: NOI $4.35M → about $4.7M. Underwriting is $4.58M. If they do not: about $3.9M.</td><td class="n"></td><td class="n pos">+$330K</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+
+  <!-- DEAL -->
+  <div class="panel" id="panel-deal" role="tabpanel" hidden>
+    <div class="card">
+      <div class="facts">
+        <div class="fact"><div class="k">Acquired</div><div class="v">Mar 3, 2026 · about $76M all-in · $264K/unit · market value $73.0M</div></div>
+        <div class="fact"><div class="k">Equity</div><div class="v">$27.3M · Rowland Ranch Properties · 5% preferred</div></div>
+        <div class="fact"><div class="k">Debt</div><div class="v">$48.8M Freddie Mac via Greystone · 5.18% fixed · interest-only 7 years · matures Apr 2033</div></div>
+        <div class="fact"><div class="k">UW NOI / yield</div><div class="v">$4.58M · 6.0% on cost · 0% rent growth year one, 3% after</div></div>
+        <div class="fact"><div class="k">Current</div><div class="v">NOI run-rate $4.35M · cash $553K · debt service $2.58M</div></div>
+        <div class="fact"><div class="k">Structure</div><div class="v">Housing Authority of Fairburn PFC · tax exemption assumed from closing · not yet visible in the books</div></div>
+        <div class="fact"><div class="k">Compliance obligation</div><div class="v">58 units @ 100% AMI + 230 @ 120% AMI · 12 months per operating agreement (Mar 2, 2027) · 120-day cure on notice · exemption at risk, no cash penalty</div></div>
+        <div class="fact"><div class="k">Business plan</div><div class="v">Stabilize at 94% · lease the third retail space · fee package (CAM $15, trash $30, package $5, pest $7) · marketing $1,000 → $317 a unit · painting in-house · drop janitor $45K and security $28K</div></div>
+        <div class="fact"><div class="k">Fees</div><div class="v">AM 1% of EGI ($35K–$75K) · PM 2.5% + 1% incentive · CM 5%</div></div>
+        <div class="fact"><div class="k">Team</div><div class="v">AM Tanner Lack (Kevin Conde at closing) · VP Daniel Henggeler · RPM Samantha Finley (dashboard: Loetta Hendrix) · regional VP Lara Stoughton · RMM Louvensky Beauge · compliance Amanda Scott</div></div>
+        <div class="fact"><div class="k">Property</div><div class="v">196 one-bedrooms, 80 two, 12 three · avg 862 sf · gated · three retail storefronts · 7000 Renaissance Pkwy · rebranding to Valera Oslo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Sources: Portfolio Dashboard v425 (Aug 2026 financials, Oct 4 weekly ops, compliance tracker, debt and cash) · Oslo BvA Briefing, Aug 2026, with RPM responses through Sep 29, 2026 · Post business plan, March 2, 2026 · Grace Hill mystery shop, April 8, 2026 · Oslo application tracker, Oct 6, 2026 · weekly reports folder (seller reports through Feb 24, 2026) · portfolio turn-time comparison from Portfolio Dashboard v435, Oct 7, 2026 (86 of 159 properties report a turn time).</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmtK = v => (v<0?'−':'') + '$' + Math.round(Math.abs(v)/1000) + 'K';
+const fmtD = v => (v<0?'−':'') + '$' + Math.abs(Math.round(v)).toLocaleString();
+const fmtP = v => (v*100).toFixed(1) + '%';
+
+const months = ['Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26'];
+const noi    = [383387,279033,333689,320714,370889,381221];
+const uwMo   = 4577645/12;
+const weeks  = ['Apr 12','Apr 19','Apr 26','May 3','May 10','May 17','May 24','May 31','Jun 7','Jun 14','Jun 21','Jun 28','Jul 5','Jul 12','Jul 19','Jul 26','Aug 2','Aug 9','Aug 16','Aug 23','Aug 30','Sep 6','Sep 13','Sep 20','Sep 27','Oct 4'];
+const occ    = [.9271,.92,.91,.896,.9028,.9063,.8924,.9028,.9167,.9167,.9236,.9375,.9306,.9444,.9375,.9479,.9514,.9514,.9549,.941,.9479,.9444,.9444,.9479,.9479,.9271];
+const rent   = [1700,1700,1750,1668,1638,1706,1755,1750,1764,1750,1821,1830,1790,1794,1828,1828,1841,1845,1822,1841,1836,1822,1822,1697,1697,1816];
+const varRows = [['Contracts',104],['Insurance',50],['Administrative',47],['R&M',10],['Mgmt fee',9],['Concessions',8],['Turnover',-12],['Marketing',-19],['Rent potential',-22],['Bad debt',-31],['Utilities',-38],['Payroll',-40],['Vacancy',-105],['Other income',-186]];
+const dq = [['0–30 days',42209],['31–60',8521],['61–90',6280],['90+',20607]];
+
+const NS='http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+function niceTicks(min,max,n){ const span=max-min||1; const raw=span/n; const p=Math.pow(10,Math.floor(Math.log10(raw))); const steps=[1,2,2.5,5,10]; let step=p*10; for(const s of steps){ if(raw<=s*p){ step=s*p; break; } } const lo=Math.floor(min/step)*step, hi=Math.ceil(max/step)*step; const t=[]; for(let v=lo; v<=hi+1e-9; v+=step) t.push(+v.toFixed(10)); return t; }
+function labelIdx(n){ const step=Math.max(1,Math.round(n/6)); const idx=[]; for(let i=0;i<n;i+=step) idx.push(i); const last=idx[idx.length-1]; if(last!==n-1){ if(n-1-last>=step/2) idx.push(n-1); else idx[idx.length-1]=n-1; } return new Set(idx); }
+function legend(id, items){ const g=document.getElementById(id); if(!g) return; g.innerHTML=items.map(i=>`<span class="key"><span class="sw ${i.bar?'bar':''}" style="background:${i.color}"></span>${i.name}</span>`).join(''); }
+function tooltip(container){ const t=document.createElement('div'); t.className='tip'; container.appendChild(t); return t; }
+function placeTip(tip,c,ev){ const cr=c.getBoundingClientRect(); tip.style.left=(ev.clientX-cr.left)+'px'; tip.style.top=(ev.clientY-cr.top)+'px'; tip.classList.add('on'); }
+function tableFor(container, head, rows){ const w=document.createElement('div'); w.className='tbl-wrap'; w.hidden=true; w.innerHTML='<table><thead><tr>'+head.map((h,i)=>`<th class="${i?'n':''}">${h}</th>`).join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map((c,i)=>`<td class="${i?'n':''}">${c}</td>`).join('')+'</tr>').join('')+'</tbody></table>'; container.parentNode.insertBefore(w, container.nextSibling); return w; }
+
+function lineChart(id, opt){
+  const c=document.getElementById(id); const W=opt.width||560, H=opt.height||230, m={t:14,r:16,b:30,l:52};
+  const n=opt.labels.length; const all=opt.series.flatMap(s=>s.values).concat(opt.ref?[opt.ref.value]:[]);
+  let lo=opt.yMin!=null?opt.yMin:Math.min(...all), hi=opt.yMax!=null?opt.yMax:Math.max(...all);
+  const ticks=niceTicks(lo,hi,4); lo=ticks[0]; hi=ticks[ticks.length-1];
+  const x=i=>m.l+(i/(n-1))*(W-m.l-m.r), y=v=>m.t+(1-(v-lo)/(hi-lo))*(H-m.t-m.b);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':opt.aria||''},c);
+  ticks.forEach(t=>{ el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:'var(--grid)','stroke-width':1},svg); el('text',{x:m.l-8,y:y(t)+4,'text-anchor':'end','font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=opt.fmt(t); });
+  el('line',{x1:m.l,x2:W-m.r,y1:y(lo),y2:y(lo),stroke:'var(--axis)','stroke-width':1},svg);
+  const li_=labelIdx(n);
+  opt.labels.forEach((l,i)=>{ if(li_.has(i)){ el('text',{x:x(i),y:H-8,'text-anchor':i===n-1?'end':(i===0?'start':'middle'),'font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=l; } });
+  if(opt.ref){ el('line',{x1:m.l,x2:W-m.r,y1:y(opt.ref.value),y2:y(opt.ref.value),stroke:'var(--ink-2)','stroke-width':1,'stroke-dasharray':'4 4'},svg); el('text',{x:W-m.r,y:y(opt.ref.value)-5,'text-anchor':'end','font-size':11,fill:'var(--ink-2)'},svg).textContent=opt.ref.label; }
+  opt.series.forEach(s=>{ const d=s.values.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+    if(s.area){ el('path',{d:d+` L${x(n-1)} ${y(lo)} L${x(0)} ${y(lo)} Z`,fill:s.color,opacity:.1},svg); }
+    el('path',{d,fill:'none',stroke:s.color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+    const li=n-1; el('circle',{cx:x(li),cy:y(s.values[li]),r:4.5,fill:s.color,stroke:'var(--surface)','stroke-width':2},svg);
+    el('text',{x:x(li)-8,y:y(s.values[li])+(s.labelDy||-9),'text-anchor':'end','font-size':11.5,'font-weight':600,fill:'var(--ink)'},svg).textContent=opt.fmt(s.values[li]); });
+  const tip=tooltip(c); const vline=el('line',{y1:m.t,y2:H-m.b,stroke:'var(--axis)','stroke-width':1,opacity:0},svg);
+  const dots=opt.series.map(s=>el('circle',{r:4,fill:s.color,stroke:'var(--surface)','stroke-width':2,opacity:0},svg));
+  svg.addEventListener('mousemove',ev=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W; let i=Math.round((px-m.l)/((W-m.l-m.r)/(n-1))); i=Math.max(0,Math.min(n-1,i));
+    vline.setAttribute('x1',x(i)); vline.setAttribute('x2',x(i)); vline.setAttribute('opacity',1);
+    opt.series.forEach((s,k)=>{ dots[k].setAttribute('cx',x(i)); dots[k].setAttribute('cy',y(s.values[i])); dots[k].setAttribute('opacity',1); });
+    tip.innerHTML=`<div class="t">${opt.labels[i]}</div>`+opt.series.map(s=>`${s.name}: ${opt.fmt(s.values[i])}`).join('<br>'); placeTip(tip,c,ev); });
+  svg.addEventListener('mouseleave',()=>{ tip.classList.remove('on'); vline.setAttribute('opacity',0); dots.forEach(d=>d.setAttribute('opacity',0)); });
+  tableFor(c,[opt.xName||''].concat(opt.series.map(s=>s.name)),opt.labels.map((l,i)=>[l].concat(opt.series.map(s=>opt.fmt(s.values[i])))));
+}
+function varChart(id, rows){
+  const c=document.getElementById(id); const W=760, rowH=24, m={t:8,r:70,b:22,l:120}; const H=m.t+rows.length*rowH+m.b;
+  const mx=Math.max(...rows.map(r=>Math.abs(r[1]))); const ticks=niceTicks(-mx,mx,4); const lo=ticks[0],hi=ticks[ticks.length-1];
+  const x=v=>m.l+(v-lo)/(hi-lo)*(W-m.l-m.r);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Last-three-months variance vs underwriting by line'},c);
+  ticks.forEach(t=>{ el('line',{x1:x(t),x2:x(t),y1:m.t,y2:H-m.b,stroke:t===0?'var(--axis)':'var(--grid)'},svg); el('text',{x:x(t),y:H-6,'text-anchor':'middle','font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=(t>0?'+':'')+t; });
+  const tip=tooltip(c);
+  rows.forEach((r,i)=>{ const v=r[1], yy=m.t+i*rowH+5, h=14; const good=v>=0; const x0=x(Math.min(0,v)), x1=x(Math.max(0,v)); const w=Math.max(0,x1-x0); const rad=Math.min(4,w);
+    const d=good?`M${x0} ${yy} H${x1-rad} Q${x1} ${yy} ${x1} ${yy+rad} V${yy+h-rad} Q${x1} ${yy+h} ${x1-rad} ${yy+h} H${x0} Z`:`M${x1} ${yy} H${x0+rad} Q${x0} ${yy} ${x0} ${yy+rad} V${yy+h-rad} Q${x0} ${yy+h} ${x0+rad} ${yy+h} H${x1} Z`;
+    el('path',{d,fill:good?'var(--good)':'var(--crit)'},svg);
+    el('text',{x:m.l-8,y:yy+h-3,'text-anchor':'end','font-size':12,fill:'var(--ink)'},svg).textContent=r[0];
+    el('text',{x:good?x1+6:x0-6,y:yy+h-3,'text-anchor':good?'start':'end','font-size':11.5,fill:'var(--ink-2)','font-family':'var(--mono)'},svg).textContent=(good?'+':'−')+'$'+Math.abs(v)+'K';
+    const hit=el('rect',{x:m.l,y:yy-5,width:W-m.l-m.r,height:rowH,fill:'transparent'},svg);
+    hit.addEventListener('mousemove',ev=>{ tip.innerHTML=`<div class="t">${r[0]}</div>${good?'Better':'Worse'} than underwriting by $${Math.abs(v)}K a year`; placeTip(tip,c,ev); });
+    hit.addEventListener('mouseleave',()=>tip.classList.remove('on')); });
+  tableFor(c,['Line','T3 annualized vs UW ($K)'],rows.map(r=>[r[0],(r[1]>0?'+':'−')+'$'+Math.abs(r[1])+'K']));
+}
+function stackBar(id, segs){
+  const c=document.getElementById(id); const W=560,H=54; const total=segs.reduce((a,s)=>a+s[1],0);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Delinquency aging'},c);
+  const cols=['var(--seq250)','var(--seq400)','var(--seq550)','var(--seq700)']; let x0=0; const tip=tooltip(c);
+  segs.forEach((s,i)=>{ const w=(s[1]/total)*W; const r=el('rect',{x:x0+(i?1:0),y:8,width:Math.max(0,w-(i?1:0)-(i<segs.length-1?1:0)),height:22,fill:cols[i]},svg);
+    if(w>70){ el('text',{x:x0+w/2,y:23,'text-anchor':'middle','font-size':11.5,'font-weight':600,fill:i>1?'#fff':'var(--ink)'},svg).textContent=fmtD(s[1]); }
+    el('text',{x:x0+2,y:46,'font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=w>60?s[0]:'';
+    r.addEventListener('mousemove',ev=>{ tip.innerHTML=`<div class="t">${s[0]}</div>${fmtD(s[1])} · ${(s[1]/total*100).toFixed(0)}% of balance`; placeTip(tip,c,ev); });
+    r.addEventListener('mouseleave',()=>tip.classList.remove('on')); x0+=w; });
+  legend('lg-dq',segs.map((s,i)=>({name:s[0],color:cols[i],bar:true})));
+  tableFor(c,['Bucket','Balance'],segs.map(s=>[s[0],fmtD(s[1])]));
+}
+
+lineChart('c-noi',{labels:months,fmt:fmtK,width:900,height:240,aria:'Monthly NOI vs underwriting',series:[{name:'NOI',values:noi,color:css('--s1'),area:true}],ref:{value:uwMo,label:'Underwriting $381K/mo'},yMin:250000,yMax:450000,xName:'Month'});
+legend('lg-noi',[{name:'NOI',color:css('--s1')},{name:'Underwriting (dashed)',color:css('--ink-2')}]);
+lineChart('c-occ',{labels:weeks,fmt:fmtP,aria:'Weekly occupancy',series:[{name:'Occupancy',values:occ,color:css('--s1')}],ref:{value:.94,label:'Plan 94%'},yMin:.84,yMax:.98,xName:'Week'});
+legend('lg-occ',[{name:'Occupancy',color:css('--s1')},{name:'Plan (dashed)',color:css('--ink-2')}]);
+lineChart('c-rent',{labels:weeks,fmt:fmtD,aria:'Weekly asking rent',series:[{name:'Asking rent',values:rent,color:css('--s2')}],ref:{value:1774,label:'In-place $1,774'},yMin:1600,yMax:1900,xName:'Week'});
+legend('lg-rent',[{name:'Asking rent',color:css('--s2')},{name:'In-place rent (dashed)',color:css('--ink-2')}]);
+varChart('c-var',varRows);
+legend('lg-var',[{name:'Better than UW',color:'var(--good)',bar:true},{name:'Worse than UW',color:'var(--crit)',bar:true}]);
+stackBar('c-dq',dq);
+
+const tabs=[...document.querySelectorAll('.tab')];
+function show(name){ tabs.forEach(t=>{ const on=t.dataset.tab===name; t.setAttribute('aria-selected',on?'true':'false'); const p=document.getElementById('panel-'+t.dataset.tab); if(p) p.hidden=!on; }); try{ localStorage.setItem('oslo-tab',name); }catch(e){} }
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+(function(){ let start='overview'; const h=(location.hash||'').replace('#',''); if(h && tabs.some(t=>t.dataset.tab===h)) start=h; else { try{ const s=localStorage.getItem('oslo-tab'); if(s && tabs.some(t=>t.dataset.tab===s)) start=s; }catch(e){} } show(start); })();
+
+document.querySelectorAll('.toggle[data-for]').forEach(b=>{ b.addEventListener('click',()=>{ const ch=document.getElementById(b.dataset.for); const tb=ch.nextElementSibling; const showT=tb.hidden; tb.hidden=!showT; ch.hidden=showT; b.textContent=showT?'Chart':'Table'; }); });
+
+const KEY='oslo-plan-v1'; let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ saved={}; }
+document.querySelectorAll('#plan input[type=checkbox]').forEach(cb=>{ cb.checked=!!saved[cb.id]; cb.closest('tr').classList.toggle('done',cb.checked);
+  cb.addEventListener('change',()=>{ cb.closest('tr').classList.toggle('done',cb.checked); saved[cb.id]=cb.checked; try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){} }); });
+})();
+</script>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

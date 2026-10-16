@@ -1,0 +1,218 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>How Post Buys</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the engine in one diagram-like band, then the buy box as a scan-able reference (state cards, numbers table, sources, process), ending with what it means for a new hire. Same tokens as the Crestmark review so the Post pages read as one set. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --warn-text:#8a5a00; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600;margin-top:34px}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+@media (max-width:760px){.band{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:30px;font-weight:600;line-height:1.1;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+
+.engine{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:stretch;margin-top:14px}
+@media (max-width:720px){.engine{grid-template-columns:1fr}.engine .arrow{transform:rotate(90deg);justify-self:center}}
+.step{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:14px 16px;min-width:0}
+.step .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.step .t{font-weight:600;margin-top:4px}
+.step .d{font-size:14px;color:var(--ink-2);margin-top:4px}
+.arrow{align-self:center;color:var(--muted);font-size:22px}
+
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0;margin-top:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
+@media (max-width:860px){.grid3{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}}
+.state{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:14px 16px;min-width:0}
+.state h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.state .n{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;white-space:nowrap}
+.state .lines{margin-top:8px}
+.lines{display:grid;gap:6px;font-size:14.5px}
+.lines b{font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;white-space:nowrap}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.good{background:var(--good)} .dot.warn{background:var(--warn)} .dot.info{background:var(--s1)} .dot.crit{background:var(--crit)}
+.tbl-wrap{overflow-x:auto;margin-top:10px}
+table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+.data th,.data td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap;vertical-align:top}
+.data th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.data td.n,.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.data td.w{white-space:normal;min-width:220px}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.math{font-family:var(--mono);font-size:13px;background:var(--page);border:1px solid var(--ring);border-radius:8px;padding:10px 12px;margin-top:8px;overflow-x:auto}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · the playbook</div>
+      <h1>How Post buys apartments</h1>
+      <div class="sub">Read from the acquisitions files on the shared drive: five years of closed-deal trackers, the state structure memos, the SOPs, the investment committee rules and the October 2025 company deck. This is the model the Monday deal finder scores against.</div>
+    </div>
+    <div class="meta">Studied Oct 7, 2026<br>Sources on the shared drive</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><div class="lab">Deals since 2007</div><div class="val">175+</div><div class="cmp">45,000 units · $6B+ · 15 states</div></div>
+    <div class="big"><div class="lab">Owned today</div><div class="val">140</div><div class="cmp">32,000 units · 31,000 of them affordable</div></div>
+    <div class="big"><div class="lab">Pace in 2026</div><div class="val">23</div><div class="cmp">closings, $1.4B, plus $526M awarded</div></div>
+    <div class="big"><div class="lab">Average investor IRR, full cycle</div><div class="val">33%</div><div class="cmp">32 exits · 2.0x money back</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> Post buys ordinary market-rate apartment communities, puts a housing authority or nonprofit into the ownership, restricts rents to 80% of area median income, and in exchange the property tax goes to zero. Because the allowed rent is usually higher than what the building already charges, nothing is given up and the income jumps on day one. They call it an affordable conversion. Everything else, the markets, the sizes, the brokers, the partners, follows from that one trade.</div>
+
+  <h2>The engine</h2>
+  <div class="engine">
+    <div class="step"><div class="k">1 · Find</div><div class="t">A B or C-plus workforce property</div><div class="d">150 to 700 units, 1970s to 2020s, in a high-income suburb where rents sit below the 80% AMI ceiling.</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="k">2 · Structure</div><div class="t">Bring in a public partner</div><div class="d">Housing authority, tribal authority or 501c3 takes a sliver of ownership or title. A recorded agreement restricts rents and incomes.</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="k">3 · Collect</div><div class="t">Tax goes to zero</div><div class="d">Expenses drop 15% to 25%. The 5.5% cap becomes a 6.5% to 7.5% yield. Agency lenders give more leverage. Refinance in 2 to 4 years and return capital.</div></div>
+  </div>
+  <div class="card">
+    <h3>Why it works: the pullback test</h3>
+    <div class="lines" style="margin-top:8px">
+      <div>The restricted rent is 30% of the income limit, divided by twelve. In a high-income county that number is often <b>above</b> market rent. When it is, Post restricts the property on paper, changes nothing a resident can feel, and stops paying property tax. When the restricted rent is <b>below</b> market, the gap is called "pullback," and it eats the tax savings. The whole underwriting comes down to that comparison.</div>
+    </div>
+    <div class="math">Atlanta MSA, 2026 · 4-person 80% AMI limit $94,240<br>1BR max rent = 30% × 75% × $94,240 ÷ 12 = $1,767<br>2BR max rent = 30% × 90% × $94,240 ÷ 12 = $2,120<br>Douglasville 2BR asking today ≈ $1,450 to $1,600 → no pullback → full exemption, no rent given up</div>
+    <div class="takeaway">That is why Post owns 1,229 units within two miles of each other in Lithia Springs and Douglasville, and why a luxury tower in Buckhead or a cheap property in a low-income county both fail. The deal is not about the building. It is about where the building sits relative to the income limit.</div>
+  </div>
+
+  <h2>Where they buy, and the tool in each state</h2>
+  <div class="sub">Ordered by how proven the structure is. The partner, the restriction and the fee are what make a state workable.</div>
+  <div class="grid3">
+    <div class="state"><h3>Georgia <span class="n">7+ deals since 2024</span></h3><span class="chip"><span class="dot good"></span>hottest</span>
+      <div class="lines"><div><b>Partner:</b> county housing authority holds 0.01%. Douglas, Cobb, Gwinnett, Fulton, Fairburn so far.</div><div><b>Restriction:</b> 50% of units at 80% AMI, 50% at 140% (Fulton 120%). Cobb and Gwinnett: 20% at 60%, 30% at 80%, 50% at 120%.</div><div><b>Catch:</b> apply by April 1 or lose the year's exemption. 1.5% exit fee. 24 months to reach compliance.</div></div></div>
+    <div class="state"><h3>Washington <span class="n">13 deals</span></h3><span class="chip"><span class="dot good"></span>strongest structure</span>
+      <div class="lines"><div><b>Partner:</b> Spokane Indian Housing Authority takes title, 99-year lease back.</div><div><b>Restriction:</b> 100% at 80% AMI, flexible to 120 to 140%.</div><div><b>Why it is best:</b> exemption is by right the day of closing, plus no seller excise tax, so Post can pay 97% of asking and still win.</div></div></div>
+    <div class="state"><h3>Texas <span class="n">72 deals, the original</span></h3><span class="chip"><span class="dot warn"></span>harder since 2023</span>
+      <div class="lines"><div><b>Partner:</b> housing finance corporations and housing authorities (Pleasanton, CCHFC, La Villa, Houston, Denton, Corpus Christi).</div><div><b>Since the 2023 law:</b> new deals use HFCs, CHDO nonprofits, HUD loan assumptions and 501c3 bonds. CHDO excludes Harris, Tarrant and Dallas counties.</div><div><b>Side business:</b> Post sells its exemption know-how to other owners for $200K to $750K a deal.</div></div></div>
+    <div class="state"><h3>California <span class="n">41 deals</span></h3><span class="chip"><span class="dot good"></span>proven</span>
+      <div class="lines"><div><b>Partner:</b> CMFA regulatory agreement plus a nonprofit general partner (Integrity, Foothill).</div><div><b>Restriction:</b> target 100% at 80% AMI, 40% minimum. Exemption equals the share of units qualified.</div><div><b>Bonus:</b> exempt from state rent control. Also buys LIHTC deals and GP interests. $600 per unit upfront, $150 per unit a year.</div></div></div>
+    <div class="state"><h3>South Carolina <span class="n">7 deals</span></h3><span class="chip"><span class="dot good"></span>proven</span>
+      <div class="lines"><div><b>Partner:</b> 501c3 nonprofit, $0 property tax.</div><div><b>Restriction:</b> 20% at 50%, 55% at 80%, 25% market. Or 40% at 60%, 35% at 80%, 25% market.</div><div><b>Note:</b> Greenville area median income grew 9.9% this year, the best in the portfolio. No exit fee.</div></div></div>
+    <div class="state"><h3>Florida <span class="n">2 owned, 4 bond deals 2026</span></h3><span class="chip"><span class="dot info"></span>growing fast</span>
+      <div class="lines"><div><b>Partner:</b> same as South Carolina, with a 120% tier instead of market.</div><div><b>How:</b> mostly Fannie and Freddie credit-enhanced 501c3 bonds through Public Finance Authority and Capital Trust Authority.</div><div><b>Where:</b> Jacksonville, Tampa, Clearwater, Gainesville, Boynton Beach.</div></div></div>
+    <div class="state"><h3>North Carolina <span class="n">1 deal</span></h3><span class="chip"><span class="dot warn"></span>thin</span>
+      <div class="lines"><div><b>Restriction:</b> 100% at 80% AMI, nonprofit. Cheap fees, no exit fee.</div><div><b>Problem:</b> area median income grew only 0.7% this year, so the pullback math is tighter than elsewhere.</div></div></div>
+    <div class="state"><h3>Also live</h3>
+      <div class="lines"><div>New Mexico (5 deals, AMI up 10%), Louisiana, Wisconsin (Milwaukee bond deal), Ohio (memo written), Colorado (two Denver pursuits), Oregon, Virginia, Arkansas, Kansas, Oklahoma, Michigan.</div></div></div>
+    <div class="state"><h3>Not in bounds</h3><span class="chip"><span class="dot crit"></span>pass</span>
+      <div class="lines"><div>New York, New Jersey, Massachusetts, Illinois, anywhere with rent stabilization and no exemption path. Student, senior-only, hotels, under 100 units unless packaged. Retail is a separate desk.</div></div></div>
+  </div>
+
+  <h2>The numbers they underwrite to</h2>
+  <div class="card" style="padding-top:12px">
+    <div class="tbl-wrap"><table class="data">
+      <thead><tr><th>What</th><th>Range on 2025 to 2026 closings</th><th class="w">Read</th></tr></thead>
+      <tbody>
+        <tr><td>Units</td><td>95 to 696 · core 200 to 450</td><td class="w">Big enough for a full on-site team and TAM to run it. Small deals only as part of a package.</td></tr>
+        <tr><td>Year built</td><td>1957 to 2025 · median about 1985</td><td class="w">Age barely matters. The income limit matters.</td></tr>
+        <tr><td>Price per unit</td><td>$100K to $330K</td><td class="w">Total deal $25M to $165M, usually $45M to $110M.</td></tr>
+        <tr><td>Cap rate as market-rate</td><td>4.6% to 6.9%</td><td class="w">What a normal buyer would pay.</td></tr>
+        <tr><td>Cap rate after exemption</td><td>5.4% to 7.5%</td><td class="w">The spread between these two rows is the whole business.</td></tr>
+        <tr><td>Project IRR</td><td>15% to 25% on partner deals · 30%+ on bond deals</td><td class="w">Bond deals use $1M to $9M of equity on $60M to $115M purchases.</td></tr>
+        <tr><td>Year 1 cash-on-cash</td><td>6.5% to 7.8%</td><td class="w">Invesco wants 6% minimum. BFIM wants 12 to 14% IRR.</td></tr>
+        <tr><td>Leverage and debt</td><td>70% of cost · Freddie or Fannie · 5 years interest-only</td><td class="w">Agency lenders give more leverage to restricted deals. 20 of 23 closings this year were agency.</td></tr>
+        <tr><td>Hold</td><td>5 to 10 years</td><td class="w">Often refinanced in 2 to 4 years to return capital (Arroyo Seco in 21 months, Southwest Pines in 24).</td></tr>
+        <tr><td>Pricing vs guidance</td><td>85% to 95% of broker guidance · 97% in Washington</td><td class="w">They lose most bids on price. That is fine. They win where the exemption lets them pay more than a normal buyer.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h2>Who they buy from and through</h2>
+  <div class="grid2">
+    <div class="card" style="margin-top:0">
+      <h3>Brokers, by Post closings 2022 to 2026</h3>
+      <ul class="plain">
+        <li><b>CBRE</b> is first by a wide margin (11 of 23 closings in 2026).</li>
+        <li>Newmark, IPA (Marcus &amp; Millichap), Berkadia, JLL, Walker &amp; Dunlop, Cushman &amp; Wakefield, Northmarq, Colliers, Kidder Mathews.</li>
+        <li>Off-market and seller-direct deals are the ones they brag about in the deck.</li>
+      </ul>
+    </div>
+    <div class="card" style="margin-top:0">
+      <h3>Sellers that keep showing up</h3>
+      <ul class="plain">
+        <li>Institutions and funds exiting: PGIM, Blackstone, LivCor, Investcorp, MAA, Cantor, Bridge, Goodman, KDF, MG Properties, Waterton.</li>
+        <li>Merchant builders handing over new product.</li>
+        <li>Lenders selling REO, and stretched syndicators (Western Wealth, Ashcroft, Tides-type owners).</li>
+        <li>Tax-credit deals hitting year 15.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Equity partners and what each one needs</h3>
+    <div class="lines" style="margin-top:8px">
+      <div><b>Institutional:</b> Vistria, PGIM, Raymond James, Freestone, Basis, Silverpeak, Enterprise, Walker &amp; Dunlop equity. These write $15M to $55M checks and want 15% to 20% project IRR, 5 to 10 year holds.</div>
+      <div><b>High-net-worth and 1031:</b> Conde, Hawkwood, the firm's own investor base (1,600 investors). Smaller deals, faster decisions.</div>
+      <div><b>Bonds:</b> Jefferies underwrites; Foothill or Bedford as the 501c3 owner; Post is project administrator and guarantor. Almost no equity, very high IRR, heavier reserves.</div>
+    </div>
+  </div>
+
+  <h2>How a deal moves inside the firm</h2>
+  <div class="card">
+    <div class="tbl-wrap"><table class="data">
+      <thead><tr><th>When</th><th class="w">What happens</th><th class="w">Who</th></tr></thead>
+      <tbody>
+        <tr><td>Monday 1:30 PM Pacific</td><td class="w">Pipeline meeting. Ten minutes per deal: business plan, asset, equity source, debt, exit. Also "how are we sourcing and winning deals."</td><td class="w">CEO Jason Post, acquisitions associates (Celine, Lash, Nicco, Hacker, Blumen, Elliot, Troy, Schulman)</td></tr>
+        <tr><td>3 weeks before bid</td><td class="w">Deal goes to capital markets to line up equity and a housing partner. Overseas analyst loads CoStar, census, RedIQ and AMI data into the model. Model reviewed with Jason and Celine.</td><td class="w">Adam Freedman, Sara M, Ria Dixit, business development team</td></tr>
+        <tr><td>Every other Thursday 9:30 AM Pacific</td><td class="w">Investment Committee. Materials to COO and CFO by Tuesday noon. Presenter covers: seller and why selling, the asset, equity and debt, the plan, "the bet," returns vs comparables, risks and downside.</td><td class="w">CEO (chair), COO, CFO, special advisor</td></tr>
+        <tr><td>PSA signed</td><td class="w">Kickoff meeting, deal memo tab 1. Nonprofit board gets its first look.</td><td class="w">Acquisitions, asset management (Aaron Cohen), legal, IR</td></tr>
+        <tr><td>End of diligence</td><td class="w">Second meeting, deal memo tab 2. Nonprofit president waives diligence. Full board approves before PSA assignment.</td><td class="w">Same group plus the housing partner</td></tr>
+        <tr><td>Closing</td><td class="w">Pre-closing meeting, final deal memo. Then the compliance clock starts: income certifications, exemption filings by state deadlines.</td><td class="w">Asset management and compliance (Kristin Johnson)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="takeaway">Model rules worth knowing: use next year's projected AMI rents, zero rent growth in year one, cut year-two AMI growth in half, 2.5% management fee plus 1% incentive to TAM, insurance growth tied to expense growth. The underwriting is deliberately conservative on rent and aggressive on the structure.</div>
+  </div>
+
+  <h2>What this means for a new hire who wants to bring deals</h2>
+  <div class="card">
+    <div class="lines">
+      <div><b>Hunt where the test passes.</b> Older garden product in high-income suburbs of Atlanta, Seattle, Dallas, Houston, San Antonio, the Bay Area, Orange County, Greenville, Tampa, Jacksonville. Not downtown towers. Not rural.</div>
+      <div><b>Hunt in counties where Post already has a partner.</b> Douglas, Cobb, Gwinnett, Fulton in Georgia. King, Pierce, Snohomish, Kitsap in Washington. Greenville, Richland, Charleston in South Carolina. Harris, Dallas, Bexar, Nueces, Denton in Texas. Those deals close faster because the paperwork already exists.</div>
+      <div><b>Lead with the pullback math, not the building.</b> A one-line note that says "2BR market $1,500, 80% AMI max $2,120, no pullback, Douglas County HA" is worth more to this team than a glossy brochure.</div>
+      <div><b>Watch motivated sellers.</b> Lender REO, loan maturities, fund wind-downs, year-15 tax-credit deals. Post's edge is paying full price on a deal everyone else sees as fully priced. A motivated seller turns a win into a steal.</div>
+      <div><b>Respect the calendar.</b> Pipeline is Monday 1:30 Pacific. A deal that lands in an associate's inbox Monday morning with the county, the unit count, the vintage, the offers-due date and the pullback read is a deal they can talk about that afternoon.</div>
+    </div>
+  </div>
+
+  <div class="foot">Sources, all on the shared drive: Acquisitions Pending\12. PIPELINE\2026 Closed Tracker.xlsx (2022 to 2026 closings, HFC partners, acquisition fees, equity partners, cap rates, IRRs) · 13. Underwriting Aids\Termsheet Cap Rate Tracker (200 deals priced, internal vs asking) · Standard Operating Procedures and Guides (State Specific Economics, GA Structure, WA Structure SIHA, CMFA Exemption SOP, Unrated and credit-enhanced bond notes, LOI Submittal Process, Model Assumptions, Non Profit Deal Approvals, DD Meetings and Deal Memos) · IC\Pipeline and IC Policies 9-1-22 · 13. Underwriting Aids\Partners Thresholds\2023 Equity Partners Thresholds · Buyer Interview Catalog\Company Slide Deck\Post Real Estate Group Oct 2025.pdf · 1. Active Pursuits\Overseas Analyst Underwriting Aids\2026 AMI Projections POST VERSION.xlsx · 12. PIPELINE\Deal Flow\July 24 Week\Deal Flow.docx. Atlanta 2026 income limit from Invest Atlanta's published MTSP table.</div>
+</div>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

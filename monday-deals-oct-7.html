@@ -1,0 +1,299 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Monday Deals Oct 7</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: three tiles, one sentence, ranked deal rows that open on click, a watch list table, a proof line showing the sources match Post's own pipeline, and a what-to-do box. Same tokens as the Crestmark review. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --warn-text:#8a5a00; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#2fc12f; --warn-text:#f0b84a; --accent-soft:rgba(57,135,229,.16);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:19px;font-weight:600;margin-top:34px}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:30px;font-weight:600;line-height:1.1;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.big .stripe{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0}
+.stripe.good{background:var(--good)} .stripe.info{background:var(--s1)} .stripe.warn{background:var(--warn)}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+.stack{display:grid;gap:10px;margin-top:12px}
+details.deal{background:var(--surface);border:1px solid var(--ring);border-radius:10px}
+details.deal summary{list-style:none;display:grid;grid-template-columns:30px 1fr auto 20px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+details.deal summary::-webkit-details-marker{display:none}
+details.deal summary:hover{background:var(--accent-soft)}
+details.deal summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.deal .n{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1}
+.deal .t{font-weight:600;font-size:16px}
+.deal .t .where{display:block;font-weight:400;font-size:13px;color:var(--ink-2);margin-top:2px}
+.deal .k{text-align:right;white-space:nowrap}
+.deal .k .v{font-size:22px;font-weight:600;line-height:1.1}
+.deal .k .l{font-size:12px;color:var(--muted)}
+.deal .chev{color:var(--muted);transition:transform .15s}
+details[open].deal .chev{transform:rotate(90deg)}
+.deal .more{padding:14px 16px 16px 60px;border-top:1px solid var(--grid)}
+@media (max-width:560px){details.deal summary{grid-template-columns:30px 1fr 20px}.deal .k{display:none}.deal .more{padding-left:16px}}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;margin-left:8px;white-space:nowrap}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.good{background:var(--good)} .dot.warn{background:var(--warn)} .dot.info{background:var(--s1)} .dot.crit{background:var(--crit)}
+.lines{display:grid;gap:6px;font-size:15px}
+.lines b{font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+.mini{border-collapse:collapse;font-size:14px;margin-top:8px;width:100%}
+.mini td{padding:5px 14px 5px 0;border-bottom:1px solid var(--grid);vertical-align:top}
+.mini td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mini tr:last-child td{border-bottom:none}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0;margin-top:12px}
+.tbl-wrap{overflow-x:auto;margin-top:10px}
+table.data{border-collapse:collapse;width:100%;font-size:13.5px}
+.data th,.data td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap;vertical-align:top}
+.data th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.data td.n,.data th.n{text-align:right;font-variant-numeric:tabular-nums}
+.data td.w{white-space:normal;min-width:200px}
+td.pos{color:var(--good-text)} td.warnc{color:var(--warn-text)} td.neg{color:var(--crit)}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.math{font-family:var(--mono);font-size:12.5px;background:var(--page);border:1px solid var(--ring);border-radius:8px;padding:8px 10px;margin-top:8px;overflow-x:auto}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · deal finder · week 1</div>
+      <h1>Deals on the market that fit Post</h1>
+      <div class="sub">Every active listing of 120+ units in Post's states, pulled from the broker listing feeds that can be read without a login, scored against the buy box, with Post's own pipeline removed. For the Monday 1:30 Pacific pipeline meeting.</div>
+    </div>
+    <div class="meta">Scanned Oct 7, 2026<br>Next scan Monday Oct 12, 7:00 AM</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><span class="stripe info"></span><div class="lab">Listings screened</div><div class="val">118</div><div class="cmp">Cushman, Berkadia, IPA, Northmarq feeds plus news search · GA, TX, FL, SC, NC, WA, CA</div></div>
+    <div class="big"><span class="stripe good"></span><div class="lab">Fit the buy box</div><div class="val">10</div><div class="cmp">score 80 or better · 18 more on the watch list</div></div>
+    <div class="big"><span class="stripe warn"></span><div class="lab">Already in Post's pipeline</div><div class="val">5</div><div class="cmp">4 Berkadia California listings and 1 Charlotte deal Post priced before</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> The best deal this week is Place at Midway, 200 units built 1989 in Douglasville, listed yesterday by Cushman, in the same county where Post already owns 1,229 units with the Douglas County Housing Authority and where the 80% AMI rent ceiling sits about $600 above market. Behind it, four Atlanta-suburb deals in Cobb, Gwinnett and Fulton counties, a Tacoma deal that fits the Washington tribal structure, a Greenville deal with offers due today, and a 384-unit Tampa deal.</div>
+
+  <h2>Ranked, best fit first</h2>
+  <div class="sub">Click a row to open it. Score is out of 100: structure and market 25, pullback 25, size 15, vintage 10, timing 15, seller motivation 10.</div>
+  <div class="stack">
+
+    <details class="deal" open>
+      <summary><div class="n">1</div><div class="t">Place at Midway<span class="chip"><span class="dot good"></span>new this week</span><span class="where">Douglasville, GA · Douglas County · 200 units · built 1989 · Cushman &amp; Wakefield · posted Oct 6, no offer date yet</span></div><div class="k"><div class="v">92</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="grid2">
+          <div>
+            <div class="eyebrow">Why it ranks first</div>
+            <div class="lines" style="margin-top:6px">
+              <div><b>Post's best county.</b> Crestmark (334), Sweetwater Creek and Villas at West Ridge (470) and Valera Riverside (425) are all within a few miles, all with the Douglas County Housing Authority. The partnership documents already exist.</div>
+              <div><b>No pullback.</b> Crestmark's 2BRs ask $1,426 to $1,491 today. The 80% AMI 2BR ceiling in the Atlanta MSA is $2,120. A 1989 property in Douglasville will sit well under the ceiling.</div>
+              <div><b>TAM already runs three properties next door.</b> Shared staff, shared vendors, shared regional manager.</div>
+              <div><b>Fresh.</b> Posted yesterday. Nobody has priced it yet.</div>
+            </div>
+          </div>
+          <div>
+            <div class="eyebrow">What to check</div>
+            <div class="lines" style="margin-top:6px">
+              <div>Concentration: a fourth deal in one submarket. Ask asset management whether Crestmark's leasing problems are property-specific or submarket-wide before adding exposure.</div>
+              <div>Georgia exemption timing: a 2027 close must apply by April 1, 2027 or the exemption slips a year.</div>
+              <div>Vintage 1989 means roofs, plumbing and siding questions. Hillcrest should walk it.</div>
+            </div>
+          </div>
+        </div>
+        <div class="math">Atlanta MSA 2026 · 4-person 80% AMI $94,240 → 1BR max $1,767 · 2BR max $2,120 · 3BR max $2,450 · Douglasville market 2BR ≈ $1,450 to $1,600 → no pullback</div>
+        <div class="takeaway"><b>Next step:</b> ask Cushman's Atlanta multifamily team for the OM and rent roll today, and tell Lash (who ran Crestmark and Valera) it is up.</div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">2</div><div class="t">50 Stoneview<span class="where">Lilburn, GA · Gwinnett County · 236 units · Berkadia · active</span></div><div class="k"><div class="v">85</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Gwinnett County Housing Authority</b> is a repeat Post partner (Park on Sweetwater, Rosemont Peachtree Corners, the Asher at Sugarloaf consulting deal). Cobb/Gwinnett structure: 20% at 60%, 30% at 80%, 50% at 120% AMI.</div>
+          <div>Lilburn is a workforce suburb. Rents will sit under the $2,120 2BR ceiling. Vintage not shown on the feed; ask.</div>
+          <div><b>Next step:</b> Berkadia Atlanta for the OM. Compare to Rosemont Peachtree Corners (440 units, 1983, bought at a 5.45% market cap, 6.69% exempt cap).</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">3</div><div class="t">Sedgefield<span class="where">Marietta, GA · Cobb County · 280 units · Berkadia · active</span></div><div class="k"><div class="v">84</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Cobb County Housing Authority</b> did Avenues of Kennesaw (524 units) with Post in 2025. Same restriction set as Gwinnett.</div>
+          <div>Marietta workforce product; 280 units is the center of Post's size range. Vintage not on the feed.</div>
+          <div><b>Next step:</b> same Berkadia call as Stoneview. Ask for both rent rolls at once.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">4</div><div class="t">The Meadows<span class="where">Tacoma, WA · Pierce County · 200 units · Berkadia · active</span></div><div class="k"><div class="v">84</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Washington is Post's strongest structure.</b> The Spokane Indian Housing Authority takes title and the tax exemption is by right the day of closing. Post has Lakes and Revive in Fife (Pierce County) and is under contract on Northpoint in Tacoma (402 units).</div>
+          <div>Pierce County AMI grew 6.5% this year. Post pays about 97% of asking on these because the exemption is certain.</div>
+          <div><b>Next step:</b> Berkadia Seattle for the OM. Loop in Hacker and Lash, who run the Washington deals.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">5</div><div class="t">2950 North<span class="chip"><span class="dot warn"></span>offers due today</span><span class="where">Greenville, SC · Greenville County · 156 units · built 1984 · Cushman · offers due Oct 7</span></div><div class="k"><div class="v">83</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Greenville is the best AMI story in the portfolio</b>, up 9.9% this year. Post closed Tribute Verdae (268) and Ardmore Springs (252) there in 2026 with the South Carolina nonprofit structure, $0 property tax.</div>
+          <div>156 units is on the small side; 1984 vintage is squarely in range.</div>
+          <div><b>Next step:</b> offers are due today, so this is a "can we get a late look" call to Cushman's Carolinas team. Worth one call because Blumen and Nicco already know the submarket cold.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">6</div><div class="t">Manchester Ridge<span class="where">College Park, GA · Fulton County · 330 units · Berkadia · active</span></div><div class="k"><div class="v">82</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div><b>Housing Authority of Fulton County</b> is a repeat partner (Windward, Manchester at Mansell, Oslo in Fairburn). Fulton restriction: 10% at 60%, 45% at 80%, 45% at 120%.</div>
+          <div>College Park is a tougher C submarket near the airport. Rents are far below the ceiling, so pullback is not the question. Collections and crime are. Ask TAM what they see at Oslo.</div>
+          <div><b>Next step:</b> OM and delinquency history before anything else.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">7</div><div class="t">Homestead + View at the Lake I and II<span class="where">Federal Way, WA · King County · 134 + 155 + 50 = 339 units · Berkadia · active</span></div><div class="k"><div class="v">82</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div>Three Berkadia listings in the same city, likely the same seller. Together they are Post-sized. Post owns Porchlight (236) and Mariposa (194) in Federal Way with SIHA.</div>
+          <div>King County AMI up 5.6%. Same by-right exemption as Tacoma.</div>
+          <div><b>Next step:</b> ask Berkadia whether the three can be bought as a package. One structure, one closing, one TAM team.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">8</div><div class="t">Compton Place<span class="where">Tampa, FL · Hillsborough County · 384 units · built 1999 · Cushman · active since Feb 2026</span></div><div class="k"><div class="v">82</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div>Post is under contract on Park at Lake Como (400 units, Tampa) and did four Florida bond deals this year. The Florida nonprofit structure with a 120% tier works on 1999 product.</div>
+          <div>Listed since February and still active: the seller has not found their number. That is where Post's exemption math lets it pay what others cannot.</div>
+          <div><b>Next step:</b> ask Cushman Tampa what guidance was and what offers came in. A stale listing is a negotiation.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">9</div><div class="t">Carrington Place at Wildewood<span class="where">Columbia, SC · Richland County · 240 units · built 2005 · Cushman · OM available soon</span></div><div class="k"><div class="v">80</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div>Post owns Paddock Club, Fairways and Hamptons Court in Columbia (852 units) under the South Carolina nonprofit structure. Institutional seller, meticulously maintained per the broker.</div>
+          <div>Richland County AMI only grew 1.9%, so run the pullback math carefully. 2005 vintage usually rents nearer the ceiling.</div>
+          <div><b>Next step:</b> get on the OM distribution list now, before it goes live.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="deal">
+      <summary><div class="n">10</div><div class="t">Wood Pointe<span class="chip"><span class="dot warn"></span>offers were due Sep 29</span><span class="where">Marietta, GA · Cobb County · 178 units · built 1986 · Cushman</span></div><div class="k"><div class="v">80</div><div class="l">score</div></div><div class="chev">›</div></summary>
+      <div class="more">
+        <div class="lines">
+          <div>Perfect profile: Cobb County, 1986, workforce rents, 178 units. The only problem is timing. Offers went in a week ago, so it is probably in best-and-final.</div>
+          <div><b>Next step:</b> one call to Cushman to ask if the field is still open. If it is awarded, note it as a comp for Sedgefield.</div>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <h2>Watch list</h2>
+  <div class="sub">Fits on paper, needs one more fact, or timing is off.</div>
+  <div class="card" style="padding-top:12px">
+    <div class="tbl-wrap"><table class="data">
+      <thead><tr><th>Deal</th><th>Where</th><th class="n">Units</th><th>Built</th><th>Broker · status</th><th class="n">Score</th><th class="w">Why it is here</th></tr></thead>
+      <tbody>
+        <tr><td>Lake St. James</td><td>Conyers, GA · Rockdale</td><td class="n">484</td><td>?</td><td>Cushman · offers due Oct 20</td><td class="n">78</td><td class="w">Big and in play. New county for Post; Rockdale would need a new housing authority agreement. Ask for vintage and rent roll.</td></tr>
+        <tr><td>The Shores</td><td>Corpus Christi, TX · Nueces</td><td class="n">356</td><td>?</td><td>Berkadia · active</td><td class="n">78</td><td class="w">Post has four Corpus deals with the Corpus Christi Housing Authority. Texas structures are harder since 2023, but Nueces is a known path.</td></tr>
+        <tr><td>The Chelsea</td><td>Norcross, GA · Gwinnett</td><td class="n">306</td><td>?</td><td>Cushman · active since May</td><td class="n">76</td><td class="w">Gwinnett again. Stale listing may mean a price gap. Vintage unknown.</td></tr>
+        <tr><td>South Pointe</td><td>Dallas, TX · Dallas County</td><td class="n">372</td><td>?</td><td>Berkadia · active</td><td class="n">76</td><td class="w">Post has 8 Dallas County deals. Needs an HFC path or HUD assumption; CHDO is not available in Dallas County.</td></tr>
+        <tr><td>Villas at Valley Ranch</td><td>Porter, TX · Montgomery</td><td class="n">312</td><td>?</td><td>Berkadia · active</td><td class="n">74</td><td class="w">Outside Harris County, so CHDO is possible if the seller has owned it 5+ years and it is 10+ years old.</td></tr>
+        <tr><td>Green Oaks at Medical</td><td>San Antonio, TX · Bexar</td><td class="n">254</td><td>?</td><td>Berkadia · active</td><td class="n">74</td><td class="w">Bexar AMI up 6.2%. Post has Arroyo Seco and Willow Bend there.</td></tr>
+        <tr><td>Ashbrook Village</td><td>Gastonia, NC · Gaston</td><td class="n">423</td><td>1985–92</td><td>Cushman · active since May</td><td class="n">74</td><td class="w">Right product, right size. North Carolina structure is thin and AMI growth is weak. Stale listing.</td></tr>
+        <tr><td>Champions Walk</td><td>Bradenton, FL · Manatee</td><td class="n">376</td><td>?</td><td>Berkadia · active</td><td class="n">74</td><td class="w">Florida bond execution could work. New county.</td></tr>
+        <tr><td>Residences at Soho</td><td>Tampa, FL · Hillsborough</td><td class="n">218</td><td>?</td><td>Berkadia · active</td><td class="n">72</td><td class="w">Pair with Compton Place for one Tampa trip.</td></tr>
+        <tr><td>Waterview Crossing + Windford Place</td><td>Orlando, FL · Orange</td><td class="n">343 + 200</td><td>?</td><td>Cushman · active since June</td><td class="n">72</td><td class="w">Two-property package, concrete block. Orlando is new for Post.</td></tr>
+        <tr><td>Chatham Green Village</td><td>Arlington, TX · Tarrant</td><td class="n">234</td><td>rehab 2014</td><td>Cushman · posted Sep 16</td><td class="n">72</td><td class="w">Tarrant County, Post has The Sydney and Oak Park there. Needs an HFC.</td></tr>
+        <tr><td>Bremerton Landing Ph 1 &amp; 2</td><td>Bremerton, WA · Kitsap</td><td class="n">373</td><td>new</td><td>Berkadia · active</td><td class="n">72</td><td class="w">Post owns three Kitsap deals. Likely new construction; pullback check needed on new rents.</td></tr>
+        <tr><td>Lender REO portfolio</td><td>Fort Worth / Richardson / TX</td><td class="n">376</td><td>1963–83</td><td>Cushman · posted Sep 1</td><td class="n">70</td><td class="w">Bank-owned, four small properties. Motivated seller, but small and old. Only if priced like REO.</td></tr>
+        <tr><td>Covington Glen · Arbor Crossing · Tucker Square</td><td>Decatur / Lithonia / Stone Mountain, GA · DeKalb</td><td class="n">254 · 240 · 276</td><td>?</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Three DeKalb deals. Post has no DeKalb housing authority deal yet; the first one would open the county.</td></tr>
+        <tr><td>Meetinghouse at Collins Cove</td><td>Jacksonville, FL · Duval</td><td class="n">160</td><td>?</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Duval AMI up 7.1%. Post has Elliot Baymeadows and is pursuing Seaton Preserve there. Small.</td></tr>
+        <tr><td>Stafford Place</td><td>Azle, TX · Parker/Tarrant</td><td class="n">252</td><td>?</td><td>Cushman · posted Jul 28</td><td class="n">66</td><td class="w">Fort Worth exurb. Lower AMI area.</td></tr>
+        <tr><td>Clemson Ridge + Crescent Pointe</td><td>Seneca, SC · Oconee</td><td class="n">264</td><td>1998 / 2003</td><td>Cushman · posted Oct 6</td><td class="n">66</td><td class="w">Tertiary market an hour from Greenville. Package size works.</td></tr>
+        <tr><td>Alwell</td><td>Pleasant Hill, CA · Contra Costa</td><td class="n">189</td><td>?</td><td>Berkadia · active</td><td class="n">70</td><td class="w">Bay Area, CMFA welfare exemption. High AMI county. Only Berkadia California listing not already in Post's pipeline.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <h2>Proof the sources are the right ones</h2>
+  <div class="card">
+    <div class="lines">
+      <div><b>Four of Berkadia's active California listings are already in Post's Active Pursuits folder:</b> Blossoms at Brentwood (288), Altura in San Diego (181), Canyon Country Villas in Santa Clarita (328) and Oak &amp; Ivy in Vacaville. The team is working exactly the feed this finder reads.</div>
+      <div><b>Commons at University Square in Charlotte</b> (276 units, 1990, offers were due Sep 30) is in Post's cap rate tracker: asking $48.3M, Post's number $38M, passed. It is back on the market, so the gap may have closed. Worth asking.</div>
+      <div><b>Post is already pursuing or under contract on</b> Arbors at Brookfield (702, Mauldin SC), Elevate at Dawson Forest (268, GA), The Arden (198, Ladson SC), Enclave at Bluffton (110), Seaton Preserve (Jacksonville), Exchange at Crestview (362, FL), Becket and Berkshire (Renton WA), Northpoint (402, Tacoma), Park at Lake Como (400, Tampa), Legacy Heights (384, Westminster CO), Alexan Montview (395, Denver), Mirabella (172, San Antonio), Mallard Cove (252, Richmond VA), 1575 Oak (187, Vista CA), Seabreeze (121, Monterey). None of those appear above.</div>
+    </div>
+  </div>
+
+  <h2>What to do this week</h2>
+  <div class="card">
+    <div class="grid2">
+      <div>
+        <div class="eyebrow">Before Monday 1:30 Pacific</div>
+        <ul class="plain">
+          <li><b>Place at Midway:</b> email Cushman Atlanta for the OM and rent roll. Send Lash the one-line pullback math. This is the one to bring to the pipeline meeting.</li>
+          <li><b>Berkadia Atlanta:</b> one call for Stoneview, Sedgefield and Manchester Ridge. Ask vintage, guidance and whether offers have a date.</li>
+          <li><b>Berkadia Seattle:</b> The Meadows and the Federal Way three. Ask if Federal Way is a package.</li>
+          <li><b>Cushman Carolinas:</b> is 2950 North still open after today's deadline, and is Commons at University Square re-priced?</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">How to present it</div>
+        <ul class="plain">
+          <li>Lead with county, units, vintage, offers date, and the pullback read. Nothing else until asked.</li>
+          <li>Name the housing partner that already exists in that county. That is the difference between a 90-day close and a 9-month one.</li>
+          <li>Say which existing Post property it looks like. Rosemont, Crestmark, Avenues, Lakes and Revive. The team prices by comparison.</li>
+          <li>Do not pitch. Hand the associate a deal they can take credit for. The second time it happens, it becomes your job.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Sources read Oct 7, 2026: Cushman &amp; Wakefield Multifamily Advisory Group active listings for GA (60), TX (25), FL (64), SC (7), NC (23); Berkadia featured listings for Texas, Atlanta, Florida, California, Seattle, Charlotte; IPA Texas; Northmarq property search; web search of REBusinessOnline, Multi-Housing News and local press for new listings and calls for offers. Post pipeline from Z:\Shared\Acquisitions\Acquisitions Pending\1. Active Pursuits and 2. Under Contract (Oct 7). Pricing history from the Termsheet Cap Rate Tracker. Atlanta 2026 income limit from Invest Atlanta's MTSP table ($94,240, 4-person, 80%). Crestmark rents from the Oct 6 owner test call. Vintage marked "?" where the feed does not show it. Scores are a screen, not an underwriting.</div>
+</div>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

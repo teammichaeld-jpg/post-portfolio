@@ -1,0 +1,220 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Who Falls Behind on Rent</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: three numbers, then short sections with small tables. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --accent:#1f2a44; --accent-soft:rgba(31,42,68,.08);
+  --good-text:#1e6b2e; --crit:#8a1f1f;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --accent:#9ec5f4; --accent-soft:rgba(158,197,244,.12); --good-text:#4cc46a; --crit:#f08a8a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --accent:#9ec5f4; --accent-soft:rgba(158,197,244,.12); --good-text:#4cc46a; --crit:#f08a8a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:25px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:18px;font-weight:600;margin-top:32px;padding-top:16px;border-top:1px solid var(--axis)}
+h3{font-size:15px;font-weight:600;margin-top:16px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:6px;padding:14px 16px 12px;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:34px;font-weight:600;line-height:1.05;margin-top:4px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.bottom{margin-top:14px;padding:12px 16px;border-left:3px solid var(--accent);background:var(--accent-soft);font-size:15px}
+p{margin:10px 0;max-width:76ch}
+.tbl-wrap{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--grid);white-space:nowrap;vertical-align:top}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+td.w{white-space:normal;min-width:240px}
+td.hi{color:var(--crit);font-weight:600}
+td.lo{color:var(--good-text);font-weight:600}
+tr.total td{font-weight:600;border-top:2px solid var(--axis)}
+tr.grp td{font-weight:600;background:var(--accent-soft)}
+.plan{border-collapse:collapse;width:100%;font-size:14px;margin-top:10px}
+.plan th,.plan td{white-space:normal;vertical-align:top}
+.plan td:first-child{font-weight:600;width:30%}
+ul{margin:8px 0 8px 18px;padding:0;max-width:76ch}
+li{margin:4px 0}
+.note{font-size:13.5px;color:var(--ink-2)}
+.src{font-size:13px;color:var(--ink-2);margin-top:30px;padding-top:12px;border-top:1px solid var(--grid)}
+.src a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="eyebrow">Post Investment Group · Asset Management</div>
+      <h1>Who Falls Behind on Rent</h1>
+      <div class="sub">Six TAM properties with the worst bad debt: Paddock Club, Cypress Bend, Cypress Bend Village, The Lakes, Crestmark, Cityscape. Every current resident's demographics, rent, screening result and aged balance, matched by unit.</div>
+    </div>
+    <div class="meta">Entrata pulled October 14, 2026<br>1,389 households<br>Detail: Delinquency vs Demographics 2026.10.14.xlsx</div>
+  </div>
+
+  <div class="band">
+    <div class="big"><div class="lab">Households behind on rent</div><div class="val">351</div><div class="cmp">25% of 1,389. They owe $602K. 197 households hold 93% of it.</div></div>
+    <div class="big"><div class="lab">Over 30 days late: our move-ins vs the seller's</div><div class="val">11% <span style="font-size:18px;color:var(--ink-2)">vs 5%</span></div><div class="cmp">Residents Post moved in are 55% of households and 71% of the money owed.</div></div>
+    <div class="big"><div class="lab">Conditional approvals' share of money owed</div><div class="val">79%</div><div class="cmp">Of balances held by residents screened May to September. Nine in ten conditional applicants were approved; the required deposit was not collected.</div></div>
+  </div>
+
+  <div class="bottom"><b>Bottom line.</b> The residents not paying are the ones we approved in the last year, mostly "pass with conditions" on credit, approved without the deposit the condition requires. Income, rent burden and age do not predict who falls behind. Tenure, screening result and deposit collected do.</div>
+
+  <h2>What predicts it</h2>
+  <p class="note">"Late" = owes more than $50 on October 14. "Over 30 days" = money from September or earlier.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Group</th><th class="n">Households</th><th class="n">Late</th><th class="n">Over 30 days</th><th class="n">Owed</th></tr>
+    <tr class="grp"><td colspan="5">Time at the property</td></tr>
+    <tr><td>Under 6 months</td><td class="n">395</td><td class="n hi">35%</td><td class="n hi">13%</td><td class="n">$244K</td></tr>
+    <tr><td>6 to 12 months</td><td class="n">262</td><td class="n">25%</td><td class="n hi">12%</td><td class="n">$147K</td></tr>
+    <tr><td>1 to 2 years</td><td class="n">300</td><td class="n">21%</td><td class="n">4%</td><td class="n">$82K</td></tr>
+    <tr><td>2 to 3 years</td><td class="n">147</td><td class="n lo">14%</td><td class="n lo">3%</td><td class="n">$32K</td></tr>
+    <tr><td>3 years or more</td><td class="n">285</td><td class="n">22%</td><td class="n">6%</td><td class="n">$98K</td></tr>
+    <tr class="grp"><td colspan="5">Who moved them in</td></tr>
+    <tr><td>Post (after acquisition)</td><td class="n">770</td><td class="n hi">29%</td><td class="n hi">11%</td><td class="n">$425K</td></tr>
+    <tr><td>Seller</td><td class="n">619</td><td class="n">20%</td><td class="n">5%</td><td class="n">$178K</td></tr>
+    <tr class="grp"><td colspan="5">Household size</td></tr>
+    <tr><td>1 person</td><td class="n">706</td><td class="n">22%</td><td class="n">6%</td><td class="n">$217K</td></tr>
+    <tr><td>2 people</td><td class="n">447</td><td class="n">25%</td><td class="n">8%</td><td class="n">$209K</td></tr>
+    <tr><td>3 or more</td><td class="n">236</td><td class="n hi">36%</td><td class="n hi">16%</td><td class="n">$176K</td></tr>
+    <tr class="grp"><td colspan="5">Lease status</td></tr>
+    <tr><td>Current</td><td class="n">1,272</td><td class="n">22%</td><td class="n">5%</td><td class="n">$367K</td></tr>
+    <tr><td>On notice (93 of these are in eviction and hold $221K)</td><td class="n">117</td><td class="n hi">62%</td><td class="n hi">40%</td><td class="n">$236K</td></tr>
+  </table></div>
+
+  <h2>What does not predict it</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>Group</th><th class="n">Households</th><th class="n">Late</th><th class="n">Over 30 days</th></tr>
+    <tr class="grp"><td colspan="4">Household income as entered at application</td></tr>
+    <tr><td>Under $30K</td><td class="n">58</td><td class="n">29%</td><td class="n">9%</td></tr>
+    <tr><td>$30K to $50K</td><td class="n">357</td><td class="n">30%</td><td class="n">10%</td></tr>
+    <tr><td>$50K to $75K</td><td class="n">384</td><td class="n">26%</td><td class="n">8%</td></tr>
+    <tr><td>$75K to $100K</td><td class="n">138</td><td class="n">33%</td><td class="n">7%</td></tr>
+    <tr><td>$100K and up</td><td class="n">114</td><td class="n">24%</td><td class="n">5%</td></tr>
+    <tr><td>No income on file</td><td class="n">338</td><td class="n">17%</td><td class="n">8%</td></tr>
+    <tr class="grp"><td colspan="4">Rent as a share of income</td></tr>
+    <tr><td>Under 20%</td><td class="n">143</td><td class="n">21%</td><td class="n">5%</td></tr>
+    <tr><td>20% to 30%</td><td class="n">273</td><td class="n">24%</td><td class="n">4%</td></tr>
+    <tr><td>30% to 40%</td><td class="n">325</td><td class="n">25%</td><td class="n">7%</td></tr>
+    <tr><td>40% to 50%</td><td class="n">142</td><td class="n">25%</td><td class="n">5%</td></tr>
+    <tr><td>50% and up</td><td class="n">91</td><td class="n">33%</td><td class="n">7%</td></tr>
+  </table></div>
+  <p class="note">Median income of households owing $500 or more: $53K, paying 34% of it in rent. Paid-up households: $55K and 32%. Age and deposit size are flat as well. Income is entered by the applicant and not verified; one in four files has none.</p>
+
+  <h2>By property</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>Property</th><th class="n">Households</th><th class="n">Late</th><th class="n">Over 30 days</th><th class="n">Owed</th><th>Note</th></tr>
+    <tr><td>Paddock Club, SC</td><td class="n">291</td><td class="n">25%</td><td class="n hi">13%</td><td class="n">$175K</td><td class="w">59 households in the court pipeline. Post move-ins (174) 36% late, $145K; seller's (117) 10% late, $29K.</td></tr>
+    <tr><td>The Lakes, WA</td><td class="n">227</td><td class="n">25%</td><td class="n hi">12%</td><td class="n">$148K</td><td class="w">Seller's residents hold $86K of $148K (carried balances, court plans). Post move-ins (79) already 32% late.</td></tr>
+    <tr><td>Cypress Bend, TX</td><td class="n">177</td><td class="n">25%</td><td class="n">9%</td><td class="n">$74K</td><td class="w">Post move-ins 35% late vs seller's 12%. Two Section 8 move-ins waiting on HAP contracts.</td></tr>
+    <tr><td>Cypress Bend Village, TX</td><td class="n">189</td><td class="n">24%</td><td class="n">8%</td><td class="n">$56K</td><td class="w">Post move-ins 31% late vs seller's 13%.</td></tr>
+    <tr><td>Crestmark, GA</td><td class="n">293</td><td class="n hi">32%</td><td class="n lo">4%</td><td class="n">$94K</td><td class="w">58 seller-era residents owe a median $132 (fee and utility billing). 36 Post move-ins owe a median $500; 16 over $1,000, hearings Oct 30 to Nov 2.</td></tr>
+    <tr><td>Cityscape, TX</td><td class="n">212</td><td class="n lo">17%</td><td class="n lo">3%</td><td class="n">$56K</td><td class="w">Post move-ins 19% late vs seller's 10%.</td></tr>
+    <tr class="total"><td>All six</td><td class="n">1,389</td><td class="n">25%</td><td class="n">8%</td><td class="n">$602K</td><td class="w">Entrata's report totals net off $17K of prepaid credits and read $570K.</td></tr>
+  </table></div>
+
+  <h2>Screening: who was approved and how</h2>
+  <p class="note">Every application screened May 1 to September 30, 2026 at the six properties (616), matched to current residents and balances.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Screening result</th><th class="n">Applicants</th><th class="n">Approved</th><th class="n">Now residents</th><th class="n">Late</th><th class="n">Owe $1,000+</th><th class="n">Owed</th><th class="n">Share of money</th></tr>
+    <tr><td>Pass</td><td class="n">82</td><td class="n">74</td><td class="n">54</td><td class="n">30%</td><td class="n">17%</td><td class="n">$26K</td><td class="n">11%</td></tr>
+    <tr><td>Pass with conditions</td><td class="n">413</td><td class="n hi">376</td><td class="n">244</td><td class="n hi">41%</td><td class="n hi">26%</td><td class="n">$182K</td><td class="n hi">79%</td></tr>
+    <tr><td>Fail</td><td class="n">111</td><td class="n hi">17</td><td class="n">14</td><td class="n hi">57%</td><td class="n hi">50%</td><td class="n">$22K</td><td class="n">10%</td></tr>
+  </table></div>
+
+  <h3>Inside "pass with conditions": which condition</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Condition flagged (a file can carry more than one)</th><th class="n">Residents</th><th class="n">Late</th><th class="n">Owe $1,000+</th><th class="n">Owed</th><th class="n">Share of conditional money</th></tr>
+    <tr><td>Credit</td><td class="n">208</td><td class="n">40%</td><td class="n">27%</td><td class="n">$164K</td><td class="n hi">90%</td></tr>
+    <tr><td>Document verification (pay stubs questioned)</td><td class="n">104</td><td class="n">33%</td><td class="n">19%</td><td class="n">$50K</td><td class="n">28%</td></tr>
+    <tr><td>Precise ID (identity)</td><td class="n">63</td><td class="n">43%</td><td class="n">30%</td><td class="n">$52K</td><td class="n">28%</td></tr>
+    <tr><td>Income</td><td class="n">40</td><td class="n">42%</td><td class="n">30%</td><td class="n">$42K</td><td class="n">23%</td></tr>
+    <tr><td>Prior evictions or filings</td><td class="n">8</td><td class="n">62%</td><td class="n">38%</td><td class="n">$15K</td><td class="n">9%</td></tr>
+  </table></div>
+
+  <h3>Credit-flagged residents by deposit actually collected</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Deposit held</th><th class="n">Residents</th><th class="n">Late</th><th class="n">Owe $1,000+</th><th class="n">Owed</th></tr>
+    <tr><td>None</td><td class="n">46</td><td class="n hi">43%</td><td class="n hi">24%</td><td class="n">$28K</td></tr>
+    <tr><td>Under half a month's rent</td><td class="n">90</td><td class="n hi">40%</td><td class="n hi">26%</td><td class="n">$52K</td></tr>
+    <tr><td>Half to one month</td><td class="n">55</td><td class="n lo">22%</td><td class="n lo">16%</td><td class="n">$19K</td></tr>
+    <tr><td>A full month or more</td><td class="n">3</td><td class="n lo">0%</td><td class="n lo">0%</td><td class="n">$2K</td></tr>
+  </table></div>
+  <p>The condition at Crestmark is a deposit equal to one month's rent or a guarantor (resident file, July 2026). 3 of 194 credit-flagged residents hold a full month. Same credit risk, half the delinquency where half a month or more was collected.</p>
+
+  <h3>Credit scores of applicants, May to September (700 scored)</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Score</th><th class="n">Under 500</th><th class="n">500-549</th><th class="n">550-599</th><th class="n">600-649</th><th class="n">650-699</th><th class="n">700+</th></tr>
+    <tr><td>Share of applicants</td><td class="n">12%</td><td class="n">21%</td><td class="n">25%</td><td class="n">19%</td><td class="n">13%</td><td class="n">11%</td></tr>
+  </table></div>
+  <p class="note">Average 593. Crestmark 577 and Paddock 586 are the weakest pools (38% under 550); The Lakes 620 is the strongest and is still 25% late. A hard cutoff at 550 would deny a third of applicants; at 600, more than half. Entrata reports scores only as counts by band, so score cannot be tied to individual payment history from here.</p>
+
+  <h3>By approver (approved applications)</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>Property</th><th>Approved by</th><th class="n">Screened</th><th class="n">Approved</th><th class="n">Now residents</th><th class="n">Late</th><th class="n">Owe $1,000+</th><th class="n">Owed</th></tr>
+    <tr><td>Paddock</td><td>Monica Willis-Peterson</td><td class="n">70</td><td class="n">70</td><td class="n">45</td><td class="n hi">19</td><td class="n hi">14</td><td class="n">$54K</td></tr>
+    <tr><td>Cypress Bend + Village</td><td>Brandi Swearingen</td><td class="n">88</td><td class="n">88</td><td class="n">60</td><td class="n hi">23</td><td class="n hi">16</td><td class="n">$28K</td></tr>
+    <tr><td>Cypress Bend</td><td>Latasha Teal</td><td class="n">33</td><td class="n">33</td><td class="n">26</td><td class="n hi">11</td><td class="n">7</td><td class="n">$20K</td></tr>
+    <tr><td>Lakes</td><td>Esmeralda Bran</td><td class="n">14</td><td class="n">14</td><td class="n">11</td><td class="n hi">7</td><td class="n">6</td><td class="n">$19K</td></tr>
+    <tr><td>Crestmark</td><td>Toccara Wiley</td><td class="n">65</td><td class="n">35</td><td class="n">12</td><td class="n">6</td><td class="n">3</td><td class="n">$16K</td></tr>
+    <tr><td>Crestmark, Paddock, Lakes</td><td>Lara Stoughton (fail overrides)</td><td class="n">12</td><td class="n">12</td><td class="n">10</td><td class="n">5</td><td class="n">4</td><td class="n">$15K</td></tr>
+    <tr><td>CB Village</td><td>Casmijah Garza</td><td class="n">16</td><td class="n">16</td><td class="n">10</td><td class="n">6</td><td class="n">4</td><td class="n">$10K</td></tr>
+    <tr><td>Cityscape</td><td>Jennifer Doggett</td><td class="n">21</td><td class="n">21</td><td class="n">12</td><td class="n">6</td><td class="n">5</td><td class="n">$9K</td></tr>
+    <tr><td>Lakes</td><td>Desiree Magno</td><td class="n">39</td><td class="n">39</td><td class="n">26</td><td class="n lo">3</td><td class="n lo">2</td><td class="n">$9K</td></tr>
+    <tr><td>Cityscape</td><td>Karla Fulker</td><td class="n">14</td><td class="n">14</td><td class="n">6</td><td class="n lo">0</td><td class="n lo">0</td><td class="n">$0</td></tr>
+  </table></div>
+  <ul>
+    <li>Site managers approve everything the screen lets through. Crestmark is the only site that denies fails (29 of 29).</li>
+    <li>Of the 17 fails approved, 10 were document-verification fails overridden with the note "verified income docs." Four of those residents owe $14.9K (Tucker, Crestmark $5,396; Dwyer, Paddock $5,663; Moore, Lakes $2,057; Rorie, Crestmark $1,761). One Paddock evictions fail approved on "proof of paid off housing debt" owes $3,072.</li>
+    <li>The Lakes: two managers, same applicant pool, 3 of 26 late vs 7 of 11.</li>
+  </ul>
+
+  <h2>Site collection notes</h2>
+  <p class="note">235 of the 351 late households have a delinquency note; 216 were written in October.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Note mentions</th><th class="n">Households</th></tr>
+    <tr><td>Notice served or posted</td><td class="n">92</td></tr>
+    <tr><td>Eviction filed, court, writ</td><td class="n">88</td></tr>
+    <tr><td>Cannot reach the resident</td><td class="n">53</td></tr>
+    <tr><td>Hardship (job, hospital, death, car)</td><td class="n">44</td></tr>
+    <tr><td>Payment plan or promise to pay</td><td class="n">38</td></tr>
+    <tr><td>Outside help involved (Medicaid plan, nonprofit, Flex, Section 8)</td><td class="n">6</td></tr>
+  </table></div>
+
+  <h2>Recommendation, effective November 1</h2>
+  <table class="plan">
+    <tr><th>Rule</th><th>Detail</th></tr>
+    <tr><td>Conditional means conditional</td><td>A "pass with conditions" is approved only with the extra deposit (one month's rent) or a guarantor collected before keys. No site-level discretion to reduce it. Occupancy targets do not override it.</td></tr>
+    <tr><td>No site-level fail approvals</td><td>Under 500 credit, document-verification fails and prior-eviction fails are denials. Overrides above the RPM go to Jeff.</td></tr>
+    <tr><td>Weekly approvals report</td><td>By property and approver, to the RPMs and AMs. 90-day late rate by move-in month in the monthly BvA. Screening is fixed when our move-ins are late at the seller's rate.</td></tr>
+    <tr><td>First 90 days</td><td>Every move-in under six months unpaid on the 5th gets a manager call that week: written payment plan, Flex, or a referral. Decision by day 10: on a plan or filed.</td></tr>
+    <tr><td>Collections now</td><td>File on the 38 never-paid accounts ($146K). Finish the 93 evictions and write off. Audit Crestmark's fee balances on long-term residents.</td></tr>
+    <tr><td>Partners</td><td>Flex at all six (Paddock residents already use it). Esusu with the Stable Home Fund for 0% rent-relief loans. Named housing-authority contact per property for late HAP contracts. Local rent funds are small and slow: Pierce County eviction prevention (The Lakes), City of Beaumont and Salvation Army (Cypress Bend), BakerRipley and Catholic Charities (Cityscape), Salvation Army Columbia (Paddock), Tallatoona CAP and Douglas County United Way (Crestmark).</td></tr>
+  </table>
+
+  <div class="src">
+    <b>Sources.</b> TAM Residential Entrata, pulled October 14, 2026: Resident Demographics (Current and Notice leases), Resident Aged Receivables (current post month), Rent Roll (occupied units), Screening Results Summary and Screening Score Analysis (May 1 to September 30, 2026). Portfolio Dashboard v448 (acquisition dates). Deal Bad Debt Analysis, October 13, 2026. Applications are matched to residents by name, so screening counts are approximate. Detail by household and by application: Delinquency vs Demographics 2026.10.14.xlsx (Property Performance / 3. Portfolio / Bad Debt Analysis).
+  </div>
+</div>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>

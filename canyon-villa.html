@@ -1,0 +1,562 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Post Portfolio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Canyon Villa Operating Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 3 numbers, one sentence, then tabs. Overview = six problems, each a click-to-open row with a short plain explanation. Same system as the other Post reviews. */
+:root{
+  --page:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --seq250:#86b6ef; --seq400:#3987e5; --seq550:#1c5cab; --seq700:#0d366b;
+  --good:#0ca30c; --good-text:#006300; --warn:#fab219; --crit:#d03b3b;
+  --accent:var(--s1); --accent-soft:rgba(42,120,214,.10);
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#0ca30c; --accent-soft:rgba(57,135,229,.16);
+    --seq250:#184f95; --seq400:#256abf; --seq550:#5598e7; --seq700:#9ec5f4;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#0d0d0d; --surface:#1a1a19; --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --ring:rgba(255,255,255,.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --good-text:#0ca30c; --accent-soft:rgba(57,135,229,.16);
+  --seq250:#184f95; --seq400:#256abf; --seq550:#5598e7; --seq700:#9ec5f4;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding-block:22px 60px;padding-inline:16px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em}
+h2{font-size:20px;font-weight:600}
+h3{font-size:14px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sub{color:var(--ink-2);font-size:14px;max-width:72ch}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;align-items:flex-end}
+.top .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6;text-align:right}
+.band{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+@media (max-width:720px){.band{grid-template-columns:1fr}}
+.big{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px 14px;position:relative;min-width:0}
+.big .lab{font-size:13px;color:var(--ink-2)}
+.big .val{font-size:40px;font-weight:600;line-height:1.05;margin-top:4px;letter-spacing:-.02em}
+.big .cmp{font-size:13px;color:var(--ink-2);margin-top:6px}
+.big .stripe{position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 3px 3px 0}
+.stripe.crit{background:var(--crit)} .stripe.warn{background:var(--warn)} .stripe.good{background:var(--good)}
+.delta{font-weight:600} .delta.bad{color:var(--crit)} .delta.good{color:var(--good-text)}
+.oneline{margin-top:14px;padding:14px 18px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:15.5px;line-height:1.5}
+.tabs{display:flex;gap:4px;margin-top:22px;border-bottom:1px solid var(--axis);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font:inherit;font-size:14px;font-weight:500;color:var(--ink-2);background:transparent;border:none;border-bottom:2px solid transparent;padding:10px 14px;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:4px}
+.panel{padding-top:18px}
+.panel .intro{margin-bottom:14px}
+.card{background:var(--surface);border:1px solid var(--ring);border-radius:10px;padding:16px 18px;min-width:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2 > .full{grid-column:1/-1}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}}
+.stack{display:grid;gap:10px}
+details.prob{background:var(--surface);border:1px solid var(--ring);border-radius:10px}
+details.prob summary{list-style:none;display:grid;grid-template-columns:30px 1fr auto 20px;gap:14px;align-items:center;padding:14px 16px;cursor:pointer}
+details.prob summary::-webkit-details-marker{display:none}
+details.prob summary:hover{background:var(--accent-soft)}
+details.prob summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:10px}
+.prob .n{font-family:var(--mono);font-size:20px;color:var(--muted);line-height:1}
+.prob .t{font-weight:600;font-size:16px}
+.prob .k{text-align:right;white-space:nowrap}
+.prob .k .v{font-size:20px;font-weight:600;line-height:1.1}
+.prob .k .l{font-size:12px;color:var(--muted)}
+.prob .chev{color:var(--muted);transition:transform .15s}
+details[open].prob .chev{transform:rotate(90deg)}
+.prob .more{padding:0 16px 16px 60px;border-top:1px solid var(--grid);padding-top:14px}
+@media (max-width:560px){details.prob summary{grid-template-columns:30px 1fr 20px}.prob .k{display:none}.prob .more{padding-left:16px}}
+.lines{display:grid;gap:6px;font-size:15px}
+.lines b{font-weight:600}
+.mini{border-collapse:collapse;font-size:14px;margin-top:10px}
+.mini td{padding:5px 14px 5px 0;border-bottom:1px solid var(--grid)}
+.mini td.n{text-align:right;font-variant-numeric:tabular-nums}
+.mini tr:last-child td{border-bottom:none}
+.why{margin-top:12px}
+.why .eyebrow{margin-bottom:4px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;border:1px solid var(--ring);background:var(--page);vertical-align:middle;margin-left:8px}
+.chip .dot{width:8px;height:8px;border-radius:50%}
+.dot.crit{background:var(--crit)} .dot.warn{background:var(--warn)} .dot.good{background:var(--good)}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--ink-2);margin-top:6px}
+.legend .key{display:inline-flex;align-items:center;gap:6px}
+.legend .sw{width:14px;height:3px;border-radius:2px;display:inline-block}
+.legend .sw.bar{width:10px;height:10px;border-radius:2px}
+.chart{position:relative;margin-top:8px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12px;padding:6px 9px;border-radius:5px;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));opacity:0;transition:opacity .08s;z-index:3;font-variant-numeric:tabular-nums;line-height:1.4}
+.tip.on{opacity:1}
+.tip .t{font-weight:600;margin-bottom:2px}
+.toggle{font:inherit;font-size:12px;color:var(--ink-2);background:transparent;border:1px solid var(--ring);border-radius:5px;padding:3px 9px;cursor:pointer}
+.toggle:hover,.toggle:focus-visible{border-color:var(--accent);color:var(--ink);outline:none}
+.takeaway{font-size:14px;color:var(--ink-2);margin-top:10px;padding-top:10px;border-top:1px solid var(--grid)}
+.tbl-wrap{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tr.subject td{font-weight:600;background:var(--accent-soft)}
+td.neg{color:var(--crit)} td.pos{color:var(--good-text)}
+tr.total td{font-weight:600;border-top:2px solid var(--axis)}
+td.w{white-space:normal}
+.meter{height:10px;border-radius:5px;background:var(--grid);overflow:hidden}
+.meter > span{display:block;height:100%}
+.mrow{display:grid;grid-template-columns:200px 1fr 120px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--grid)}
+.mrow:last-child{border-bottom:none}
+.mrow .r{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right}
+@media (max-width:560px){.mrow{grid-template-columns:1fr 100px}.mrow .k{grid-column:1/-1}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px}
+.fact .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:14.5px;font-weight:500;margin-top:2px}
+ul.plain{margin:6px 0 0;padding-left:18px;line-height:1.6}
+.plan-tbl td{white-space:normal;vertical-align:top;font-size:15px;padding:12px 14px}
+.plan-tbl td.w{min-width:200px}
+.plan-tbl input{width:16px;height:16px;accent-color:var(--accent);margin-top:3px}
+.plan-tbl tr.done td.w{color:var(--muted);text-decoration:line-through}
+.grade{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;padding:1px 7px;border-radius:4px;border:1px solid var(--ring)}
+.grade.ok{color:var(--good-text)} .grade.no{color:var(--crit)} .grade.part{color:var(--ink-2)}
+.foot{margin-top:36px;border-top:1px solid var(--axis);padding-top:12px;font-size:12px;color:var(--muted);line-height:1.6}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">POST portfolio · CVA · CMFA welfare-exemption deal</div>
+      <h1>Canyon Villa</h1>
+      <div class="sub">Chula Vista, CA · 183 units · built 1981 · owned since Sep 10, 2025 · ConAm · AM Joelle Zingerman · first California review, different team from the four Georgia properties</div>
+    </div>
+    <div class="meta">Financials Aug 2026 · ops Oct 4, 2026<br>Portfolio Dashboard v435 · AR Oct 5, 2026</div>
+  </header>
+
+  <div class="band">
+    <div class="big"><span class="stripe crit"></span><div class="lab">NOI run-rate (Jun–Aug, annualized)</div><div class="val">$4.31M</div><div class="cmp"><span class="delta bad">▼ $504K</span> vs $4.81M underwritten · 12 months: $4.26M, 11% short</div></div>
+    <div class="big"><span class="stripe crit"></span><div class="lab">Occupancy</div><div class="val">90.2%</div><div class="cmp"><span class="delta bad">▼ 5.4 pts</span> vs 95.6% budget · underwriting assumed 97.5% · one bedrooms 84%</div></div>
+    <div class="big"><span class="stripe crit"></span><div class="lab">Residents behind on rent</div><div class="val">47 of 183</div><div class="cmp">$201K owed · bad debt $190K a year vs $67K underwritten · 4 in eviction, 8 on final notice</div></div>
+  </div>
+  <div class="oneline"><b>In one sentence:</b> Canyon Villa runs about $500K a year under plan because the rules that earn its property-tax break only let in renters who earn between roughly $72K and $93K, so two of every three applicants are turned away and the one-bedrooms sit 84% full; a quarter of the residents are behind on rent; and the tax break itself has been claimed on 67% of the homes, not the 95% the deal was priced on, which is another $280K a year of cash the model never counted.</div>
+
+  <div class="tabs" role="tablist" id="tabs">
+    <button class="tab" role="tab" aria-selected="true" data-tab="overview">Problems</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="leasing">Leasing</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="money">Money</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="risk">Collections &amp; tax</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="plan">Plan</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="deal">Deal</button>
+  </div>
+
+  <!-- PROBLEMS -->
+  <div class="panel" id="panel-overview" role="tabpanel">
+    <div class="intro"><div class="sub">Biggest first. Click a row to open it.</div></div>
+    <div class="stack">
+
+      <details class="prob" id="prob-box">
+        <summary><div class="n">1</div><div class="t">The income box is too small to fill the building<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">−$340K</div><div class="l">vacancy vs underwriting</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>The rule:</b> every home is restricted to households earning no more than 80% of area income. In San Diego that is $92,700 for one person and $105,950 for two. Post also requires income of 2.5 times the rent.</div>
+            <div><b>The box:</b> a one-bedroom asks $2,416, so a single renter must earn at least $72,500 and no more than $92,700. That is a $20K window. For a two-bedroom at $2,653 a couple needs $79,600 to $105,950.</div>
+            <div><b>What it does to leasing:</b> in the three months to May 24, 612 inquiries became 82 tours, 29 applications, 18 denials and 15 leases, and 18 applicants cancelled. Net leases for the quarter: minus three. Today: 33 inquiries a week, 4 tours, 1 net lease.</div>
+            <div><b>Where it bites:</b> one-bedrooms were 84% occupied on June 1 (7 of 43 empty) against 93% for two-bedrooms. 18 homes are empty today, 7 ready to show, 11 not. Occupancy has sat between 88% and 92% all year.</div>
+          </div>
+          <table class="mini">
+            <tr><td>Occupancy underwritten · budget · today</td><td class="n">97.5% · 95.6% · 90.2%</td></tr>
+            <tr><td>Vacancy loss, last 3 months annualized</td><td class="n">$625K vs $285K underwritten = $340K over</td></tr>
+            <tr><td>Applications denied, Mar–May</td><td class="n">18 of 29 (62%)</td></tr>
+            <tr><td>Jun–Jul (AM's count)</td><td class="n">25 approved · 24 denied · 18 cancelled</td></tr>
+            <tr><td>Why denied, per the AM (Aug 17)</td><td class="n">credit first (550 minimum), then income under 2.5x</td></tr>
+            <tr><td>Why cancelled</td><td class="n">no answer after 5 contact attempts</td></tr>
+            <tr><td>Leasing agent seat</td><td class="n">empty since March · $35K budgeted, $0 spent</td></tr>
+            <tr><td>Apartment List, 3 months</td><td class="n">387 inquiries → 8 tours → 3 leases</td></tr>
+          </table>
+          <div class="why"><div class="eyebrow">Why it matters</div>
+            <div class="lines">
+              <div>Every point of occupancy is about $59K a year. The gap to budget is five points, about $300K, and the deal was priced at 97.5%.</div>
+              <div>The business plan said "stabilize at 95%" and never asked who can actually qualify. The fix is to widen the box from both sides: lower the one-bedroom asking rent so the floor drops, and let an income-qualified applicant in at 2.25 times rent with a bigger deposit. Both are Post decisions, not ConAm's.</div>
+              <div><b>What the asset manager says (Aug 17 email to Kevin Conde):</b> the top denial reason is credit, not income. ConAm's floor is a 550 score; Post's other manager, Aperto, has no official floor and screens on collections instead. Canyon Villa's cancel-or-deny rate was 90%+ against 50% or less at most California properties. Both gates need loosening: credit and the income box. The AM's own compliance count was 49% in January and 59% in August, against a 70% target for the February 2027 filing; the Feb 2026 claim as filed shows 67%.</div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-tax">
+        <summary><div class="n">2</div><div class="t">The tax break is claimed on 67% of homes, the deal was priced on 95%<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">~$280K</div><div class="l">a year, below NOI</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>How the break works:</b> the county forgives the share of the tax bill equal to the share of homes with a qualified resident. 123 of 183 homes count today, 67%.</div>
+          </div>
+          <table class="mini">
+            <tr><td>Full tax bill</td><td class="n">$860K a year</td></tr>
+            <tr><td>Post pays at 67%</td><td class="n">$280K</td></tr>
+            <tr><td>Post pays at 95% (what the deal assumed)</td><td class="n">$43K</td></tr>
+            <tr><td>Gap</td><td class="n">$240K a year · 51 homes · $4,700 each</td></tr>
+          </table>
+          <div class="why"><div class="eyebrow">What a home needs to count</div>
+            <div class="lines"><div>A signed income form, pay stubs or a tax return behind it, and income under the cap ($92,700 for one person, $105,950 for two). Bank statements do not count.</div></div>
+          </div>
+          <div class="why"><div class="eyebrow">The 51 homes</div>
+            <div class="lines">
+              <div><b>25</b> have no form on file. Get the paperwork. Pay the $500 bonus that is already budgeted.</div>
+              <div><b>18</b> are empty. Lease them to qualified renters.</div>
+              <div><b>8</b> have a resident who earns too much (60 do in all). Only a move-out fixes those.</div>
+              <div>Files plus leasing gets to about 91%. Deadline: the next claim is filed Feb 15, 2027.</div>
+            </div>
+          </div>
+          <div class="why"><div class="eyebrow">Watch</div>
+            <div class="lines"><div>The dashboard flag for this exemption reads "No" as of Sep 3, 2026. $312K of prepaid tax sits on the balance sheet waiting on the assessor. The deal set aside less than a year of escrow for the ramp.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-dq">
+        <summary><div class="n">3</div><div class="t">A quarter of residents are behind on rent<span class="chip"><span class="dot crit"></span>critical</span></div><div class="k"><div class="v">$201K</div><div class="l">owed · 47 homes</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Oct 5 aging:</b> 47 of 183 households owe money. 18 are October only and got notices on the 6th. 8 are on 30-day notices that expired Oct 8 and go to the attorney Oct 9 if unpaid. 4 are in court (units 154 and 161 owe $12.8K and $12.2K; 252 and 280 are military and protected). $63K is more than 30 days old.</div>
+            <div><b>Bad debt:</b> $190K written off in 12 months, 3.3% of rent. Underwriting allowed 1%, $67K. June's list carried $265K owed, with one eviction (unit 107, $22.9K) open since 2025.</div>
+            <div><b>They are filing.</b> Legal spend is $31K a year against $8K budgeted. California's 30-day CARES notice on this property stretches every case to three or four months.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>Residents in a $20K income window are living at the edge. Cutting the ratio to 2.25x will make this worse unless deposits and screening go up with it. Collections and the income box have to be one decision, not two.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-rent">
+        <summary><div class="n">4</div><div class="t">Rents are sliding and 51 homes are month-to-month<span class="chip"><span class="dot warn"></span>warning</span></div><div class="k"><div class="v">−4.6%</div><div class="l">new leases vs prior rent</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>New leases:</b> 40 signed this year, 34 of them below what the last resident paid. Average 4.6% lower. Effective rent fell from $2,737 in April to $2,624 now.</div>
+            <div><b>Renewals:</b> 49 signed at 3.2% more. Renewal rate is 62% this year, up from 34% in 2025. That part works.</div>
+            <div><b>Month-to-month:</b> 28% of residents, 51 homes, have no lease. The plan parked the three-bedrooms on month-to-month until the April 2026 rent limits came out. They are still there, and the practice spread.</div>
+            <div><b>The tracker:</b> a 2026 Renewal Execution Tracker was created Sep 4. Every month in it is empty.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>Three-bedroom asking rent ($3,416) is above the restricted maximum ($3,310) and has to come down anyway. One-bedroom asking rent should come down on purpose, to widen the box. Two-bedrooms are priced fine. The 51 month-to-month homes should be on 12-month leases at the state cap (AB 1482) before the next move-out wave.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-turn">
+        <summary><div class="n">5</div><div class="t">Repairs and turns cost almost double, and 11 empty homes are not ready<span class="chip"><span class="dot warn"></span>warning</span></div><div class="k"><div class="v">$208K</div><div class="l">R&amp;M + turnover · UW $119K</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Repairs and maintenance</b> $117K vs $64K underwritten. <b>Turnover</b> $92K vs $55K. Contract painting is $52K a year; the kickoff plan said it was $43K and would move in-house. It went up.</div>
+            <div><b>Below the line:</b> carpet replacement $86K, HVAC $36K, ovens $32K. Recurring replacements are $190K against $92K underwritten.</div>
+            <div><b>People:</b> the lead maintenance seat cost $64K through August against $39K budgeted, plus $19K of overtime nobody budgeted. The porter is gone. Contract cleaning is $0, so the two maintenance staff are cleaning turns themselves.</div>
+            <div><b>Ready homes:</b> 7 of 18. Turn time is not reported; ConAm stopped filing the weekly report after June 1, 2026.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>A 1981 building needs real money, and the capital plan has it ($1.36M). What it does not need is paying contract rates for paint and overtime rates for cleaning on the same turn. Quarterly rebids across the ConAm San Diego properties with a locked rate card, same as the Georgia fix.</div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="prob" id="prob-leaks">
+        <summary><div class="n">6</div><div class="t">Unbudgeted sewer bills, phones, a stalled capital plan and no weekly reports<span class="chip"><span class="dot warn"></span>warning</span></div><div class="k"><div class="v">12%</div><div class="l">of capital plan spent</div></div><div class="chev">›</div></summary>
+        <div class="more">
+          <div class="lines">
+            <div><b>Sewer:</b> $53K this year against a budget of zero. The city sent past-due notices in December, March and April. Utilities overall are $65K a year over underwriting.</div>
+            <div><b>Phones:</b> $15.4K a year. The plan said $9.5K was too much and promised fiber.</div>
+            <div><b>Capital:</b> $161K of $1.36M spent, and every one of 36 lines shows exactly 12.9%, which means the tracker is an allocation, not a record. The lender's year-one items (termite $55K, parking lot $45K) show $0 spent in the budget comparison. The lender holds $179K in a repair reserve for them. The city issued a brush-clearance fire notice in March.</div>
+            <div><b>Reports:</b> weekly activity and aging reports were filed to the folder through June 1, 2026. Nothing since. The dashboard shows "--" for turn time for the same reason.</div>
+            <div><b>Other income</b> is $45K a year short: garage and carport $153K vs $162K budget, forfeited deposits $16K vs $40K, lease-break fees $5K vs $18K. The EV-charging idea in the plan ($20–25K a year) was never started.</div>
+          </div>
+          <div class="why"><div class="eyebrow">Read</div>
+            <div class="lines"><div>None of these is large alone. Together they are about $100K and they are all signs that nobody is reading the property every week.</div></div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- LEASING -->
+  <div class="panel" id="panel-leasing" role="tabpanel" hidden>
+    <div class="stack">
+      <div class="grid2">
+        <div class="card">
+          <div class="chart-head"><div><h3>Occupancy by week</h3><div class="legend" id="lg-occ"></div></div><button class="toggle" data-for="c-occ">Table</button></div>
+          <div class="chart" id="c-occ"></div>
+          <div class="takeaway">93.4% in April, 88% by August, 90.2% now. The system projects 91.6% in 30 days. Budget is 95.6%.</div>
+        </div>
+        <div class="card">
+          <div class="chart-head"><div><h3>Effective rent by week</h3><div class="legend" id="lg-rent"></div></div><button class="toggle" data-for="c-rent">Table</button></div>
+          <div class="chart" id="c-rent"></div>
+          <div class="takeaway">$2,737 in April, $2,478 in August, $2,624 now. A $100 concession is running; the 13-week average was $200.</div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:var(--accent)">
+        <h3>The income box, by floorplan</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Floorplan</th><th class="n">Homes</th><th class="n">Asking</th><th class="n">Max allowed</th><th class="n">Income needed (2.5x)</th><th class="n">Income cap, 1 person</th><th class="n">Cap, 2 people</th><th class="n">Occupied Jun 1</th></tr></thead>
+          <tbody>
+            <tr><td>1 bed / 1 bath</td><td class="n">43</td><td class="n">$2,416</td><td class="n">$2,648</td><td class="n">$72,500</td><td class="n">$92,700</td><td class="n">$105,950</td><td class="n neg">84%</td></tr>
+            <tr><td>2 bed / 1 bath</td><td class="n">72</td><td class="n">$2,653</td><td class="n">$2,978</td><td class="n">$79,600</td><td class="n">$92,700</td><td class="n">$105,950</td><td class="n">93%</td></tr>
+            <tr><td>2 bed / 2 bath</td><td class="n">56</td><td class="n">$2,781</td><td class="n">$2,978</td><td class="n">$83,400</td><td class="n">$92,700</td><td class="n">$105,950</td><td class="n">89%</td></tr>
+            <tr><td>3 bed / 2 bath</td><td class="n">12</td><td class="n">$3,416</td><td class="n">$3,310</td><td class="n">$99,300</td><td class="n">3 people $119,200</td><td class="n">4 people $132,400</td><td class="n">92%</td></tr>
+          </tbody></table></div>
+        <div class="takeaway">A single person renting a one-bedroom has to earn between $72,500 and $92,700. Drop the asking rent to $2,250 and the floor falls to $67,500. Allow 2.25x and it falls to $60,750. That is the whole leasing fix. The three-bedroom asking rent is above its legal cap.</div>
+      </div>
+
+      <div class="card">
+        <h3>The funnel, last four weeks</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Week ending</th><th class="n">Inquiries</th><th class="n">Tours</th><th class="n">Applications</th><th class="n">Net leases</th></tr></thead>
+          <tbody>
+            <tr><td>Sep 13</td><td class="n">19</td><td class="n">12</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td>Sep 20</td><td class="n">16</td><td class="n">11</td><td class="n">4</td><td class="n">2</td></tr>
+            <tr><td>Sep 27</td><td class="n">19</td><td class="n">4</td><td class="n">0</td><td class="n">0</td></tr>
+            <tr><td>Oct 4</td><td class="n">33</td><td class="n">4</td><td class="n">3</td><td class="n">1</td></tr>
+          </tbody></table></div>
+        <div class="takeaway">Three leases in a month. Two-thirds of applications cancel or are denied. The site manager, Aby Morales, did 177 first contacts and 440 follow-ups in the spring quarter herself; there is no leasing agent. Zillow produced 4 of the 15 spring leases; Apartment List, 387 inquiries, produced 3.</div>
+      </div>
+
+      <div class="card">
+        <h3>The neighbors · at purchase, September 2025</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Property</th><th class="n">Built</th><th class="n">Units</th><th class="n">Miles</th><th class="n">Leased</th><th class="n">1BR</th><th class="n">2BR</th></tr></thead>
+          <tbody>
+            <tr><td>Emery at Terra Nova</td><td class="n">1985</td><td class="n">233</td><td class="n">0.9</td><td class="n">94.8%</td><td class="n">$2,385</td><td class="n">$2,996</td></tr>
+            <tr><td>Sunbow Villas</td><td class="n">1989</td><td class="n">156</td><td class="n">0.7</td><td class="n">98.1%</td><td class="n">$2,426</td><td class="n">$2,959</td></tr>
+            <tr><td>Beacon Cove</td><td class="n">1986</td><td class="n">177</td><td class="n">0.8</td><td class="n">100%</td><td class="n">$2,230</td><td class="n">$2,810</td></tr>
+            <tr class="subject"><td>Canyon Villa (then)</td><td class="n">1981</td><td class="n">183</td><td class="n">—</td><td class="n">97.3%</td><td class="n">$2,322</td><td class="n">$2,730</td></tr>
+            <tr class="subject"><td>Canyon Villa (today)</td><td class="n">1981</td><td class="n">183</td><td class="n">—</td><td class="n">90.2%</td><td class="n">$2,416</td><td class="n">$2,653–2,781</td></tr>
+            <tr><td>Bonita Cedars</td><td class="n">1983</td><td class="n">120</td><td class="n">3.6</td><td class="n">99.2%</td><td class="n">$2,267</td><td class="n">$2,693</td></tr>
+            <tr><td>Seawind</td><td class="n">1970</td><td class="n">200</td><td class="n">2.4</td><td class="n">—</td><td class="n">$2,230</td><td class="n">$2,518</td></tr>
+          </tbody></table></div>
+        <div class="takeaway">Price is not the problem against the neighbors; the one-bedroom is mid-pack. The problem is that the neighbors can rent to anyone and Canyon Villa cannot. The dashboard has no comp survey for Canyon Villa and the Market Surveys folder is empty. Get one before the next pricing call.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONEY -->
+  <div class="panel" id="panel-money" role="tabpanel" hidden>
+    <div class="stack">
+      <div class="card">
+        <div class="chart-head"><div><h3>Monthly NOI vs underwriting</h3><div class="legend" id="lg-noi"></div></div><button class="toggle" data-for="c-noi">Table</button></div>
+        <div class="chart" id="c-noi"></div>
+        <div class="takeaway">Eleven full months. Never once reached the $401K monthly underwriting. December came closest at $398K. August, $340K, is the lowest full month.</div>
+      </div>
+      <div class="card">
+        <div class="chart-head"><div><h3>Where the gap to underwriting comes from, last three months annualized ($K per year)</h3><div class="legend" id="lg-var"></div></div><button class="toggle" data-for="c-var">Table</button></div>
+        <div class="chart" id="c-var"></div>
+        <div class="takeaway">Vacancy is two-thirds of the gap. Expenses net out almost flat only because payroll ($47K, the empty leasing seat), insurance and the management fee (lower because revenue is lower) offset utilities, repairs and admin. Property tax sits below this line.</div>
+      </div>
+      <div class="card">
+        <h3>The business plan's top bets, one year on</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Kickoff plan, Sep 3, 2025</th><th>What happened</th><th>Grade</th></tr></thead>
+          <tbody>
+            <tr><td class="w">Tax exemption: certify every resident for the highest exemption</td><td class="w">67% claimed; 25 households with no income on file</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">Stabilize at 95% by end of 2025</td><td class="w">90.2%; never above 93.4% this year</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">Garage concession; carports $75 → $85–90</td><td class="w">Parking income $153K vs $162K budget</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">EV charging, $20–25K a year at no cost</td><td class="w">Not started</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">Contract painting $43K → in-house touch-ups</td><td class="w">$52K</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">Phone lines $9.5K → fiber</td><td class="w">$15.4K</td><td><span class="grade no">missed</span></td></tr>
+            <tr><td class="w">Pet audit on work orders</td><td class="w">Pet rent $14.7K vs $16.3K budget</td><td><span class="grade part">partial</span></td></tr>
+            <tr><td class="w">Uninsured-resident fee</td><td class="w">$5.5K of placement fees this year</td><td><span class="grade part">partial</span></td></tr>
+            <tr><td class="w">Elevator contract $1.6K a quarter via Thrive</td><td class="w">Otis contract signed Feb 2026</td><td><span class="grade ok">done</span></td></tr>
+            <tr><td class="w">Gas billing recovery above 90%</td><td class="w">$43.7K billed vs $33.3K budget</td><td><span class="grade ok">done</span></td></tr>
+            <tr><td class="w">Trash audit</td><td class="w">Billed back 109% of cost</td><td><span class="grade ok">done</span></td></tr>
+            <tr><td class="w">Water heaters $76K a year → free tankless</td><td class="w">$11K spent</td><td><span class="grade ok">done or deferred</span></td></tr>
+          </tbody></table></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RISK -->
+  <div class="panel" id="panel-risk" role="tabpanel" hidden>
+    <div class="grid2">
+      <div class="card">
+        <h3>Delinquency · $201,332 · Oct 5, 2026</h3>
+        <div class="chart-head"><div class="legend" id="lg-dq"></div><button class="toggle" data-for="c-dq">Table</button></div>
+        <div class="chart" id="c-dq"></div>
+        <div class="takeaway">$63K is more than 30 days old. 4 in court with Kimball Tirey &amp; St. John, 8 on notices that expired Oct 8, 18 served Oct 6, 16 small balances. On June 1 the total was $265K.</div>
+      </div>
+      <div class="card">
+        <h3>Tax exemption · welfare claim filed Feb 1, 2026</h3>
+        <div class="mrow"><div class="k">Homes under 80% of area income</div><div class="meter"><span style="width:52%;background:var(--seq400)"></span></div><div class="r">95 of 183</div></div>
+        <div class="mrow"><div class="k">Plus qualified-at-move-in, now under 100%</div><div class="meter"><span style="width:67%;background:var(--seq550)"></span></div><div class="r">123 of 183 · 67%</div></div>
+        <div class="mrow"><div class="k">Underwriting, stabilized</div><div class="meter"><span style="width:95%;background:var(--grid)"></span></div><div class="r">95%</div></div>
+        <div class="mrow"><div class="k">Households with no income on file</div><div class="meter"><span style="width:14%;background:var(--crit)"></span></div><div class="r">25</div></div>
+        <div class="mrow"><div class="k">Files with no certification date</div><div class="meter"><span style="width:16%;background:var(--crit)"></span></div><div class="r">29</div></div>
+        <div class="takeaway">Full bill about $860K at 1.17% of $73.75M. Each home certified is worth about $4,700 a year. The $500 sign-up incentive in the plan was budgeted at $116K. Managing partner FFAH (compliance manager Nicole Dale) files; the site collects the paperwork. Dashboard flag: "No", Sep 3, 2026.</div>
+      </div>
+      <div class="card">
+        <h3>Cost recovery</h3>
+        <div class="mrow"><div class="k">Trash</div><div class="meter"><span style="width:100%;background:var(--good)"></span></div><div class="r">109%</div></div>
+        <div class="mrow"><div class="k">Pest</div><div class="meter"><span style="width:91%;background:var(--good)"></span></div><div class="r">91%</div></div>
+        <div class="mrow"><div class="k">Gas</div><div class="meter"><span style="width:90%;background:var(--good)"></span></div><div class="r">90%</div></div>
+        <div class="mrow"><div class="k">Water and sewer</div><div class="meter"><span style="width:81%;background:var(--seq400)"></span></div><div class="r">81% · sewer unbudgeted</div></div>
+        <div class="mrow"><div class="k">Forfeited deposits vs budget</div><div class="meter"><span style="width:40%;background:var(--crit)"></span></div><div class="r">$16K of $40K</div></div>
+        <div class="takeaway">Billing back works here. The miss is the $53K city sewer bill that was never in the budget and went past due three times.</div>
+      </div>
+      <div class="card">
+        <h3>Capital · $1.36M plan</h3>
+        <div class="mrow"><div class="k">Spent</div><div class="meter"><span style="width:12%;background:var(--seq550)"></span></div><div class="r">$161K of $1.36M</div></div>
+        <div class="mrow"><div class="k">Termite (lender, year one)</div><div class="meter"><span style="width:0%;background:var(--crit)"></span></div><div class="r">$0 of $55K</div></div>
+        <div class="mrow"><div class="k">Parking lot (lender, year one)</div><div class="meter"><span style="width:0%;background:var(--crit)"></span></div><div class="r">$0 of $45K</div></div>
+        <div class="mrow"><div class="k">Exterior paint and balconies</div><div class="meter"><span style="width:13%;background:var(--seq400)"></span></div><div class="r">$354K · bid Apr 2026</div></div>
+        <div class="takeaway">All 36 lines show 12.9% spent: the tracker spreads one number, it does not track. The lender holds $179K for the year-one repairs. Year two in the plan is $1.33M, mostly paint, roofs and the state balcony law (SB 721).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN -->
+  <div class="panel" id="panel-plan" role="tabpanel" hidden>
+    <div class="intro"><div class="sub">We do → this happens → NOI moves by this. Check items off as they land (saved in this browser only).</div></div>
+    <div class="card" style="padding:0;overflow:hidden">
+      <div class="tbl-wrap" style="margin:0"><table id="plan" class="plan-tbl">
+        <thead><tr><th style="width:36px"></th><th>We do</th><th>What happens</th><th class="n">Fixes #</th><th class="n">NOI / yr</th></tr></thead>
+        <tbody>
+          <tr><td><input type="checkbox" id="p1"></td><td class="w"><b>Widen the income box.</b> One-bedroom asking rent to about $2,250. Income-qualified applicants accepted at 2.25x rent with an extra half-month deposit. Decide every application in 48 hours. Hire the leasing seat that is already in the budget. Cancel Apartment List, keep Zillow. Make the 11 not-ready homes ready. Owner: Joelle Zingerman for the policy, Nicole Zuniga for the site.</td><td class="w">Occupancy 90% → 95%. One-bedrooms 84% → 93%.</td><td class="n">1</td><td class="n pos">+$250K</td></tr>
+          <tr><td><input type="checkbox" id="p2"></td><td class="w"><b>Certify the 25 blank households by Dec 31</b> and pay the $500 incentive that is already budgeted. Every empty home goes to a household under 80% of area income, no exceptions. Get the assessor's 2026–27 ruling in writing from FFAH this month. Owner: Nicole Dale (FFAH) and Aby Morales.</td><td class="w">Exemption 67% → 75–80% this year, 95% by year three. The $312K of prepaid tax comes back.</td><td class="n">2</td><td class="n">protects ~$240K below NOI</td></tr>
+          <tr><td><input type="checkbox" id="p3"></td><td class="w"><b>Collect.</b> File on the 8 expired notices Oct 9. No payment plans after the 8th of the month. Door-knock the 18 October-only balances this week. Send the 90-day balances to an agency. Owner: Aby Morales with Kimball Tirey &amp; St. John.</td><td class="w">Bad debt 3.3% → 1.5%. Owed $201K → under $80K.</td><td class="n">3</td><td class="n pos">+$100K</td></tr>
+          <tr><td><input type="checkbox" id="p4"></td><td class="w"><b>Put the 51 month-to-month homes on 12-month leases</b> at the state cap, three-bedrooms first (asking rent to $3,310). Fill in the renewal tracker every month. End the $100 concession. Owner: Aby Morales, Nicole Zuniga reviews.</td><td class="w">Month-to-month 28% → 10%. Rent slide stops.</td><td class="n">4</td><td class="n pos">+$60K</td></tr>
+          <tr><td><input type="checkbox" id="p5"></td><td class="w"><b>Rebid every turn item quarterly across the ConAm San Diego properties and lock a rate card.</b> Paint touch-ups and cleans in-house with a cleaner, not maintenance overtime. 7-day turns. Owner: Erick Carvajal and the lead maintenance tech.</td><td class="w">R&amp;M + turnover $208K → $150K. Ready homes 7 → 15.</td><td class="n">5</td><td class="n pos">+$50K</td></tr>
+          <tr><td><input type="checkbox" id="p6"></td><td class="w"><b>Housekeeping.</b> Put the sewer bill in the budget and pay it on time. Fiber for the phones. Restart the Monday weekly report. Replace the 12.9% capital tracker with real invoices and start termite and parking before the lender asks. Charge for carports at $85. Owner: Nicole Zuniga.</td><td class="w">Someone is reading the property every week. Small leaks close. The $40K is other income back to budget: carports $9K, forfeited deposits $24K, lease-break fees $13K ($46K, rounded down).</td><td class="n">6</td><td class="n pos">+$40K</td></tr>
+          <tr class="total"><td></td><td class="w">Net</td><td class="w">NOI $4.31M → about $4.80M. Underwriting is $4.81M. Plus about $240K a year of tax protected below the line, which is what pays the 5% preferred return.</td><td class="n"></td><td class="n pos">+$500K</td></tr>
+        </tbody></table></div>
+    </div>
+  </div>
+
+  <!-- DEAL -->
+  <div class="panel" id="panel-deal" role="tabpanel" hidden>
+    <div class="card">
+      <div class="facts">
+        <div class="fact"><div class="k">Acquired</div><div class="v">Sep 10, 2025 · $73.75M · $76.8M all-in · $420K/unit · dashboard market value $73.8M</div></div>
+        <div class="fact"><div class="k">Equity</div><div class="v">$20.6M · high-net-worth investors · 5% preferred ($257K a quarter)</div></div>
+        <div class="fact"><div class="k">Debt</div><div class="v">$56.25M Freddie Mac via Northmarq · 5.18% fixed · interest-only to Oct 2030, then $308K/mo · matures Oct 2032</div></div>
+        <div class="fact"><div class="k">UW NOI / returns</div><div class="v">$4.81M · 6.4% on price · 7.8% cash-on-cash year one · 20% IRR over 7 years · 97.5% occupancy, 1% bad debt</div></div>
+        <div class="fact"><div class="k">Current cash</div><div class="v">After tax, replacements, entity costs and interest: about $870K a year, 4.2% on equity · cash in bank $134K</div></div>
+        <div class="fact"><div class="k">Distributions</div><div class="v">$257K paid Q4 2025 and Q1 2026 · nothing since · $269K short for the next one</div></div>
+        <div class="fact"><div class="k">Structure</div><div class="v">CMFA bond-financed welfare exemption · 30-year regulatory agreement · Foundation for Affordable Housing V is managing general partner ($27K a year)</div></div>
+        <div class="fact"><div class="k">Compliance obligation</div><div class="v">100% of homes to households at or under 80% of area income · over-income residents keep counting up to 100% · claim filed every Feb 15 · exemption prorated by qualified homes</div></div>
+        <div class="fact"><div class="k">Business plan</div><div class="v">Stabilize at 95% · 8.8% renewals, 3% trade-outs · compliance 60% / 70% / 95% · lender repairs year one, $1.33M capital year two · no renovations</div></div>
+        <div class="fact"><div class="k">Fees</div><div class="v">AM $62.8K a year, +3.5% · PM 2.5% + 0.25% incentive · CM fee $65K in the capital plan</div></div>
+        <div class="fact"><div class="k">Team</div><div class="v">AM Joelle Zingerman · VP Daniel Henggeler · ConAm regional VP Daniel Limata · RPM Nicole Zuniga · site manager Aby Morales · capex Adam Khalil / Erick Carvajal · FFAH compliance Nicole Dale</div></div>
+        <div class="fact"><div class="k">Property</div><div class="v">43 one-bedrooms, 128 two, 12 three · avg 978 sf · 35 buildings on 8.8 acres · 601 Telegraph Canyon Rd · earthquake deductible $1.47M</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Sources: Portfolio Dashboard v435, Oct 7, 2026 (Aug 2026 financials and budget comparison, Oct 4 weekly ops and KPIs, May 2026 balance sheet, debt, cash, capital plan) · Canyon Villa AR by category, Oct 5, 2026 · ConAm weekly activity and aging reports, folder filed through Jun 1, 2026 · 2026–27 list of qualified households, Jun 1, 2026 · Welfare exemption claim BOE-267 with list of qualified households, signed Feb 1, 2026 · CMFA onsite audit, Apr 30, 2026 · Post business plan kickoff, Sep 3, 2025 (comps, income and expense bets, capital plan) · Underwriting model Canyon Villa_Analysis_9.22.25 FINAL (tax, occupancy and bad-debt assumptions) · ConAm cash-flow forecast, Apr 16, 2026 · Renewal Execution Tracker 2026, Sep 4, 2026 (empty) · No monthly BvA briefing exists for Canyon Villa in the Aug or Sep 2026 folders.</div>
+</div>
+
+<script>
+(function(){
+'use strict';
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmtK = v => (v<0?'−':'') + '$' + Math.round(Math.abs(v)/1000) + 'K';
+const fmtD = v => (v<0?'−':'') + '$' + Math.abs(Math.round(v)).toLocaleString();
+const fmtP = v => (v*100).toFixed(1) + '%';
+
+const months = ['Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26'];
+const noi    = [377106,291397,397508,365484,378729,358231,381137,377844,376776,359717,340459];
+const uwMo   = 4811445/12;
+const weeks  = ['Apr 12','Apr 19','Apr 26','May 3','May 10','May 17','May 24','May 31','Jun 7','Jun 14','Jun 21','Jun 28','Jul 5','Jul 12','Jul 19','Jul 26','Aug 2','Aug 9','Aug 16','Aug 23','Aug 30','Sep 6','Sep 13','Sep 20','Sep 27','Oct 4'];
+const occ    = [.9344,.934,.94,.934,.9235,.918,.9126,.9071,.8962,.9016,.9016,.9071,.9125,.9016,.8962,.8962,.8852,.8798,.8907,.8852,.8907,.9126,.9016,.9071,.9016,.9016];
+const rent   = [2737,2737,2737,2737,2737,2737,2737,2737,2603,2603,2603,2678,2678,2558,2504,2504,2558,2478,2478,2478,2605,2605,2605,2705,2624,2624];
+const varRows = [['Payroll',47],['Insurance',39],['Mgmt fee',28],['Turnover',6],['Contracts',4],['Concessions',0],['Marketing',-3],['Rent potential',-19],['Administrative',-25],['Other income',-45],['R&M',-47],['Utilities',-65],['Bad debt',-84],['Vacancy',-340]];
+const dq = [['0–30 days',137617],['31–60',43688],['61–90',250],['90+',19777]];
+
+const NS='http://www.w3.org/2000/svg';
+function el(tag, attrs, parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k, attrs[k]); if(parent) parent.appendChild(e); return e; }
+function niceTicks(min,max,n){ const span=max-min||1; const raw=span/n; const p=Math.pow(10,Math.floor(Math.log10(raw))); const steps=[1,2,2.5,5,10]; let step=p*10; for(const s of steps){ if(raw<=s*p){ step=s*p; break; } } const lo=Math.floor(min/step)*step, hi=Math.ceil(max/step)*step; const t=[]; for(let v=lo; v<=hi+1e-9; v+=step) t.push(+v.toFixed(10)); return t; }
+function labelIdx(n){ const step=Math.max(1,Math.round(n/6)); const idx=[]; for(let i=0;i<n;i+=step) idx.push(i); const last=idx[idx.length-1]; if(last!==n-1){ if(n-1-last>=step/2) idx.push(n-1); else idx[idx.length-1]=n-1; } return new Set(idx); }
+function legend(id, items){ const g=document.getElementById(id); if(!g) return; g.innerHTML=items.map(i=>`<span class="key"><span class="sw ${i.bar?'bar':''}" style="background:${i.color}"></span>${i.name}</span>`).join(''); }
+function tooltip(container){ const t=document.createElement('div'); t.className='tip'; container.appendChild(t); return t; }
+function placeTip(tip,c,ev){ const cr=c.getBoundingClientRect(); tip.style.left=(ev.clientX-cr.left)+'px'; tip.style.top=(ev.clientY-cr.top)+'px'; tip.classList.add('on'); }
+function tableFor(container, head, rows){ const w=document.createElement('div'); w.className='tbl-wrap'; w.hidden=true; w.innerHTML='<table><thead><tr>'+head.map((h,i)=>`<th class="${i?'n':''}">${h}</th>`).join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map((c,i)=>`<td class="${i?'n':''}">${c}</td>`).join('')+'</tr>').join('')+'</tbody></table>'; container.parentNode.insertBefore(w, container.nextSibling); return w; }
+
+function lineChart(id, opt){
+  const c=document.getElementById(id); const W=opt.width||560, H=opt.height||230, m={t:14,r:16,b:30,l:52};
+  const n=opt.labels.length; const all=opt.series.flatMap(s=>s.values).concat(opt.ref?[opt.ref.value]:[]);
+  let lo=opt.yMin!=null?opt.yMin:Math.min(...all), hi=opt.yMax!=null?opt.yMax:Math.max(...all);
+  const ticks=niceTicks(lo,hi,4); lo=ticks[0]; hi=ticks[ticks.length-1];
+  const x=i=>m.l+(i/(n-1))*(W-m.l-m.r), y=v=>m.t+(1-(v-lo)/(hi-lo))*(H-m.t-m.b);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':opt.aria||''},c);
+  ticks.forEach(t=>{ el('line',{x1:m.l,x2:W-m.r,y1:y(t),y2:y(t),stroke:'var(--grid)','stroke-width':1},svg); el('text',{x:m.l-8,y:y(t)+4,'text-anchor':'end','font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=opt.fmt(t); });
+  el('line',{x1:m.l,x2:W-m.r,y1:y(lo),y2:y(lo),stroke:'var(--axis)','stroke-width':1},svg);
+  const li_=labelIdx(n);
+  opt.labels.forEach((l,i)=>{ if(li_.has(i)){ el('text',{x:x(i),y:H-8,'text-anchor':i===n-1?'end':(i===0?'start':'middle'),'font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=l; } });
+  if(opt.ref){ el('line',{x1:m.l,x2:W-m.r,y1:y(opt.ref.value),y2:y(opt.ref.value),stroke:'var(--ink-2)','stroke-width':1,'stroke-dasharray':'4 4'},svg); el('text',{x:W-m.r,y:y(opt.ref.value)-5,'text-anchor':'end','font-size':11,fill:'var(--ink-2)'},svg).textContent=opt.ref.label; }
+  opt.series.forEach(s=>{ const d=s.values.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+    if(s.area){ el('path',{d:d+` L${x(n-1)} ${y(lo)} L${x(0)} ${y(lo)} Z`,fill:s.color,opacity:.1},svg); }
+    el('path',{d,fill:'none',stroke:s.color,'stroke-width':2,'stroke-linejoin':'round','stroke-linecap':'round'},svg);
+    const li=n-1; el('circle',{cx:x(li),cy:y(s.values[li]),r:4.5,fill:s.color,stroke:'var(--surface)','stroke-width':2},svg);
+    el('text',{x:x(li)-8,y:y(s.values[li])+(s.labelDy||-9),'text-anchor':'end','font-size':11.5,'font-weight':600,fill:'var(--ink)'},svg).textContent=opt.fmt(s.values[li]); });
+  const tip=tooltip(c); const vline=el('line',{y1:m.t,y2:H-m.b,stroke:'var(--axis)','stroke-width':1,opacity:0},svg);
+  const dots=opt.series.map(s=>el('circle',{r:4,fill:s.color,stroke:'var(--surface)','stroke-width':2,opacity:0},svg));
+  svg.addEventListener('mousemove',ev=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)/r.width*W; let i=Math.round((px-m.l)/((W-m.l-m.r)/(n-1))); i=Math.max(0,Math.min(n-1,i));
+    vline.setAttribute('x1',x(i)); vline.setAttribute('x2',x(i)); vline.setAttribute('opacity',1);
+    opt.series.forEach((s,k)=>{ dots[k].setAttribute('cx',x(i)); dots[k].setAttribute('cy',y(s.values[i])); dots[k].setAttribute('opacity',1); });
+    tip.innerHTML=`<div class="t">${opt.labels[i]}</div>`+opt.series.map(s=>`${s.name}: ${opt.fmt(s.values[i])}`).join('<br>'); placeTip(tip,c,ev); });
+  svg.addEventListener('mouseleave',()=>{ tip.classList.remove('on'); vline.setAttribute('opacity',0); dots.forEach(d=>d.setAttribute('opacity',0)); });
+  tableFor(c,[opt.xName||''].concat(opt.series.map(s=>s.name)),opt.labels.map((l,i)=>[l].concat(opt.series.map(s=>opt.fmt(s.values[i])))));
+}
+function varChart(id, rows){
+  const c=document.getElementById(id); const W=760, rowH=24, m={t:8,r:70,b:22,l:120}; const H=m.t+rows.length*rowH+m.b;
+  const mx=Math.max(...rows.map(r=>Math.abs(r[1]))); const ticks=niceTicks(-mx,mx,4); const lo=ticks[0],hi=ticks[ticks.length-1];
+  const x=v=>m.l+(v-lo)/(hi-lo)*(W-m.l-m.r);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Last-three-months variance vs underwriting by line'},c);
+  ticks.forEach(t=>{ el('line',{x1:x(t),x2:x(t),y1:m.t,y2:H-m.b,stroke:t===0?'var(--axis)':'var(--grid)'},svg); el('text',{x:x(t),y:H-6,'text-anchor':'middle','font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=(t>0?'+':'')+t; });
+  const tip=tooltip(c);
+  rows.forEach((r,i)=>{ const v=r[1], yy=m.t+i*rowH+5, h=14; const good=v>=0; const x0=x(Math.min(0,v)), x1=x(Math.max(0,v)); const w=Math.max(0,x1-x0); const rad=Math.min(4,w);
+    const d=good?`M${x0} ${yy} H${x1-rad} Q${x1} ${yy} ${x1} ${yy+rad} V${yy+h-rad} Q${x1} ${yy+h} ${x1-rad} ${yy+h} H${x0} Z`:`M${x1} ${yy} H${x0+rad} Q${x0} ${yy} ${x0} ${yy+rad} V${yy+h-rad} Q${x0} ${yy+h} ${x0+rad} ${yy+h} H${x1} Z`;
+    el('path',{d,fill:good?'var(--good)':'var(--crit)'},svg);
+    el('text',{x:m.l-8,y:yy+h-3,'text-anchor':'end','font-size':12,fill:'var(--ink)'},svg).textContent=r[0];
+    el('text',{x:good?x1+6:x0-6,y:yy+h-3,'text-anchor':good?'start':'end','font-size':11.5,fill:'var(--ink-2)','font-family':'var(--mono)'},svg).textContent=(good?'+':'−')+'$'+Math.abs(v)+'K';
+    const hit=el('rect',{x:m.l,y:yy-5,width:W-m.l-m.r,height:rowH,fill:'transparent'},svg);
+    hit.addEventListener('mousemove',ev=>{ tip.innerHTML=`<div class="t">${r[0]}</div>${good?'Better':'Worse'} than underwriting by $${Math.abs(v)}K a year`; placeTip(tip,c,ev); });
+    hit.addEventListener('mouseleave',()=>tip.classList.remove('on')); });
+  tableFor(c,['Line','T3 annualized vs UW ($K)'],rows.map(r=>[r[0],(r[1]>0?'+':'−')+'$'+Math.abs(r[1])+'K']));
+}
+function stackBar(id, segs){
+  const c=document.getElementById(id); const W=560,H=54; const total=segs.reduce((a,s)=>a+s[1],0);
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Delinquency aging'},c);
+  const cols=['var(--seq250)','var(--seq400)','var(--seq550)','var(--seq700)']; let x0=0; const tip=tooltip(c);
+  segs.forEach((s,i)=>{ const w=(s[1]/total)*W; const r=el('rect',{x:x0+(i?1:0),y:8,width:Math.max(0,w-(i?1:0)-(i<segs.length-1?1:0)),height:22,fill:cols[i]},svg);
+    if(w>70){ el('text',{x:x0+w/2,y:23,'text-anchor':'middle','font-size':11.5,'font-weight':600,fill:i>1?'#fff':'var(--ink)'},svg).textContent=fmtD(s[1]); }
+    el('text',{x:x0+2,y:46,'font-size':11,fill:'var(--muted)','font-family':'var(--mono)'},svg).textContent=w>60?s[0]:'';
+    r.addEventListener('mousemove',ev=>{ tip.innerHTML=`<div class="t">${s[0]}</div>${fmtD(s[1])} · ${(s[1]/total*100).toFixed(0)}% of balance`; placeTip(tip,c,ev); });
+    r.addEventListener('mouseleave',()=>tip.classList.remove('on')); x0+=w; });
+  legend('lg-dq',segs.map((s,i)=>({name:s[0],color:cols[i],bar:true})));
+  tableFor(c,['Bucket','Balance'],segs.map(s=>[s[0],fmtD(s[1])]));
+}
+
+lineChart('c-noi',{labels:months,fmt:fmtK,width:900,height:240,aria:'Monthly NOI vs underwriting',series:[{name:'NOI',values:noi,color:css('--s1'),area:true}],ref:{value:uwMo,label:'Underwriting $401K/mo'},yMin:250000,yMax:450000,xName:'Month'});
+legend('lg-noi',[{name:'NOI',color:css('--s1')},{name:'Underwriting (dashed)',color:css('--ink-2')}]);
+lineChart('c-occ',{labels:weeks,fmt:fmtP,aria:'Weekly occupancy',series:[{name:'Occupancy',values:occ,color:css('--s1')}],ref:{value:.956,label:'Budget 95.6%'},yMin:.86,yMax:.98,xName:'Week'});
+legend('lg-occ',[{name:'Occupancy',color:css('--s1')},{name:'Budget (dashed)',color:css('--ink-2')}]);
+lineChart('c-rent',{labels:weeks,fmt:fmtD,aria:'Weekly effective rent',series:[{name:'Effective rent',values:rent,color:css('--s2')}],ref:{value:2679,label:'In-place $2,679'},yMin:2400,yMax:2800,xName:'Week'});
+legend('lg-rent',[{name:'Effective rent',color:css('--s2')},{name:'In-place rent (dashed)',color:css('--ink-2')}]);
+varChart('c-var',varRows);
+legend('lg-var',[{name:'Better than UW',color:'var(--good)',bar:true},{name:'Worse than UW',color:'var(--crit)',bar:true}]);
+stackBar('c-dq',dq);
+
+const tabs=[...document.querySelectorAll('.tab')];
+function show(name){ tabs.forEach(t=>{ const on=t.dataset.tab===name; t.setAttribute('aria-selected',on?'true':'false'); const p=document.getElementById('panel-'+t.dataset.tab); if(p) p.hidden=!on; }); try{ localStorage.setItem('cva-tab',name); }catch(e){} }
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+(function(){ let start='overview'; const h=(location.hash||'').replace('#',''); if(h && tabs.some(t=>t.dataset.tab===h)) start=h; else { try{ const s=localStorage.getItem('cva-tab'); if(s && tabs.some(t=>t.dataset.tab===s)) start=s; }catch(e){} } show(start); })();
+
+document.querySelectorAll('.toggle[data-for]').forEach(b=>{ b.addEventListener('click',()=>{ const ch=document.getElementById(b.dataset.for); const tb=ch.nextElementSibling; const showT=tb.hidden; tb.hidden=!showT; ch.hidden=showT; b.textContent=showT?'Chart':'Table'; }); });
+
+const KEY='cva-plan-v1'; let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ saved={}; }
+document.querySelectorAll('#plan input[type=checkbox]').forEach(cb=>{ cb.checked=!!saved[cb.id]; cb.closest('tr').classList.toggle('done',cb.checked);
+  cb.addEventListener('change',()=>{ cb.closest('tr').classList.toggle('done',cb.checked); saved[cb.id]=cb.checked; try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){} }); });
+})();
+</script>
+<style>#pp-home{display:none;position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:9999;background:#0e0e10;color:#fff;font:600 13px Inter,system-ui,-apple-system,sans-serif;padding:9px 14px;border-radius:999px;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25)}@media (display-mode: standalone){#pp-home{display:inline-block}}</style><a id="pp-home" href="index.html">&#8249; Home</a></body></html>
